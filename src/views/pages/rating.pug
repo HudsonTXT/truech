@@ -1,0 +1,74 @@
+extends ../layouts/default
+
+
+block variables
+    - const title = "Рейтинг"
+
+block content
+    +Breadcrumbs(["Отзывы", "Курсы", "Рейтинг"])
+    .container
+        section
+            .section__head.mb-32.pos-r
+                .js-toggler(data-target="#reviews__type")
+                    h4 Все отзывы
+                        i.fa.fa-chevron-down
+
+                .reviews__dropdown.dropdown.js-toggler-target.js-toggler-close-on-select#reviews__type
+                    a(href="#").js-toggler-close-on-select__item.active
+                        span Все отзывы
+                        .icon
+                            i.fal.fa-th
+                    a(href="#").js-toggler-close-on-select__item
+                        span Курсы
+                        .icon
+                            i.fal.fa-books
+                    a(href="#").js-toggler-close-on-select__item
+                        span Спикеры
+                        .icon
+                            i.fal.fa-graduation-cap
+                .actions
+                    //-a(href="#read-review" rel="modal:open").btn.btn--xs Написать отзыв
+                    +Input("search", "search-min", "Поиск по отзывам")
+                    +Filters(true)
+        .row.reviews__row
+            section.col.col--reviews
+                .section__head.mb-16
+                    h5 Рейтинг
+                .rating__grid
+                    +Rating({rating: "9.9", img: "img/1.jpg"})
+                    +Rating({rating: "9.6", img: "img/2.jpg", title: "1C для профессионалов"})
+                    +Rating({rating: "9.5", img: "img/3.jpg", title: "Графический дизайн от новичка до PRO"})
+                    +Rating({rating: "9.4", img: "img/4.png"})
+                    +Rating({rating: "9.2", img: "img/1.jpg", title: "1C для профессионалов"})
+                    +Rating({rating: "9.1", img: "img/2.jpg", title: "Графический дизайн от новичка до PRO"})
+                    +Rating({rating: "9.0", img: "img/3.jpg"})
+                    +Rating({rating: "8.9", img: "img/1.jpg"})
+                    +Rating({rating: "8.6", img: "img/2.jpg", title: "1C для профессионалов"})
+                    +Rating({rating: "8.5", img: "img/3.jpg", title: "Графический дизайн от новичка до PRO"})
+                    +Rating({rating: "8.4", img: "img/4.png"})
+                    +Rating({rating: "8.2", img: "img/1.jpg", title: "1C для профессионалов"})
+                    +Rating({rating: "8.1", img: "img/2.jpg", title: "Графический дизайн от новичка до PRO"})
+                    +Rating({rating: "8.0", img: "img/3.jpg"})
+
+                +Pagination
+
+            section.col.col--rating
+                .card.card--help
+                    h5 Как составляется рейтинг?
+                    p Рейтинг - это суммарная оценка курса, от пользователей, который оставили отзыв на данный курс.
+                    p Рейтинг всегда актуальный и обновляется с каждым новым отзывом.
+                    a(href="courses_list.html").btn.btn--xs Обзор курсов
+
+
+
+
+
+
+
+
+
+
+
+
+
+block scripts

@@ -1,0 +1,293 @@
+mixin Person(type)
+    .person__main
+        .person__cover
+            if(type === "speaker")
+                img(src="img/person_men.jpg")
+            else
+                img(src="img/p12.png")
+
+        .person__about
+            if type === "speaker"
+                h4 Владимир Завертайлов
+                p.big-article Основатель и руководитель студии интернет-решений «Сибирикс»
+            else
+                h4 Skillbox
+                p.big-article Онлайн-платформа для людей
+                p.description Максимально практическое обучение от лидеров digital-рынка. Курсы от компаний, оттачивающих мастерство на реальных проектах. После обучения студенты смогут пройти гарантированную стажировку в этихкомпаниях или у партнеров онлайн-университета.
+
+            .items
+                if type === "speaker"
+                    .item
+                        .title Образование
+                        .content
+                            p АлтГТУ им. Ползунова
+                            p Факультет: Информационных технологий
+                            p Направление: Прикладная математика 1991 г.
+                .item
+                    .title Направления
+                    .content
+                        .tags
+                            each tag in ["Дизайн", "Маркетинг", "Программирование", "Бизнес"]
+                                a(href="#")=tag
+                if type === "school"
+                    .item
+                        .title Основатель школы
+                        .content
+                            .people
+                                .avatar
+                                    img(src="img/u3.jpg")
+                                .text
+                                    .name Дмитрий Крутов
+                                    .description Генеральный директор
+        .advantages
+            +Advantage("star", "Рейтинг", "8.7 / 10")
+            +Advantage("comment-dots", "Отзывы", "255 отзывов", "#person-reviews")
+            if type === "speaker"
+                +Advantage("user-graduate", "Школа", "Skillbox")
+            +Advantage("graduation-cap", "Курсы", "10 курсов", "#person-courses")
+
+    if type === "school"
+        section.s-margins
+            .section__head
+                h4 Курсы ведут
+
+            .row
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u1.jpg',
+                        title: 'Николай Борисов',
+                        descriptor: 'Арт-директор Nimax',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.9',
+                        reviews: 456,
+                        courses: 23,
+                        short: true,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u2.jpg',
+                        title: 'Светлана Попова',
+                        descriptor: 'Руководитель Geekbrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.2',
+                        reviews: 398,
+                        courses: 20,
+                        short: true,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Павел Конюков',
+                        descriptor: 'Дизайнер Нетология',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.9',
+                        reviews: 345,
+                        courses: 18,
+                        short: true,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Елена Фигма',
+                        descriptor: 'Клауд Скетч',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.2',
+                        reviews: 218,
+                        courses: 21,
+                        short: true,
+
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u1.jpg',
+                        title: 'Николай Борисов',
+                        descriptor: 'Арт-директор Nimax',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.9',
+                        reviews: 456,
+                        courses: 23,
+                        short: true,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u2.jpg',
+                        title: 'Светлана Попова',
+                        descriptor: 'Руководитель Geekbrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.2',
+                        reviews: 398,
+                        courses: 20,
+                        short: true,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Павел Конюков',
+                        descriptor: 'Дизайнер Нетология',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.9',
+                        reviews: 345,
+                        courses: 18,
+                        short: true,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Елена Фигма',
+                        descriptor: 'Клауд Скетч',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.2',
+                        reviews: 218,
+                        courses: 21,
+                        short: true,
+                    })
+        section.s-margins
+            .section__head
+                h4 Студенты школы
+
+            .row
+                .col-4.col-xs-1.col-m-2
+                    +Card('student', {
+                        img: 'img/c1.png',
+                        title: 'Анастасия Иванова',
+                        descriptor: 'Арт-директор Сбербанка',
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('student', {
+                        img: 'img/c1.png',
+                        title: 'Светлана Попова',
+                        descriptor: 'UX дизайнер Сбербанка',
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('student', {
+                        img: 'img/c1.png',
+                        title: 'Павел Конюков',
+                        descriptor: 'Разработчик Сбербанка',
+                    })
+
+    section.s-margins.person__main-info
+        .row
+            if type === "school"
+                .col
+                    h4 Обучение
+                    .teach__grid
+                        .item
+                            .num 01.
+                            p.big-article Помогаем подобрать курс
+                        .item
+                            .num 02.
+                            p.big-article Смотрите лекции и выполняете домашние задания
+                        .item
+                            .num 03.
+                            p.big-article Личные консультации с нашими преподавателями
+                        .item
+                            .num 04.
+                            p.big-article Пишите диплом и защищаете его в Москве
+
+
+
+            if type === "speaker"
+                .col
+                    h4 О себе
+                    p Я программист по образованию; наверное — не самый плохой. Увлекался компьютерной лингвистикой. Красный диплом, ACM-олимпиады. Десять лет занимался заказной разработкой: писал код и настраивал сервера. Аспирантуру бросил на полпути ради будущего бизнеса.
+                    p Когда понял, что заниматься программированием интересно, но бизнес топчется на месте — плавно переключился на управление своей компанией. Все, что происходит в мире разработки, новые технологии, фреймворки, подходы — люто интересно до сих пор: читаю, изучаю, пробую сам, ищу слабые места.
+                    p Сейчас программирование — это скорее хобби, тренировка для мозгов и мой способ следить за трендами: не просто прочитать какую-то статью на Хабре о новой технологии, а взять да попробовать, поковырять руками. Этого кстати не хватает сейчас юным программистам: они просто читают чьё-то мнение о технологиях и считают, что всё поняли, вместо того, чтобы потрогать своими руками и составить свое мнение.
+                    p Короче, программирование люблю…
+                    p Тем не менее, основная моя роль сейчас — руководитель компании и Product Owner во внутренних проекта компании.
+            .col
+                h4 Сертификаты
+                .certificates__grid
+                    .item
+                        a(data-lightbox="certificates" href="img/cert1.png")
+                            img(src="img/cert1.png")
+
+                    .item
+                        a(data-lightbox="certificates" href="img/cert2.jpg")
+                            img(src="img/cert2.jpg")
+                    .item
+                        a(data-lightbox="certificates" href="img/cert3.jpg")
+                            img(src="img/cert3.jpg")
+                    .item
+                        a(data-lightbox="certificates" href="img/cert4.jpg")
+                            img(src="img/cert4.jpg")
+                    .item
+                        a(data-lightbox="certificates" href="img/cert5.png")
+                            img(src="img/cert5.png")
+                    .item
+                        a(data-lightbox="certificates" href="img/cert1.png")
+                            img(src="img/cert1.png")
+
+
+    if type === "school"
+        section#courses.s-margins
+            .section__head
+                h4 Лучшие курсы
+                .actions
+                    a(href="rating.html").action--showmore Смотреть все
+                        i.fa.fa-chevron-right
+            .courses__carousel--wrapper.slider--nav-blue
+                .courses__carousel
+                    .item
+                        +Card('promo', {
+                            img: 'img/4.png',
+                            title: 'Бухгалтерия для продвинутых',
+                            rating: '9.9',
+                            nums: "13"
+                        })
+
+                    .item
+                        +Card('promo', {img: 'img/3.jpg', title: 'Управление проектами', rating: '9.2', nums: "21"})
+
+                    .item
+                        +Card('promo', {img: 'img/2.jpg', title: 'От новичка до профи', rating: '9.0', nums: "135"})
+
+                    .item
+                        +Card('promo', {img: 'img/1.jpg', title: 'Идеальный Landing Page', rating: '8.2', nums: "34"})
+
+
+    section.s-margins#person-reviews
+        .section__head
+            h4 Отзывы
+            .actions
+                a(href="rating.html").action--showmore Смотреть все
+                    i.fa.fa-chevron-right
+            //    a(href="#read-review" rel="modal:open").btn.btn--xs.js-read-review Написать отзыв
+        .row
+            .col-3.col-xs-1.col-m-2
+                +Review(false, {avatar: "u1", title: "Дмитрий Дмитров"})
+            .col-3.col-xs-1.col-m-2
+                +Review(false, {avatar: "u2", title: "Светлана Попова"})
+            .col-3.col-xs-1.col-m-2
+                +Review(false, {avatar: "u3", title: "Сергей Сергеев"})
+
+
+
+
+
+
+    // Person Courses
+    section.s-margins#person-courses
+        .section__head
+            h4 Курсы
+            .actions
+                a(href="speakers_list.html").action--showmore Смотреть все
+                    i.fa.fa-chevron-right
+        .row
+            .col-4.col-xs-1.col-m-2
+                +Card('course', {img: "1.jpg"})
+            .col-4.col-xs-1.col-m-2
+                +Card('course', {title: "Управление проектом", img: "2.jpg"})
+            .col-4.col-xs-1.col-m-2
+                +Card('course', {title: "От новичка до профи", img: "3.jpg"})
+            .col-4.col-xs-1.col-m-2
+                +Card('course', {img: "4.png", title: "1С для профессионала"})
+
+            if type === "school"
+                .col-4.col-xs-1.col-m-2
+                    +Card('course', {img: "1.jpg"})
+                .col-4.col-xs-1.col-m-2
+                    +Card('course', {title: "Управление проектом", img: "2.jpg"})
+                .col-4.col-xs-1.col-m-2
+                    +Card('course', {title: "От новичка до профи", img: "3.jpg"})
+                .col-4.col-xs-1.col-m-2
+                    +Card('course', {img: "4.png", title: "1С для профессионала"})

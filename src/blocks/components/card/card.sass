@@ -1,0 +1,965 @@
+a.card
+  text-decoration: none
+  color: inherit
+
+
+.card
+  display: flex
+  overflow: hidden
+  +border-radius
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05)
+  border: 1px solid $cardBorders
+  background: $classicalWhite
+  padding: 24px
+  +transition
+
+  &.card--add
+    box-shadow: none
+    border: 2px dashed $line
+    background: transparent
+    color: $lightAccent
+    height: 100%
+
+    .card__content
+      margin-top: auto
+
+    .item__num
+      color: $lightAccent !important
+
+    .card__title
+      color: $lightAccent !important
+
+  .only-row
+    display: none !important
+
+  .only-col
+    display: flex !important
+
+  &.card--noshadow
+    box-shadow: none
+
+  &.card--row
+    display: flex
+    flex-flow: row wrap
+    padding: 0
+
+  .card-col
+    flex: 1
+    background: $classicalWhite
+    display: flex
+    flex-wrap: wrap
+    padding: 32px
+    border-right: 1px solid $line
+    +media("<=m")
+      border-right: none
+      border-bottom: 1px solid $line
+    &:last-child
+      border-right: none
+      border-bottom: none
+
+    h5
+      width: 100%
+      margin-top: 0
+      margin-bottom: 24px
+
+    &.card-col-7
+      max-width: 58.333%
+      flex: 0 0 58.333%
+      +media("<=m")
+        &#contacts-main, &#contacts-feedback
+          max-width: 100%
+          flex: 0 0 100%
+
+
+    &.card-col-5
+      max-width: 41.666%
+      flex: 0 0 41.666%
+      +media("<=m")
+        &#contacts-main, &#contacts-feedback
+          max-width: 100%
+          flex: 0 0 100%
+
+
+  a
+    text-decoration: none
+
+
+  /* Remove on build */
+  .debug
+    font-size: 14px
+    width: 100%
+    display: block
+    background: rgba($coralRed, .1)
+    color: $pureBlack
+    +border-radius
+    padding: 16px
+    word-break: break-word
+
+
+
+
+  .card__stats
+    display: flex
+    flex-flow: row wrap
+    +selfCenter
+    margin-right: -16px
+    margin-left: -16px
+    justify-content: center
+    .item
+      display: flex
+      flex-flow: column nowrap
+      margin-left: 16px
+      margin-right: 16px
+    .item__num
+      color: $pureBlack
+      font-size: 18px
+
+    .item__title
+      @extend %Caption10
+      color: $lightAccent
+
+
+  .card--course .card__stats
+    margin-left: -12px
+    margin-right: -12px
+    justify-content: space-between
+    margin-top: 24px
+    .item
+      margin-left: 12px
+      margin-right: 12px
+
+  .card--course__admin
+    .card__title
+      margin-bottom: auto
+
+  &.card__admin
+    overflow: visible
+    .card__title
+      padding-right: 24px
+
+    .card__dots
+      width: 32px
+      height: 32px
+      position: absolute
+      top: -48px
+      right: -13px
+      display: flex
+      align-items: center
+      justify-content: center
+      +media("<=xl")
+        top: -26px
+      i
+        color: $lightAccent
+
+  .card__dropdown
+    box-shadow: 0px 19px 38px rgba(153, 153, 153, 0.3), 0px 15px 12px rgba(153, 153, 153, 0.22)
+    top: -16px
+    left: -2px
+    font-size: 14px
+
+
+  &.card--speaker
+    .card__dots
+      top: -24px
+      right: -14px
+      +media("<=xl")
+        top: -10px
+
+    .card__dropdown
+      top: 8px
+
+
+  .dropdown__delete
+    background: $backgroundMainTest
+    color: $coralRed !important
+    border-top: 1px solid $line
+    i
+      color: $coralRed !important
+
+
+.card__avatar
+  +circle(112px)
+  overflow: hidden
+  +selfCenter
+  +media("<=m")
+    max-width: 64px
+    flex: 0 0 64px
+    height: 64px
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+
+.card--categories
+  display: flex
+  flex-flow: column nowrap
+  text-align: center
+  height: 100%
+
+  .title
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+  +transition
+  &:hover
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.06)
+
+  +media("<=m")
+    padding: 16px
+    flex-flow: row wrap
+    .title
+      font-size: 16px
+
+    .circle
+      margin-left: 0
+      margin-right: 0
+    .wrapper
+      display: flex
+      flex-flow: column nowrap
+      margin-left: 8px
+      align-items: flex-start
+      text-align: left
+      justify-content: center
+      .title
+        margin-top: 0
+
+  p
+    margin: 0
+    width: 100%
+    +transition
+
+  .circle
+    +flexCenter
+    +circle(90px)
+    +selfCenter
+    background: rgba($lightAccent, .1)
+    +transition
+    +media("<=xl")
+      +circle(64px)
+      i
+        font-size: 20px
+    +media("<=m")
+      +circle(48px)
+      i
+        font-size: 16px
+    i
+      font-size: 26px
+      +transition
+
+  .title
+    font-size: 18px
+    font-weight: 600
+    margin-top: 16px
+
+    
+  .nums
+    margin-top: 4px
+    color: rgba($lightAccent, .8)
+    font-size: 14px
+
+  &:hover
+    .circle
+      background: rgba($accentColor, .1)
+
+      i
+        color: $accentColor
+        font-weight: 600
+
+    .title
+      color: $accentColor !important
+
+    .nums
+      color: $lightAccent
+
+  .card__head
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    justify-content: flex-start
+    .card__cover
+      +border-radius
+      +square(52px)
+      overflow: hidden
+      max-width: 52px
+      flex: 0 0 52px
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    .card__info
+      display: flex
+      flex-flow: column nowrap
+      margin-left: 8px    
+      font-size: 18px
+      font-weight: 600
+      color: $pureBlack
+      text-align: left
+      max-width: 181px
+
+
+      .card__info-title
+        width: 100%
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+
+      .description
+        display: block
+        margin-top: 4px
+        font-size: 14px
+        color: rgba($lightAccent, .8)
+        font-weight: normal
+
+  .card__content
+    margin-top: 16px
+    @extend %defaultText
+    color: rgba($pureBlack, .8)
+    text-align: left
+    line-height: 150%
+
+
+
+
+.card--promo
+  height: 180px
+  padding: 0
+  position: relative
+  border: none
+
+  &:hover
+    .card__cover-mask
+      background: rgba($pureBlack, .6)
+
+
+  p
+    margin: 0
+
+  .card__content
+    position: relative
+    padding: 24px
+    z-index: 2
+    display: flex
+    color: $classicalWhite
+    flex-flow: column
+    width: 100%
+
+    .title
+      margin-top: auto
+      letter-spacing: 0.0015em
+      font-size: 20px
+      font-weight: 600
+      line-height: 24px
+      width: 100%
+
+    .card__content-top
+      display: flex
+      flex-flow: row nowrap
+      font-size: 14px
+      align-items: flex-start
+      .rating
+        margin-left: auto
+        font-size: 14px
+        font-weight: 600
+        text-align: right
+        white-space: nowrap
+        i.fa
+          margin-left: 4px
+          font-size: 12px
+          vertical-align: baseline
+
+      p
+        margin: 0
+
+
+  .card__cover
+    width: 100%
+    height: 100%
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 1
+    .card__cover-mask
+      width: 100%
+      height: 100%
+      background: rgba($pureBlack, .4)
+      mix-blend-mode: multiply
+      position: absolute
+      +transition
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+
+.card--speaker
+  flex-flow: column
+  padding: 32px 24px
+  &:hover
+    .card__stats, .card__descriptor
+      opacity: .9
+  +transition
+  +media("<=m")
+    padding: 24px
+
+
+  .card__content
+    display: flex
+    flex-flow: column nowrap
+    margin-top: 24px
+    +media("<=m")
+      margin-top: 16px
+
+    .card__title
+      font-size: 20px
+      font-weight: 600
+      text-align: center
+      color: $pureBlack
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+      +transition
+      +media("<=m")
+        font-size: 18px
+
+
+    .card__descriptor
+      font-size: 14px
+      color: $lightAccent
+      text-align: center
+      margin-top: 4px
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+
+
+    .card__tags
+      margin-top: 8px
+
+    .card__stats
+      margin-top: 24px
+
+
+  .card--add
+
+
+  &:hover
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.06)
+    .card__title
+      color: $accentColor
+
+
+
+.card--course
+  display: flex
+  flex-flow: column nowrap
+  color: $pureBlack
+  height: 100%
+  padding: 23px
+
+
+  .btn--xs
+    color: $classicalWhite
+
+
+  a
+    text-decoration: none
+    color: inherit
+
+  .card__content
+    display: flex
+    flex-flow: column
+    flex: 1
+
+  .card__cover
+    display: flex
+    position: relative
+    margin: -23px
+    overflow: hidden
+    height: 170px
+    margin-bottom: 32px
+    flex: 0 0 170px
+
+
+
+    .card__cover--elements
+      position: absolute
+      +square(100%)
+
+    .card__cover--status
+      position: absolute
+      top: 24px
+      right: 24px
+      background: rgba($pureBlack, .8)
+      height: 24px
+      +flexCenter
+      color: $classicalWhite
+      @extend %Caption10
+      font-weight: bold
+      letter-spacing: 0.07em
+      padding: 0 8px
+      +border-radius
+
+    .card__cover--document
+      position: absolute
+      right: 0
+      bottom: 0
+      background: $accentColor
+      border-top-left-radius: 23px
+      color: $classicalWhite
+      @extend %CaptionDefault
+      height: 33px
+      flex-flow: row nowrap
+      padding-left: 22px
+      padding-right: 12px
+      +flexCenter
+      i
+        display: inline-block
+        margin-right: 8px
+        font-size: 14px
+
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  .card__content
+
+
+
+  .card__parameters
+    display: flex
+    flex-flow: row nowrap
+    color: rgba($lightAccent, .8)
+    .card__category
+      font-size: 14px
+
+  .card__rating
+    margin-left: auto
+    text-align: right
+    span
+      font-size: 14px
+      font-weight: 600
+    i
+      display: inline-block
+      font-size: 12px
+      margin-left: 4px
+      vertical-align: baseline
+
+
+
+  .card__title
+    font-size: 20px
+    font-weight: 600
+    color: $pureBlack
+    line-height: 120%
+    margin-top: 8px
+    display: block
+    +media("<=m")
+      font-size: 18px
+
+  .card__description
+    margin-top: 8px
+    color: rgba($pureBlack, .8)
+    font-size: 16px
+    line-height: 150%
+    white-space: normal
+
+  .card__etc
+    padding-top: 24px
+    margin-top: auto
+    display: flex
+    flex-flow: row nowrap
+    +media("<=xl")
+      flex-flow: column nowrap
+      padding-top: 16px
+
+  .card__action
+    margin-left: auto
+    display: inline-flex
+    align-items: center
+    font-size: 14px
+    +media("<=xl")
+      margin-left: unset
+      margin-top: 4px
+
+
+  .card__price
+    display: inline-flex
+    align-items: baseline
+    .pre-price
+      @extend %Caption10
+      color: $lightAccent
+      display: inline-block
+      margin-right: 5px
+
+    .price
+      font-weight: 500
+      font-size: 20px
+      color: $pureBlack
+      display: inline-block
+      margin-right: 5px
+
+    .ruble
+      font-weight: 500
+      @extend %defaultText
+      color: $lightAccent
+      display: inline-block
+
+
+  ul.card__features
+    display: flex
+    margin: 0
+    flex-flow: row nowrap
+    list-style: none
+    padding: 0
+    font-size: 16px
+    color: $lightAccent
+    margin-top: 4px
+    margin-bottom: 8px
+    li
+      margin-right: 22px
+      position: relative
+      &::after
+        content: ' '
+        +circle(6px)
+        background: rgba($lightAccent, .5)
+        position: absolute
+        display: block
+        right: -12px
+        top: 50%
+        transform: translateY(-50%)
+
+      &:last-child
+        &::after
+          content: none
+
+
+
+  .card__content--for-row
+    display: flex
+    height: 100%
+    flex-flow: column nowrap
+    align-items: flex-end
+    margin-left: auto
+    max-width: 50%
+    flex: 0 0 50%
+    justify-content: center
+
+    .card__price
+      margin-bottom: 16px
+
+      .pre-price
+        font-size: 12px
+
+      .price
+        font-size: 24px
+
+    .card__rating
+
+      margin-bottom: 4px
+      span
+        font-size: 16px
+      i
+        font-size: 12px
+        color: rgba($pureBlack, .8)
+
+    .more-reviews
+      font-size: 14px
+      color: $lightAccent
+      @extend %statesAccentColor
+
+
+
+.card--student
+  &:hover
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05)
+    .card__title
+      color: $pureBlack
+  .card__avatar
+    +border-radius
+
+.card--school
+
+  .card__descriptor
+    white-space: normal !important
+    max-height: 32px
+
+
+  .card__avatar
+    display: flex
+    +border-radius
+    width: 100%
+    height: 170-64px
+    margin-left: -24px
+    margin-right: -24px
+    margin-top: -32px
+    padding: 32px 24px
+    box-sizing: content-box
+    border-bottom: 1px solid $line
+    +media("<=xl")
+      max-width: unset !important
+      flex: unset !important
+
+    .card__img
+      padding: 0 32px
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain
+
+
+  .card__tags
+    margin-top: 16px !important
+
+  .card__peoples
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    justify-content: center
+    margin-top: 8px
+    .item
+      display: inline-block
+      +circle(40px)
+      max-width: 40px
+      flex: 0 0 40px
+      border: 2px solid $classicalWhite
+      overflow: hidden
+      margin-left: -10px
+      position: relative
+      align-items: center
+      justify-content: center
+      &:last-child
+        &::before
+          content: ' '
+          width: 100%
+          height: 100%
+          background: rgba($accentColor, .5)
+          position: absolute
+          top: 0
+          left: 0
+        span
+          position: absolute
+          color: $classicalWhite
+          font-size: 13px
+          margin: auto
+          top: 50%
+          left: 50%
+          transform: translateY(-50%) translateX(-50%)
+
+
+
+
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+
+/* Columns to rows adaptive */
+.col-to-row
+  .tags
+    text-align: left
+  .only-row
+    display: flex !important
+
+  .only-col
+    display: none !important
+  .card--course
+    padding: 32px
+    flex-flow: row nowrap
+    +media("<=m")
+      flex-flow: column nowrap
+      padding: 24px
+      .card__description
+        font-size: 14px
+      .card__content--for-row
+        max-width: 100%
+        flex: 0 0 100%
+        margin-left: 0
+        justify-content: flex-start
+        align-items: flex-start
+        margin-top: 8px
+        .card__price
+          margin-bottom: 4px
+
+
+        .card__rating
+          margin-left: 0
+      .card__content
+        margin-left: 0
+        margin-top: 16px
+        .card__features
+          font-size: 12px
+          li
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
+
+
+
+    .card__cover
+      +square(120px)
+      margin: 0
+      +border-radius
+      max-width: 120px
+      flex: 0 0 120px
+
+    .card__cover--document
+      height: 24px !important
+      border-top-left-radius: 0 !important
+      border-top-right-radius: 23px
+      right: unset
+      left: 0
+      padding-left: 8px
+      padding-right: 18px
+      &, span
+        @extend %Caption10
+
+      i
+        font-size: 10px !important
+        margin-right: 4px
+
+    .card__content
+      width: 100%
+      margin-left: 24px
+
+    .card__title
+      margin-top: 0
+      line-height: 150%
+
+
+
+    .card__description
+      color: $pureBlack
+
+  .card--speaker
+    padding: 32px
+    flex-flow: row nowrap
+    +media("<=m")
+      padding: 24px
+      flex-flow: column nowrap
+      align-items: center
+      text-align: center
+      .tags
+        text-align: center
+
+      .card__content--for-row
+        margin-left: 0
+        margin-top: 16px
+        align-items: flex-start
+        justify-content: flex-start
+        width: 100%
+
+
+    .card__avatar
+      margin: 0
+      +media("<=m")
+        margin-bottom: 16px
+
+    .card__content
+      margin-top: 0
+      display: flex
+      flex-flow: column nowrap
+      flex: 0 0 50%
+      margin-left: 24px
+      align-items: flex-start
+      justify-content: center
+      +media("<=m")
+        margin-left: 0
+        justify-content: center
+        flex: 0 0 100%
+        align-items: center
+
+      .card__title
+        line-height: 150%
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+
+      .card__descriptor
+        line-height: 150%
+        font-size: 16px
+        margin: 0
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+
+      .card__tags
+        font-size: 14px
+        color: $pureBlack
+        margin-top: 8px
+
+    .card__content--for-row
+      margin-left: auto
+      display: flex
+      flex-flow: column nowrap
+      align-items: flex-end
+      justify-content: center
+
+
+  .card--school
+    .card__avatar
+      +square(120px)
+      +border-radius
+      border-bottom: none
+      margin: 0
+      padding: 0
+      box-sizing: border-box
+
+      .card__img
+        padding: 0
+
+  .card__content--for-row
+    a
+      color: inherit
+    .card__rating
+      margin-bottom: 4px
+      span
+        font-size: 16px
+      i
+        font-size: 12px
+        color: rgba($pureBlack, .8)
+
+    .more-reviews
+      font-size: 14px
+      color: $lightAccent
+      @extend %statesAccentColor
+
+    .item
+      margin-bottom: 16px
+      .item__num
+        text-align: right
+        font-weight: 500
+        font-size: 24px
+
+
+      .item__title
+        @extend %Caption12
+        font-weight: 600
+        display: inline-block
+        color: $lightAccent
+        margin-left: 4px
+
+
+
+.card--help
+  display: flex
+  flex-flow: column nowrap
+  align-items: flex-start
+  padding: 32px
+  h5
+    margin-top: 0
+    margin-bottom: 16px
+
+  p
+    margin-bottom: 16px
+    margin-top: 0
+    font-size: 16px
+    line-height: 150%
+    color: $pureBlack
+

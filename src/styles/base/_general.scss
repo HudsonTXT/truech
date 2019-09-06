@@ -1,0 +1,901 @@
+
+
+
+/* Global */
+* {
+    box-sizing: border-box;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.body--lock {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font: 16px 'Gilroy';
+    background: $backgroundMainTest;
+    color: $pureBlack;
+    min-width: 1200px;
+    @include media("<=xl") {
+        min-width: auto;
+    }
+}
+
+.only-mobile {
+    display: none;
+    @include media("<=xl") {
+        display: flex;
+    }
+}
+.only-desktop {
+    //display: flex;
+    @include media("<=xl") {
+        display: none;
+
+    }
+}
+
+.header__search {
+    @include media("<=xl") {
+
+    }
+}
+
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    @include media("<=xl") {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+/* Buttons */
+
+.btn {
+    @include accentColorBtn;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @extend %defaultText;
+    font-weight: 600;
+    height: 64px;
+    padding-right: 20px;
+    padding-left: 20px;
+    @include media("<=xl") {
+        width: 100%;
+
+    }
+    &[disabled] {
+        opacity: 0.5;
+    }
+
+    i.far {
+        margin-left: 8px;
+    }
+
+    &.btn--danger {
+        background: $coralRed;
+    }
+
+    &.btn--light {
+        @include lightBtn;
+        font-weight: normal;
+    }
+
+    &.btn--catalog {
+        @include catalogBtn;
+        min-width: unset;
+        position: relative;
+    }
+
+    &.btn--w-auto {
+        min-width: unset;
+    }
+
+    &.btn--w210 {
+        min-width: 210px;
+    }
+
+    &.btn--transparent {
+        background: transparent;
+        color: $lightAccent;
+        font-size: 14px;
+        font-weight: normal;
+        @extend %statesAccentColor
+
+    }
+
+    &.btn--sm {
+        height: 48px;
+    }
+    &.btn--xs {
+        height: 36px;
+        font-size: 14px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    &.btn--block {
+        display: block;
+    }
+
+    i.fa {
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+        margin-left: 8px;
+        margin-top: 2px;
+        vertical-align: middle;
+    }
+
+    &.btn--login-remember {
+        display: inline-flex;
+        width: 210px;
+        @include flexCenter
+    }
+
+
+
+}
+
+
+section#features {
+    margin-bottom: -81px;
+    background: transparent;
+    @include media("<=xl") {
+        margin-bottom: -41px;
+    }
+}
+
+section#main-reviews {
+    .tns-nav button {
+        background: rgba($accentColor, .5) !important;
+        &:hover {
+            background: rgba($accentColor, .8) !important;
+        }
+        &.tns-nav-active {
+            background: $accentColor !important
+
+        }
+    }
+
+    .tns-controls {
+
+    }
+}
+.input-panel--file {
+    &:hover {
+        .drop-zone i::before {
+            content: '\f345';
+            color: $accentDark;
+        }
+
+        .description-zone .title {
+            color: $accentDark !important;
+        }
+
+
+    }
+}
+.drop-zone {
+    @include transition;
+    i::before {
+        @include transition;
+    }
+
+}
+
+.drop-zone__input {
+    display: none;
+}
+.drop-zone, .description-zone {
+    cursor: pointer;
+    @include transition;
+}
+
+.drop-zone-changed {
+    position: relative;
+    background-size: cover !important;
+    background-position: center center !important;
+    //&:before {
+    //    content: ' ';
+    //    width: 100%;
+    //    height: 100%;
+    //    position: absolute;
+    //    background: rgba($pureBlack, .2);
+    //}
+    i {
+        display: none;
+    }
+}
+
+/* Grid */
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    margin: -8px;
+    .col {
+        padding: 8px;
+        flex: 0 0 auto
+    }
+    .col-4 {
+        padding: 8px;
+        max-width: 25%;
+        flex: 0 0 25%
+    }
+    .col-3 {
+        padding: 8px;
+        max-width: 33.3333%;
+        flex: 0 0 33.3333%
+    }
+
+    .col-xs-1 {
+        @include media("<=m") {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+
+    .col-m-2 {
+        @include media("<=xl") {
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+    }
+
+    &.col-to-row {
+
+        .col, .col-3, .col-4 {
+            max-width: 100%;
+            flex: 0 0 100%
+        }
+
+    }
+
+}
+
+.col-8 {
+    max-width: 66.666%;
+    flex: 0 0 66.666%;
+}
+
+.col-10 {
+    max-width: 83.333%;
+    flex: 0 0 83.333%;
+}
+
+.col-centered {
+    @include selfCenter;
+}
+
+/* Sections formats */
+
+.section__head {
+    display: flex;
+    width: 100%;
+    //margin-top: 80px;
+    margin-bottom: 24px;
+    align-items: center;
+    @include media("<=xl") {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        width: 100%;
+        .actions {
+            width: 100%;
+            flex-flow: column nowrap;
+            .btn:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .dropdown {
+        top: 40px !important;
+    }
+
+    a {
+        text-decoration: none;
+        h4 {
+            color: $pureBlack;
+        }
+    }
+
+    &.section__head--centered{
+        justify-content: center;
+    }
+    h4 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    h5 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    i {
+        font-weight: 400;
+        color: $accentColor;
+        font-size: 16px;
+        display: inline-block;
+        margin-left: 8px;
+
+    }
+
+
+
+    .actions {
+        margin-left: auto;
+        display: flex;
+        flex-flow: row nowrap;
+        @include media("<=xl") {
+            margin-left: unset;
+            margin-top: 8px;
+            margin-right: unset;
+            &.filters {
+             .btn {
+                 margin: 0;
+                 margin-bottom: 8px;
+             }
+            }
+
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .btn.btn--xs {
+            color: $classicalWhite !important;
+            margin-right: 16px;
+        }
+
+        .action--showmore {
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: baseline;
+            @include transition;
+            &:hover {
+                color: $accentColor;
+            }
+            i {
+                font-size: 10px;
+                display: inline-block;
+                margin-left: 8px;
+            }
+        }
+
+        .input-panel--search {
+            margin-right: 8px;
+            width: 350px;
+            @include media("<=xl") {
+                width: 100%;
+                margin-right: 0;
+                margin-top: 8px;
+            }
+            input, button {
+                height: 36px;
+                font-size: 14px;
+            }
+
+            form {
+                position: relative;
+
+                &::before {
+                    content: '\f002';
+                    width: 14px;
+                    height: 14px;
+                    font-family: "Font Awesome 5 Pro";
+                    font-weight: 300;
+                    color: $lightAccent;
+                    position: absolute;
+                    display: block;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 16px;
+                    font-size: 14px;
+                }
+            }
+
+            input {
+                padding-left: 38px !important;
+                padding-right: 16px !important;
+            }
+
+            button {
+                display: none;
+            }
+
+        }
+
+
+
+
+    }
+}
+
+.s-margins {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    @include media("<=xl") {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+}
+.s-margins-32 {
+    margin-top: 32px;
+}
+
+.s-white {
+    background: $classicalWhite;
+    border-top: 1px solid $line;
+    border-bottom: 1px solid $line;
+    padding: 80px 0;
+    @include media("<=xl") {
+        padding: 40px 0;
+    }
+
+}
+
+
+/* Tags  */
+.tags {
+    font-size: 12px;
+    margin-left: -4px;
+    margin-right: -4px;
+    text-align: center;
+    a {
+        display: inline-block;
+        margin-left: 4px;
+        margin-right: 4px;
+        color: rgba($pureBlack, .8);
+        @include transition;
+        &:hover {
+            color: $accentColor;
+        }
+        &::before {
+            content: '#';
+        }
+    }
+}
+
+
+.overline12 {
+    @extend %Caption12
+}
+
+
+.m0 {
+    margin: 0;
+}
+
+.default-text {
+    line-height: 150%;
+}
+
+.subarticle {
+    font-size: 20px;
+    line-height: 150%;
+    font-weight: 600;
+    @include media("<=xl") {
+        font-size: 18px;
+    }
+}
+
+.big-article {
+    font-size: 18px;
+    line-height: 150%;
+    @include media("<=xl") {
+        font-size: 16px;
+    }
+}
+
+.read-more {
+    color: $accentColor;
+    @extend %defaultText;
+    text-decoration: none;
+    i {
+        font-size: 12px;
+        vertical-align: baseline;
+        margin-left: 8px;
+    }
+}
+
+
+.dots {
+    @include flexCenter;
+    .dot {
+        @include circle(8px);
+        background: rgba($accentColor, .5);
+        @extend %statesAccentBG;
+        margin-left: 4px;
+        margin-right: 4px;
+        &.active {
+            background: $accentColor;
+        }
+    }
+}
+
+.signarea {
+    width: 100%;
+    height: 100%;
+    @include accentGradient;
+    padding: 48px 0;
+    @include flexCenter;
+}
+
+.page-cover {
+    width: 91.111%;
+    min-width: 1200px;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    @include border-radius;
+    overflow: hidden;
+    margin-bottom: 32px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+    @include media("<=xl") {
+      width: unset;
+      min-width: unset;
+      max-width: unset;
+      height: 200px;
+      margin-bottom: 24px;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.pos-r {
+    position: relative;
+}
+
+.js-toggler {
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    width: 240px;
+    flex-flow: column nowrap;
+    @include border-radius;
+    border: 1px solid $line;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    box-shadow: 0px 19px 38px rgba(153, 153, 153, 0.3), 0px 15px 12px rgba(153, 153, 153, 0.22);
+    z-index: 90;
+    background: $classicalWhite;
+    &.dropdown--right {
+        left: unset;
+        right: 0;
+    }
+
+    @include media("<=xl") {
+
+        width: 100%;
+
+        .dropdown__content {
+            padding: 24px;
+        }
+
+        .filter__head {
+            flex-flow: column nowrap !important;
+            .actions {
+                margin-left: 0 !important;
+            }
+        }
+
+        .filter__head {
+            .title {
+                font-size: 16px !important;
+            }
+        }
+    }
+
+
+    .dropdown__head {
+        display: flex;
+        flex-flow: row nowrap;
+        margin-bottom: 24px;
+        @include media("<=xl") {
+            .actions {
+                align-items: flex-end;
+            }
+        }
+
+
+        .dropdown__close {
+            width: 48px;
+            height: 48px;
+            margin-right: -10px;
+            text-align: center;
+            margin-top: -10px;
+            @include flexCenter;
+            i {
+                color: $lightAccent !important;
+                font-size: 18px !important;
+                font-weight: 300 !important;
+            }
+        }
+
+
+        .actions {
+            margin-left: auto;
+        }
+    }
+
+
+    .dropdown__content {
+        padding: 32px;
+    }
+
+    .dropdown__footer {
+        background: $backgroundMainTest;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        border-top: 1px solid $line;
+        height: 96px;
+        padding-left: 24px;
+        padding-right: 24px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        @include media("<=xl") {
+            flex-flow: column nowrap;
+            height: auto;
+            padding-top: 24px;
+            padding-bottom: 16px;
+        }
+
+        .btn {
+            height: 64px;
+            padding-left: 45px;
+            padding-right: 45px;
+            font-size: 16px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+
+
+    &.dropdown--filter {
+        width: 480px;
+        overflow: visible;
+        margin-top: 10px;
+        @include media("<=m") {
+            width: 100%;
+        }
+
+        .input-panel--checkbox {
+            label {
+                margin-bottom: 0;
+            }
+        }
+
+        .filter__section {
+            margin-bottom: 32px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+
+
+        .filter__head {
+            display: flex;
+            flex-flow: row nowrap;
+            margin-bottom: 16px;
+            p {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            .title {
+                font-size: 18px;
+                color: $pureBlack;
+                line-height: 150%;
+
+            }
+
+            .actions {
+                display: flex;
+                flex-flow: row nowrap;
+                margin-left: auto;
+            }
+        }
+
+        .filter-spinner {
+            @extend %someDescriptor;
+            color: $lightAccent;
+            display: inline-block;
+            vertical-align: baseline;
+            span {
+                @extend %defaultText;
+                color: $pureBlack;
+                margin-left: 4px;
+                margin-right: 4px;
+
+            }
+        }
+
+        .input-panel--default {
+            label{
+                display: none;
+            }
+        }
+        .input-panel--radio__values {
+            flex-flow: column nowrap !important;
+            margin-top: -8px;
+        }
+
+        &::before {
+            content: ' ';
+            width: 16px;
+            height: 16px;
+            background: $classicalWhite;
+            display: block;
+            position: absolute;
+            right: 32px;
+            transform: rotate(45deg);
+            top: -8px;
+            border: 1px solid $line;
+            border-bottom: none;
+            border-right: none;
+            @include media("<=xl"){
+                right: unset;
+                left: 50%;
+                margin-left: -8px;
+            }
+        }
+
+
+
+
+
+    }
+
+    &.js-toggler-open {
+        display: flex;
+    }
+    &:not(.dropdown--filter) a {
+        display: flex;
+        flex-flow: row nowrap;
+        height: 46px;
+        padding-left: 16px;
+        padding-right: 16px;
+        align-items: center;
+        text-decoration: none;
+        color: $pureBlack;
+        background: $classicalWhite;
+        @include transition;
+        &.active {
+            background: $accentColor;
+            color: $classicalWhite;
+            i {
+                color: rgba($classicalWhite, .8) !important;
+            }
+
+        }
+
+        &:hover:not(.active) {
+            background: lighten($accentColor, 50%);
+            color: $accentColor;
+            i {
+                color: rgba($accentColor, .8) !important;
+            }
+        }
+
+        .icon {
+            margin-left: auto;
+
+            i {
+                font-size: 12px;
+                color: rgba($lightAccent, .8);
+            }
+        }
+
+    }
+}
+
+
+
+.sort-state {
+    background: rgba($lightAccent, .1);
+    color: $lightAccent;
+    i {
+        color: $lightAccent;
+    }
+
+    @include transition;
+
+    &:hover {
+        background: rgba(darken($lightAccent, 5%), .2);
+        color: darken($lightAccent, 5%);
+    }
+
+    &:active {
+        background: rgba(lighten($lightAccent, 5%), .2);
+        color: lighten($lightAccent, 5%);
+    }
+}
+
+.new-state {
+    background: rgba($successGreen, .1);
+    color: $successGreen;
+    i {
+        color: $successGreen;
+    }
+
+    @include transition;
+
+    &:hover {
+        background: rgba(darken($successGreen, 5%), .2);
+        color: darken($successGreen, 5%);
+    }
+
+    &:active {
+        background: rgba(lighten($successGreen, 5%), .2);
+        color: lighten($successGreen, 5%);
+    }
+}
+
+.delete-state {
+    background: rgba($coralRed, .1);
+    color: $coralRed;
+    i {
+        color: $coralRed;
+    }
+
+    @include transition;
+
+    &:hover {
+        background: rgba(darken($coralRed, 5%), .2);
+        color: darken($coralRed, 5%);
+    }
+
+    &:active {
+        background: rgba(lighten($coralRed, 5%), .2);
+        color: lighten($coralRed, 5%);
+    }
+}
+
+.js-visible-toggler {
+    .js-visible-toggler__elements {
+        display: none;
+        &.visible {
+            display: block;
+        }
+    }
+
+
+
+
+}

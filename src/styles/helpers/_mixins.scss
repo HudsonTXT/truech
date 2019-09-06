@@ -1,0 +1,279 @@
+@mixin accentGradient {
+  // Accent colors from logo
+  background: linear-gradient(276.26deg, #0E67CE 0%, #45279A 100%);
+}
+
+@mixin border-radius {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+@mixin border-light {
+  border: 1px solid $cardBorders
+}
+
+@mixin border-default {
+  border: 1px solid $line
+}
+
+@mixin transition {
+  transition: all .2s ease-in-out;
+}
+
+/* Active input with $line -> rgba($lightAccent, .80) */
+@mixin activeInputWithLine {
+  &:hover {
+    border-color: rgba($lightAccent, .5);
+  }
+
+  &:active, &:focus {
+    border-color: $accentColor;
+    @include transition;
+  }
+}
+
+
+@mixin accentColorBtn {
+  text-decoration: none;
+  background: $accentColor;
+  color: $classicalWhite;
+  border: none;
+  @include transition;
+  @include border-radius;
+  cursor: pointer;
+
+  svg, svg path {
+    fill: $classicalWhite
+  }
+
+  /* States */
+  &:hover {
+    background: darken($accentColor, 5%);
+  }
+  &:active {
+    background: lighten($accentColor, 5%);
+  }
+}
+
+
+@mixin lightBtn {
+  text-decoration: none;
+  background: $classicalWhite;
+  color: rgba($pureBlack, .8);
+  border: 1px solid rgba($lightAccent, .5);
+  @include transition;
+  @include border-radius;
+  cursor: pointer;
+
+
+
+  svg, svg path {
+    fill: rgba($pureBlack, .8);
+
+  }
+
+  /* States */
+  &:hover {
+    border: 1px solid rgba($pureBlack, .5);
+  }
+  &:active {
+    border: 1px solid $accentColor;
+    color: $accentColor;
+    svg, svg path {
+      fill: $accentColor;
+    }
+  }
+}
+
+
+@mixin catalogBtn {
+  text-decoration: none;
+  background: $accentDarkColor;
+  color: $classicalWhite;
+  @include transition;
+  @include border-radius;
+  cursor: pointer;
+
+  svg, svg path {
+    fill: $classicalWhite
+  }
+
+  /* States */
+  &:hover {
+    background: darken($accentDarkColor, 5%);
+  }
+  &:active {
+    background: lighten($accentDarkColor, 5%);
+  }
+}
+
+/* For full height block */
+@mixin fullHeight($topMinus) {
+  & {
+    @if $topMinus {
+      min-height: calc(100vh - #{$topMinus});
+      min-height: calc((var(--vh, 1vh) * 100) - #{$topMinus});
+    }@else{
+      min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+      min-height: calc(var(--vh, 1vh) * 100);
+
+    }
+  }
+
+}
+
+/* States default */
+
+/* Active: blue */
+%statesAccentBG {
+  @include transition;
+  &:hover {
+    background: darken($accentColor, 5%);
+  }
+  &:active {
+    background: lighten($accentColor, 5%);
+  }
+}
+%statesAccentColor {
+  @include transition;
+  &:hover {
+    color: darken($accentColor, 5%);
+  }
+  &:active {
+    color: lighten($accentColor, 5%);
+  }
+}
+
+%statesAccentBorderBottom {
+  @include transition;
+  &:hover {
+    border-bottom-color: darken($accentColor, 5%);
+  }
+  &:active {
+    border-bottom-color: lighten($accentColor, 5%);
+  }
+}
+
+
+
+/**
+    Text styles
+ */
+
+%defaultText {
+  font-size: 16px;
+  font-weight: normal;
+}
+%Numbers {
+  font-size: 31.3px;
+  line-height: 60px;
+  letter-spacing: 0.0025em;
+  @include media("<=xl") {
+    font-size: 24px;
+    line-height: normal;
+  }
+}
+
+%someDescriptor {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+%Caption10 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+%CaptionDefault {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+%Caption12 {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+%h4, h4 {
+  font-size: 31.3px;
+  font-weight: 600;
+  letter-spacing: 0.0025em;
+  @include media("<=xl") {
+    font-size: 24px;
+  }
+}
+%h2, h2 {
+  font-size: 48.8px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  @include media("<=xl") {
+    font-size: 27px;
+  }
+}
+%h5, h5 {
+  font-size: 25px;
+  font-weight: 600;
+  @include media("<=xl") {
+    font-size: 22px;
+  }
+}
+%h6, h6 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Sizes */
+@mixin square($a) {
+  width: $a;
+  height: $a;
+}
+
+@mixin circle($a) {
+  @include square($a);
+  border-radius: $a;
+}
+
+@mixin size($w, $h) {
+  width: $w+px;
+  height: $h+px;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin selfCenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered {
+  @include selfCenter;
+}
+
+.centered--flex {
+  @include flexCenter;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+.mb-16 {
+  margin-bottom: 16px !important;
+}
+.mb-32 {
+  margin-bottom: 32px !important;
+}
+
+%inline-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

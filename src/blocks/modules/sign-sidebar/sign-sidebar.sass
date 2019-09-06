@@ -1,0 +1,81 @@
+.sign-sidebar
+  background: $backgroundMainTest
+  width: 41.666%
+  border-right: 1px solid $line
+  padding: 32px
+  max-height: 800px
+  display: flex
+  flex-flow: column nowrap
+  +media('<=xl')
+    width: 33.333%
+
+  +media("<=m")
+    width: 100%
+    border-right: none
+    border-bottom: 1px solid $line
+    padding: 0 24px
+    height: 56px
+    justify-content: center
+
+
+  /* Return to portal */
+
+  .sign-sidebar__return
+    a
+      color: $pureBlack
+      @extend %defaultText
+      @extend %statesAccentColor
+      i
+        display: inline-block
+        margin-right: 12px
+        font-size: 12px
+        vertical-align: baseline
+
+
+  /* Slider */
+  .sign-slider-wrapper
+    margin-top: auto
+    +media("<=m")
+      display: none
+
+    /* Slider item */
+    .item
+
+      .num
+        @extend %Numbers
+        color: rgba($lightAccent, .8)
+        display: block
+        margin-bottom: 24px
+      p
+        margin: 0
+        line-height: 150%
+        font-size: 16px
+        color: rgba($pureBlack, .8)
+        display: block
+        width: 61%
+        +media("<=xl")
+          width: 100%
+
+    /* Slider controls */
+    .tns-controls
+      display: none
+    button
+      display: none
+
+    .tns-nav
+      display: flex
+      margin-top: 48px
+      button
+        display: inline-flex
+        @include circle(10px)
+        background: rgba($lightAccent, .2)
+        padding: 0 !important
+
+        +transition
+        &:hover
+          background: rgba($lightAccent, .5)
+        margin-left: 5px
+        margin-right: 5px
+        border: none
+        &.tns-nav-active
+          background: rgba($lightAccent, .8)

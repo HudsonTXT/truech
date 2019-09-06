@@ -1,0 +1,43 @@
+.reviews__row
+  display: flex
+  flex-flow: row nowrap
+  margin-left: -16px
+  margin-right: -16px
+  +media("<=m")
+    margin: 0
+    flex-flow: column nowrap
+    .col
+      padding: 0
+      max-width: 100% !important
+      flex: unset !important
+  .col
+    padding-left: 16px
+    padding-right: 16px
+    padding-top: 0 !important
+    padding-bottom: 0 !important
+
+    &.col--rating
+      display: flex
+      flex-flow: column nowrap
+      max-width: 33.333%
+      flex: 0 0 33.333%
+      position: relative
+      .card--help
+        position: sticky
+        top: 24px
+      .card
+        margin-bottom: 16px
+        min-height: 140px
+        height: auto
+        &:last-child
+          margin-bottom: 0
+
+    &.col--reviews
+      max-width: 66.666%
+      flex: 0 0 66.666%
+
+
+  .review--long
+    margin-bottom: 16px
+    &:last-child
+      margin-bottom: 0

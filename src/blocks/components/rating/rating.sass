@@ -1,0 +1,110 @@
+.rating-item
+  display: flex
+  flex-flow: row nowrap
+  margin-bottom: 16px
+  +media("<=xl")
+
+  &:last-child
+    margin-bottom: 0
+    .info
+      border-bottom: none !important
+
+  .cover
+    position: relative
+    width: 64px
+    height: 64px
+    display: flex
+    +media("<=m")
+      +square(48px)
+      flex: 0 0 48px
+      max-width: 48px
+    +flexCenter
+    +border-radius
+    overflow: hidden
+    flex: 0 0 64px
+    max-width: 64px
+    &::before
+      content: ' '
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      background: rgba($pureBlack, .4)
+      mix-blend-mode: multiply
+      z-index: 1
+      position: absolute
+
+    span
+      position: absolute
+      font-size: 24px
+      color: $classicalWhite
+      text-align: center
+      margin: auto
+      z-index: 3
+      letter-spacing: 0.0015em
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      +border-radius
+
+  .info
+    margin-left: 16px
+    display: flex
+    flex-flow: column nowrap
+    border-bottom: 1px solid $line
+    width: 100%
+    justify-content: center
+
+    .title
+      font-weight: 600
+      font-size: 18px
+      letter-spacing: 0.0015em
+      line-height: 150%
+      text-decoration: none
+      color: $pureBlack
+      +media("<=m")
+        line-height: normal
+
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+      display: flex
+      flex-flow: row nowrap
+      margin-top: 8px
+      margin-bottom: 11px
+      +media("<=m")
+        flex-wrap: wrap
+
+      a
+        text-decoration: none
+        color: inherit
+
+
+
+      li
+        position: relative
+        margin-right: 22px
+        font-size: 14px
+        color: rgba($pureBlack, .8)
+        &:last-child
+          margin-right: 0
+          &::before
+            content: none
+
+        &::before
+          content: ' '
+          +circle(6px)
+          display: block
+          position: absolute
+          top: 50%
+          right: -14px
+          transform: translateY(-50%)
+          background: rgba($pureBlack, .2)
+
+        &.bold
+          font-weight: 600
+
+

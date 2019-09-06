@@ -1,0 +1,59 @@
+extends ../layouts/default
+
+
+block variables
+    - const title = "Каталог курсов - Категории"
+
+block content
+    +Breadcrumbs(["Каталог"])
+    .container#recommendations
+        section#courses
+            .section__head
+                h4 Рекомендации
+            .courses__carousel--wrapper.slider--nav-blue
+                .courses__carousel
+                    .item
+                        //.col-4.col-xs-1.col-m-2
+                        +Card('promo', {img: 'img/4.png', title: 'Бухгалтерия для продвинутых', rating: '9.9', nums: "13"})
+
+                    .item
+                        //.col-4.col-xs-1.col-m-2
+                        +Card('promo', {img: 'img/3.jpg', title: 'Управление проектами', rating: '9.2', nums: "21"})
+
+                    .item
+                        //.col-4.col-xs-1.col-m-2
+                        +Card('promo', {img: 'img/2.jpg', title: 'От новичка до профи', rating: '9.0', nums: "135"})
+
+                    .item
+                        //.col-4.col-xs-1.col-m-2
+                        +Card('promo', {img: 'img/1.jpg', title: 'Идеальный Landing Page', rating: '8.2', nums: "34"})
+        section#categories.s-margins-32
+            .section__head
+                h4 Категории
+
+
+            .row
+                .col-4.col-xs-1.col-m-2
+                    +Card("categories-max", {img: 1, title: "Дизайн", nums: 230, description: "Ежедневно мы видим дизайн - в соцсетях, когда идем домой. Везде вокруг нас что-то нарисовано. Поэтому так важно начать разбираться в дизайне."})
+                .col-4.col-xs-1.col-m-2
+                    +Card("categories-max", {img: 2, title: "Бизнес", nums: 132, description: "Процесс визуального общения и решения проблем с использованием типографики, фотографии и иллюстрации."})
+                .col-4.col-xs-1.col-m-2
+                    +Card("categories-max", {img: 3, title: "IT", nums: 141, description: "Ежедневно мы видим дизайн - в соцсетях, когда идем домой. Везде вокруг нас что-то нарисовано. Поэтому так важно начать разбираться в дизайне."})
+                .col-4.col-xs-1.col-m-2
+                    +Card("categories-max", {img: 1, title: "Здоровье", nums: 120, description: "Процесс визуального общения и решения проблем с использованием типографики, фотографии и иллюстрации."})
+                .col-4.col-xs-1.col-m-2
+                    +Card("categories-max", {img: 3, title: "Личное развитие", nums: 12, description: "Ежедневно мы видим дизайн - в соцсетях, когда идем домой. Везде вокруг нас что-то нарисовано. Поэтому так важно начать разбираться в дизайне."})
+                .col-4.col-xs-1.col-m-2
+                    +Card("categories-max", {img: 1, title: "Изучение языков", nums: 32, description: "Процесс визуального общения и решения проблем с использованием типографики, фотографии и иллюстрации."})
+                .col-4.col-xs-1.col-m-2
+                    +Card("categories-max", {img: 2, title: "Математика и логика", nums: 65, description: "Ежедневно мы видим дизайн - в соцсетях, когда идем домой. Везде вокруг нас что-то нарисовано. Поэтому так важно начать разбираться в дизайне."})
+                .col-4.col-xs-1.col-m-2
+                    +Card("categories-max", {img: 1, title: "Наука о данных", nums: 10, description: "Процесс визуального общения и решения проблем с использованием типографики, фотографии и иллюстрации."})
+
+
+
+
+
+
+
+block scripts

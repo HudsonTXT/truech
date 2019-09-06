@@ -1,0 +1,72 @@
+.advantage
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  text-decoration: none
+  color: $pureBlack
+  .icon
+    +square(48px)
+    +border-radius
+    +flexCenter
+    background: $classicalWhite
+    border: 1px solid $line
+    i
+      font-size: 18px
+      color: $lightAccent
+
+  .content
+    margin-left: 12px
+    display: flex
+    flex-flow: column nowrap
+    .title
+      font-weight: 600
+      line-height: 150%
+
+    .value
+      font-size: 14px
+      color: rgba($pureBlack, .8)
+      margin-top: 1px
+      line-height: 130%
+
+      ul
+        list-style: none
+        display: flex
+        flex-flow: row nowrap
+        padding: 0
+        margin: 0
+        +media("<=m")
+          flex-wrap: wrap
+        li
+          margin-right: 30px
+          position: relative
+          +media("<=m")
+            margin-right: 5px
+            &::before
+              content: none
+
+          &::before
+            content: ' '
+            +circle(6px)
+            background: rgba($pureBlack, .2)
+            display: block
+            position: absolute
+            top: 50%
+            right: -16px
+            transform: translateY(-50%)
+
+          &:last-child
+            margin-right: 0
+            &:before
+              content: none
+
+
+
+
+
+.advantages
+  display: flex
+  flex-flow: column nowrap
+  .advantage
+    margin-bottom: 16px
+    &:last-child
+      margin-bottom: 0

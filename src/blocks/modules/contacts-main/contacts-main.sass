@@ -1,0 +1,35 @@
+#contacts-main
+  .contacts__grid
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    align-items: flex-start
+    width: 100%
+    padding-right: 36px
+    +media("<=m")
+      flex-flow: column nowrap
+      .item
+        margin-bottom: 16px
+        &:last-child
+          margin-bottom: 0
+    .item
+      span
+        display: block
+      .title
+        @extend %CaptionDefault
+        color: $lightAccent
+      .description
+        @extend %defaultText
+        line-height: 130%
+        color: $pureBlack
+        margin-top: 8px
+
+
+  .contacts__map
+    margin-top: 32px
+    overflow: hidden
+    width: 100%
+    height: 497px
+    +media("<=m")
+      height: 210px
+

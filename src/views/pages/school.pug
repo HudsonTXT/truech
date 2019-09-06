@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+
+block variables
+    - const title = "Skillbox"
+
+block content
+    +Breadcrumbs(["Школы", "Skillbox"])
+    .container
+        +Person("school")
+
+
+
+
+block scripts

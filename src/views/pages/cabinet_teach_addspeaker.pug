@@ -1,0 +1,52 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Добавить спикера"
+    - var status = "teach"
+
+block content
+    .cabinet__head
+            h4 Добавить спикера
+            .actions
+                a(href="#").btn.btn--xs.btn--light Удалить спикера
+
+
+    form.mb-32
+        +Input('upload', 'cabinet_description', '', 'Фотография спикера', {icon: "user-graduate"})
+
+        .form__section
+            h5 Контактные данные
+            +Input('text', 'cabinet_fio', '', 'Фамилия Имя Отчество')
+            +Input('text', 'cabinet_phone', '', 'Телефон')
+            +Input('text', 'cabinet_mail', '', 'E-mail')
+
+        .form__section
+            h5 Основная информация
+            +Input('text', 'cabinet_dolpznost', '', 'Должность')
+            +Input('select', 'meeting__worktime', ["Выберите деятельность из списка", "Менее 1 года", "от 1 до 3-х лет", "Более 3-х лет"], 'Направление деятельности')
+            +Input('textarea', 'cabinet_obrazovanie', '', 'Образование')
+            +Input('textarea', 'cabinet_dostizenia', '', 'О себе / Достижения')
+
+        h5 Сертификаты
+        .duplicated
+            .duplicate-it
+                +Input('upload', 'cabinet_description', '', 'Фото или скан сертификата', {icon: "file"})
+            .duplicate-copies
+            +Duplicator
+
+
+        button(type=submit).btn Добавить спикера
+
+
+
+
+
+
+
+
+
+
+
+
+block scripts

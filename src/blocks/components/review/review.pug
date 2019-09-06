@@ -1,0 +1,60 @@
+mixin Review(snippet, params)
+    - var snippet = snippet || false
+    .card.card--review.review(class=params.long?"review--long":null)
+        if !params.long
+            .review__user
+                .review__avatar
+                    img(src="img/"+params.avatar+".jpg")
+                .review__author
+                    .review__title #{params.title}
+                    .review__date 12 июня, 2019
+
+        .review__content
+            if !params.long
+                p Давно хотел заняться графическим дизайном, но никак не мог определиться с курсом и программой.
+                p Со мной созвонились все объяснили. Не пожалел, что выбрал именно этот курс...
+
+
+
+            if params.long
+                p Я как новичёк просмотрел видео и все понял! Нигде ещё не встречал чтоб так все раскладывали пополочкам куда нажать, зачем туда нажать и что будет при нажатии. Видно что команда Skillbox готовит видео материал на отлично после их видео уроков не приходится искать в поисковике что они имелии ввиду и что они хотели мне открыть показать, такого я еще невстречал у Skillbox команда профессионалов в этом деле расказывают показывают практикуют в процессе обучения это круто также мне нравится их стратегия по трудоустройству они открыли двери в свой мирок это круто ! ревиззоро советует Skillbox как новую дверь в интересный мир )))
+
+
+
+        if !params.long
+            a(href="#").review__readmore Читать полностью
+                include ../../../img/chevron_right_16px.svg
+
+        if params.long && !params.incourse
+            .review__grade
+                span.text Оценка:
+                .rating
+                    span 9.9
+                    i.fa.fa-star
+
+        if snippet
+            .review__snippet
+                if !params.incourse
+                    a(href="course.html").review__item
+                        .review__img
+                            img(src="img/3.jpg")
+                        .review__info
+                            .review__school Skillbox
+                            .review__rating 9.8
+                                i.fa.fa-star
+                            .review__type-title От новичка до про
+
+                if params.long
+                    .review__item.review__user
+                            .review__avatar
+                                img(src="img/" + params.avatar + ".jpg")
+                            .review__author
+                                .review__title #{params.title}
+                                .review__date 12 июня, 2019
+
+                            if params.incourse
+                                .review__grade
+                                    span.text Оценка:
+                                    .rating
+                                        span 9.9 / 10
+                                        i.fa.fa-star

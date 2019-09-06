@@ -1,0 +1,177 @@
+%FooterLinks
+  font-size: 14px
+  line-height: 24px
+
+
+footer
+  padding-top: 64px
+  border-top: 1px solid $line
+  background: $classicalWhite
+  display: flex
+  flex-flow: column nowrap
+  margin-top: 110px
+  +media("<=xl")
+    margin-top: 80px
+    padding-top: 32px
+
+
+
+  .footer__top
+    .container
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-between
+      align-items: flex-start
+      +media("<=xl")
+        flex-flow: column nowrap
+        align-items: normal
+
+      .footer__col--logo
+        display: flex
+        flex-flow: row nowrap !important
+        align-items: flex-start
+        text-decoration: none
+        color: $pureBlack
+        +media("<=xl")
+          margin-bottom: 24px
+        .footer__descriptor
+          display: flex
+          flex-flow: column nowrap
+          margin-left: 16px
+          span
+            display: block
+            width: 100%
+            white-space: pre
+        .title
+          font-size: 20px
+          letter-spacing: 0.0015em
+          font-weight: 600
+        .description
+          @extend %FooterLinks
+          color: $lightAccent
+          white-space: pre
+
+      .footer__col
+        display: flex
+        flex-flow: column nowrap
+        +media("<=xl")
+          &.footer__col--normal
+            border-top: 1px solid $line
+            margin-left: -16px
+            margin-right: -16px
+            padding-left: 16px
+            padding-right: 16px
+            .footer__title
+              padding-top: 16px
+              padding-bottom: 16px
+              margin-bottom: 0
+              position: relative
+              cursor: pointer
+              &::before
+                content: '+'
+                font-weight: bold
+                color: $lightAccent
+                font-size: 16px
+                position: absolute
+                right: 0
+                +transition
+
+            a
+              display: none
+              padding-left: 24px
+              &:last-child
+                margin-bottom: 24px
+
+            &.js-footer__col--opened
+              .footer__title::before
+                transform: rotate(45deg)
+              a
+                display: block
+
+        &.footer__col--social
+          flex-flow: column nowrap
+          +media("<=xl")
+            padding-top: 24px
+            width: unset
+            text-align: center
+            justify-content: center
+            border-top: 1px solid $line
+            margin-left: -16px
+            margin-right: -16px
+            padding-left: 16px
+            padding-right: 16px
+
+
+
+        .footer__title
+          @extend %CaptionDefault
+          width: 100%
+          color: rgba($pureBlack, .6)
+          margin-bottom: 12px
+          white-space: pre
+
+        .footer__social
+          margin-left: -8px
+          margin-right: -8px
+          display: flex
+          align-items: flex-start
+          +media("<=xl")
+            justify-content: center
+            align-items: center
+          a
+            display: inline-flex
+            color: $classicalWhite
+            align-items: center
+            justify-content: center
+            text-align: center
+            margin-left: 8px
+            margin-right: 8px
+            font-size: 14px
+            +circle(40px)
+            background: $accentDarkColor
+            +transition
+
+            &:hover
+              background: darken($accentDarkColor, 5%)
+
+            &:active
+              background: lighten($accentDarkColor, 5%)
+
+
+        a
+          width: 100%
+          display: block
+          text-decoration: none
+          font-size: 14px
+          color: $pureBlack
+          +transition
+          @extend %statesAccentColor
+          line-height: 24px
+
+
+    .footer__bottom
+      height: 48px
+      display: flex
+      flex-flow: row nowrap
+      align-items: center
+      border-top: 1px solid $line
+      font-size: 13px
+      color: $lightAccent
+      margin-top: 64px
+      +media("<=xl")
+        margin-top: 32px
+        height: auto
+        justify-content: center
+        padding-top: 16px
+        padding-bottom: 16px
+        text-align: center
+        align-items: center
+
+        .container
+          align-items: center
+      a
+        display: inline-block
+        margin-left: 4px
+        color: $accentDarkColor
+        text-decoration: none
+        @extend %statesAccentColor

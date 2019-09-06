@@ -1,0 +1,172 @@
+extends ../layouts/default
+
+
+block variables
+    - const title = "Все отзывы"
+
+block content
+    +Breadcrumbs(["Отзывы"])
+    .container
+        section
+            .section__head.mb-32.pos-r
+                .js-toggler(data-target="#reviews__type")
+                    h4 Все отзывы
+                        i.fa.fa-chevron-down
+
+                .reviews__dropdown.dropdown.js-toggler-target.js-toggler-close-on-select#reviews__type
+                    a(href="#").js-toggler-close-on-select__item.active
+                        span Все отзывы
+                        .icon
+                            i.fal.fa-th
+                    a(href="#").js-toggler-close-on-select__item
+                        span Курсы
+                        .icon
+                            i.fal.fa-books
+                    a(href="#").js-toggler-close-on-select__item
+                        span Спикеры
+                        .icon
+                            i.fal.fa-graduation-cap
+
+
+
+                .actions
+                    //-a(href="#read-review" rel="modal:open").btn.btn--xs Написать отзыв
+                    +Input("search", "search-min", "Поиск по отзывам")
+                    +Filters(true)
+
+        section
+            .section__head
+                h4 Курсы
+
+            .section__head.mb-16
+                h5 Рейтинг
+                .actions
+                    a(href="#").action--showmore Смотреть рейтинг
+                        i.fa.fa-chevron-right
+
+            .row.mb-32
+                .col-4.col-xs-1.col-m-2
+                    +Card('promo', {
+                        img: 'img/4.png',
+                        title: 'Бухгалтерия для продвинутых',
+                        rating: '9.9',
+                        nums: "13"
+                    })
+
+                .col-4.col-xs-1.col-m-2
+                    +Card('promo', {img: 'img/3.jpg', title: 'Управление проектами', rating: '9.2', nums: "21"})
+
+                .col-4.col-xs-1.col-m-2
+                    +Card('promo', {img: 'img/2.jpg', title: 'От новичка до профи', rating: '9.0', nums: "135"})
+
+                .col-4.col-xs-1.col-m-2
+                    +Card('promo', {img: 'img/1.jpg', title: 'Идеальный Landing Page', rating: '8.2', nums: "34"})
+
+            .section__head.mb-16
+                h5 Отзывы
+                .actions
+                    a(href="#").action--showmore Смотреть все отзывы
+                        i.fa.fa-chevron-right
+
+            .row
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u1", title: "Дмитрий Дмитров"})
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u2", title: "Светлана Попова"})
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u3", title: "Сергей Сергеев"})
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u1", title: "Дмитрий Дмитров"})
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u2", title: "Светлана Попова"})
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u3", title: "Сергей Сергеев"})
+
+
+        section.s-margins
+
+            .section__head
+                h4 Спикеры
+
+            .section__head.mb-16
+                h5 Рейтинг
+                .actions
+                    a(href="#").action--showmore Смотреть рейтинг
+                        i.fa.fa-chevron-right
+
+            .row.mb-32
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u1.jpg',
+                        title: 'Николай Борисов',
+                        descriptor: 'Арт-директор Nimax',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.9',
+                        reviews: 456,
+                        courses: 23,
+                        
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u2.jpg',
+                        title: 'Светлана Попова',
+                        descriptor: 'Руководитель Geekbrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.2',
+                        reviews: 398,
+                        courses: 20,
+                        
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Павел Конюков',
+                        descriptor: 'Дизайнер Нетология',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.9',
+                        reviews: 345,
+                        courses: 18,
+                        
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Елена Фигма',
+                        descriptor: 'Клауд Скетч',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.2',
+                        reviews: 218,
+                        courses: 21,
+                        
+
+                    })
+
+            .section__head.mb-16
+                h5 Отзывы
+                .actions
+                    a(href="#").action--showmore Смотреть все отзывы
+                        i.fa.fa-chevron-right
+
+            .row
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u1", title: "Дмитрий Дмитров"})
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u2", title: "Светлана Попова"})
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u3", title: "Сергей Сергеев"})
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u1", title: "Дмитрий Дмитров"})
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u2", title: "Светлана Попова"})
+                .col-3.col-xs-1.col-m-2
+                    +Review(true, {avatar: "u3", title: "Сергей Сергеев"})
+
+
+
+
+
+
+
+
+
+block scripts

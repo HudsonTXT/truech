@@ -1,0 +1,57 @@
+#error-page
+  display: flex
+  flex-flow: row nowrap
+  margin-top: 110px
+  align-items: center
+  +media("<=xl")
+    margin: 0
+    margin-top: 64px
+    flex-flow: column nowrap
+    .col, &.col-10
+      max-width: 100%
+      flex: 0 0 100%
+
+    .col
+      margin-bottom: 32px
+      &:first-child
+        order: 2
+
+      &:nth-child(2)
+        order: 1
+        margin-right: auto
+        img
+          width: 100%
+          height: auto
+
+
+  h2
+    margin-top: 0
+    margin-bottom: 24px
+  p
+    line-height: 187%
+    color: rgba($pureBlack, .8)
+    margin-bottom: 32px
+    margin-top: 24px
+    +media("<=xl")
+      line-height: 150%
+      margin-top: 16px
+      margin-bottom: 32px
+
+
+
+  .col:first-child
+    padding-right: 136px
+    +media("<=xl")
+      padding-right: 0
+
+
+  .btn
+    margin-right: 16px
+    padding: 0 25px
+    +media("<=xl")
+    width: 100%
+    margin-bottom: 16px
+    &:last-child
+      margin-right: 0
+      +media("<=xl")
+        margin-bottom: 0

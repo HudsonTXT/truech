@@ -1,0 +1,401 @@
+.input-panel
+  label
+    display: block
+    margin-bottom: 8px
+    @extend %someDescriptor
+  &.input-panel--default
+    display: flex
+    flex-flow: column nowrap
+    position: relative
+    input, select, option, textarea
+      width: 100% //@global
+      background: $classicalWhite //@global
+      +border-default //@global
+      +border-radius //@global
+      +activeInputWithLine //@global
+      +transition //@global
+      padding-left: 20px !important
+      padding-right: 20px !important
+      font-family: 'Gilroy' //@global
+      color: $pureBlack //@global
+      height: 64px
+      @extend %defaultText
+      &::placeholder
+        color: rgba($pureBlack, .5)
+
+    .icon
+      position: absolute
+      color: $lightAccent
+      font-size: 14px
+      text-align: right
+      right: 15px
+      bottom: 26px
+      top: 48px
+      
+    input[type="date"]
+      -webkit-appearance: none
+      -moz-appearance: none
+      appearance: none
+
+    textarea
+      height: 160px
+      resize: none
+      padding: 20px
+      padding-bottom: 20px
+
+    select
+      -webkit-appearance: none
+      -moz-appearance: none
+      appearance: none
+      background: $classicalWhite url("../img/chevron-down.svg") 96% 50% no-repeat
+
+  &.input-panel--search form
+    display: flex
+    overflow: hidden
+    max-width: 480px
+    position: relative
+    +media("<=m")
+      max-width: 100%
+    +media("<=xl")
+      max-width: 100%
+
+
+    input
+      width: 100% //@global
+      background: $classicalWhite //@global
+      +border-default //@global
+      +border-radius //@global
+      +activeInputWithLine //@global
+      +transition //@global
+      padding-left: 20px !important
+      padding-right: 20px !important
+      font-family: 'Gilroy' //@global
+      color: $pureBlack //@global
+      @extend %defaultText
+      &::placeholder
+        color: rgba($pureBlack, .5)
+
+
+    input, button
+      height: 64px
+      padding: 0
+      margin: 0
+
+
+    button
+      width: 64px
+      position: absolute
+      right: 0
+      background: $accentColor
+      display: flex
+      align-items: center
+      justify-content: center
+      +accentColorBtn
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+  &.input-panel--social
+    .input-panel__items
+      margin-left: -8px
+      margin-right: -8px
+      display: flex
+      align-items: flex-start
+      a
+        display: inline-flex
+        color: $classicalWhite
+        align-items: center
+        justify-content: center
+        text-align: center
+        margin-left: 8px
+        margin-right: 8px
+        font-size: 14px
+        +circle(40px)
+        background: $accentDarkColor
+        +transition
+        &:hover
+          background: darken($accentDarkColor, 5%)
+
+        &:active
+          background: lighten($accentDarkColor, 5%)
+  &.input-panel--registertype
+    .input__container
+      display: flex
+      flex-flow: row nowrap
+      text-align: center
+      color: $lightAccent
+      margin-left: -8px
+      margin-right: -8px
+      +transition
+
+      label
+        margin-right: 8px
+        margin-left: 8px
+        +transition
+        cursor: pointer
+
+      .circle
+        +circle(64px)
+        +flexCenter
+        +transition
+        font-size: 16px
+        background: $classicalWhite
+        border: 1px solid $line
+
+      .title
+        @extend %defaultText
+        margin-top: 4px
+
+      input
+        display: none
+      input:hover + .registertype__wrapper
+        color: rgba($pureBlack, .7)
+        .circle
+          background: rgba($pureBlack, .2)
+          border-color: rgba($pureBlack, .2)
+          color: $classicalWhite
+      input:checked + .registertype__wrapper
+        color: $pureBlack
+        .circle
+          background: $pureBlack
+          border-color: $pureBlack
+          color: $classicalWhite
+  &.input-panel--checkbox
+    cursor: pointer
+    label, .checkmark
+      display: flex
+      flex-flow: row nowrap
+      cursor: pointer
+
+    .label
+
+      a
+        text-decoration: underline
+        color: inherit
+
+      span
+        display: block
+        @extend %someDescriptor
+        color: $lightAccent
+        margin-top: 4px
+        line-height: normal
+
+
+    .checkmark
+      align-items: flex-start
+
+    input
+      display: none
+      &:checked + .checkmark
+        .checkbox
+          background: $accentColor
+          border-color: $accentColor
+          i
+            display: block
+
+
+    .checkbox
+      +square(20px)
+      flex: 0 0 20px
+      +border-radius
+      background: $classicalWhite
+      border: 1px solid $line
+      margin-right: 10px
+      +flexCenter
+      i
+        display: none
+        color: $classicalWhite
+        font-size: 14px
+        font-weight: 300
+        margin: auto
+
+    .label
+      @extend %defaultText
+      line-height: 150%
+
+  &.input-panel--file
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    .drop-zone
+      +square(64px)
+      +border-radius
+      +flexCenter
+      max-width: 64px
+      flex: 0 0 64px
+      border: 1px dashed rgba($lightAccent, .5)
+      color: $lightAccent
+      font-size: 20px
+
+    .description-zone
+      display: flex
+      flex-flow: column nowrap
+      margin-left: 12px
+      .title
+        font-weight: 600
+        color: $pureBlack
+      .descriptor
+        margin-top: 6px
+        @extend %someDescriptor
+        color: $lightAccent
+        width: 240px
+        +media("<=m")
+          width: 100%
+          max-width: 240px
+
+  &.input-panel--radio
+    display: flex
+    flex-flow: column nowrap
+    .input-panel--radio__values
+      display: flex
+      flex-flow: row wrap
+      margin-left: -4px
+      margin-right: -4px
+
+      input:checked + .checkmark
+        .checkbox
+          border: 2px solid $accentColor
+        .circle
+          opacity: 1
+
+      label
+        margin-left: 4px
+        margin-right: 4px
+        cursor: pointer
+        .checkmark
+          display: flex
+          flex-flow: row nowrap
+
+        .label
+          @extend %defaultText
+          color: $pureBlack
+
+        .checkbox
+          +circle(20px)
+          background: $classicalWhite
+          border: 1px solid $line
+          flex: 0 0 20px
+          margin-right: 8px
+          +transition
+          +flexCenter
+
+          .circle
+            +circle(8px)
+            background: $accentColor
+            opacity: 0
+            +transition
+
+
+        input
+          display: none
+
+
+.program-course
+  list-style: none
+  padding: 0
+  margin: 0
+
+  & > ul
+    padding-left: 32px
+    list-style: none
+
+
+
+.inputs-panel--userable
+  margin-right: -128px
+  +media("<=xl")
+    margin-right: 0
+
+  li
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    +media("<=m")
+      flex-flow: column nowrap
+
+    &[data-type="part"]
+      .sort-state
+        display: none
+
+    &[data-type="part"]:first-child
+      .controls
+        .delete-state
+          display: none
+
+    &:last-child
+      .controls
+        display: none
+
+  .input-panel
+    flex: 0 0 430px
+    max-width: 430px
+    +media("<=xl")
+      flex: 0 0 calc(100% - 104px)
+      max-width: calc(100% - 104px)
+    +media("<=m")
+      flex: 0 0 100%
+      max-width: 100%
+      width: 100%
+
+  & > ul
+    li.input-panel
+      flex: 0 0 398px
+      max-width: 398px
+      +media("<=xl")
+        flex: 0 0 calc(95% - 104px)
+        max-width: calc(95% - 104px)
+      +media("<=m")
+        flex: 0 0 95%
+        max-width: 95%
+
+
+  .controls
+    display: flex
+    flex-flow: row nowrap
+    margin-left: -4px
+    margin-right: -4px
+    padding-left: 16px
+    +media("<=xl")
+      flex: 0 0 120-32px
+      max-width: 120-32px
+    +media("<=m")
+      flex: 0 0 100%
+      max-width: 100%
+      padding-left: 0
+      margin-top: -12px
+      margin-bottom: 16px
+
+    a
+      +circle(32px)
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-left: 4px
+      margin-right: 4px
+      +media("<=xl")
+        flex: 0 0 32px
+        max-width: 32px
+
+  .new
+
+  .deactive
+    opacity: 0.5
+
+
+.ui-sortable-handle
+  //background: $classicalWhite
+  //+border-radius
+
+.ui-sortable-placeholder
+  width: 100%
+  height: 80px
+  position: relative
+  &::before
+    content: ' '
+    width: 80%
+    height: 80%
+    background: rgba($lightAccent, .05)
+    border: 2px dashed rgba($lightAccent, .2)
+    +border-radius
+    position: absolute
+
+.ui-sortable-helper
+  //box-shadow: 0px 19px 38px rgba(153, 153, 153, 0.3), 0px 15px 12px rgba(153, 153, 153, 0.22)

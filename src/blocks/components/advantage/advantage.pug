@@ -1,0 +1,16 @@
+mixin Advantage(icon, title, value, link)
+    #{link?"a":"div"}(href=link?link:null, class=link?'easing-scroll':null).advantage
+        .icon
+            i.fal(class=icon?"fa-"+icon:"fa-star")
+
+        .content
+            .title
+                =title?title:"Заголовок"
+
+            .value
+                if !Array.isArray(value)
+                    =value?value:"Значение"
+                else
+                    ul
+                        each val in value
+                            li=val

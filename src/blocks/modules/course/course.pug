@@ -1,0 +1,152 @@
+mixin Course
+    .course
+        +CourseMain
+        +CourseParts
+        section#speakers.s-margins
+            .section__head
+                h4 Спикеры курса
+            .row
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker-min', {
+                        img: 'img/u1.jpg',
+                        title: 'Николай Борисов',
+                        descriptor: 'Арт-директор Nimax',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.9',
+                        reviews: 456,
+                        courses: 23,
+                        short: true
+                    })
+
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker-min', {
+                        img: 'img/u2.jpg',
+                        title: 'Светлана Попова',
+                        descriptor: 'Руководитель Geekbrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.2',
+                        reviews: 398,
+                        courses: 20,
+                        short: true
+                    })
+
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker-min', {
+                        img: 'img/u3.jpg',
+                        title: 'Павел Конюков',
+                        descriptor: 'Дизайнер Нетология',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.9',
+                        reviews: 345,
+                        courses: 18,
+                        short: true
+                    })
+
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker-min', {
+                        img: 'img/u3.jpg',
+                        title: 'Елена Фигма',
+                        descriptor: 'Клауд Скетч',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.2',
+                        reviews: 218,
+                        courses: 21,
+                        short: true
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker-min', {
+                        img: 'img/u1.jpg',
+                        title: 'Николай Борисов',
+                        descriptor: 'Арт-директор Nimax',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.9',
+                        reviews: 456,
+                        courses: 23,
+                        short: true
+                    })
+
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker-min', {
+                        img: 'img/u2.jpg',
+                        title: 'Светлана Попова',
+                        descriptor: 'Руководитель Geekbrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.2',
+                        reviews: 398,
+                        courses: 20,
+                        short: true
+                    })
+
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker-min', {
+                        img: 'img/u3.jpg',
+                        title: 'Павел Конюков',
+                        descriptor: 'Дизайнер Нетология',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.9',
+                        reviews: 345,
+                        courses: 18,
+                        short: true
+                    })
+
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker-min', {
+                        img: 'img/u3.jpg',
+                        title: 'Елена Фигма',
+                        descriptor: 'Клауд Скетч',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.2',
+                        reviews: 218,
+                        courses: 21,
+                        short: true
+                    })
+
+        section#speakers.s-margins
+            .section__head
+                h4 Спикер курса
+            .row.col-to-row
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u1.jpg',
+                        title: 'Николай Борисов',
+                        descriptor: 'Арт-директор Nimax',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.9',
+                        reviews: 456,
+                        courses: 23
+                    })
+
+        //+MainReviews("Отзывы о курсе")
+
+        section#course-reviews
+            .section__head
+                h4 Отзывы
+                .actions
+                    a(href="#read-review", rel="modal:open").btn.btn--xs Добавить отзыв
+            +Review(true, {avatar: "u1", title: "Дмитрий Дмитров", long: true, incourse: true})
+
+            +Review(true, {avatar: "u2", title: "Светлана Попова", long: true, incourse: true})
+
+            +Review(true, {avatar: "u3", title: "Сергей Сергеев", long: true, incourse: true})
+
+            +Review(true, {avatar: "u1", title: "Дмитрий Дмитров", long: true, incourse: true})
+
+            +Review(true, {avatar: "u2", title: "Светлана Попова", long: true, incourse: true})
+
+            +Review(true, {avatar: "u3", title: "Сергей Сергеев", long: true, incourse: true})
+
+        +CoursePrices
+
+        section#similar-courses.s-margins
+            .section__head
+                h4 Похожие курсы
+            .courses__carousel--wrapper.slider--nav-blue
+                .courses__carousel
+                    .item
+                        +Card('course', {img: "1.jpg"})
+                    .item
+                        +Card('course', {title: "Управление проектом", img: "2.jpg"})
+                    .item
+                        +Card('course', {title: "От новичка до профи", img: "3.jpg"})
+                    .item
+                        +Card('course', {img: "4.png", title: "1С для профессионала"})

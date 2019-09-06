@@ -1,0 +1,12 @@
+mixin Breadcrumbs(items)
+    .container
+        ul.breadcrumbs
+            li
+                a(href="index.html")
+                    include ../../../img/home.svg
+                    span Главная
+
+            each val, index in items
+                li(class=index===(items.length-1) ? "active":null)
+                    a(href="#")
+                        span=val

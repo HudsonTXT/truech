@@ -1,0 +1,36 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Лучшие студенты"
+    - var status = "teach"
+
+block content
+    .cabinet__head
+        .cabinet__head--with-description
+            h4 Лучшие студенты
+            p.default-text Если у вас есть знаменитые студенты или предприятия, то вы можете указать их в этом разделе. Эта информация будет отображаться на странице школы.
+        //.actions
+        //    a(href="#").btn.btn--xs Soma Action
+
+    form
+        .duplicated
+            .duplicate-it
+                +Input('upload', 'cabinet_description', '', 'Аватар или логотип компании', {icon: "user"})
+                +Input('text', 'cabinet_title', '', 'Фамилия Имя Отчество')
+                +Input('text', 'cabinet_company', 'Компания', 'Должность')
+            .duplicate-copies
+            +Duplicator
+
+        button(type=submit).btn Сохранить изменения
+
+
+
+
+
+
+
+
+
+
+block scripts

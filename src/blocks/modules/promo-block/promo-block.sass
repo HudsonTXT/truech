@@ -1,0 +1,156 @@
+.promoblock
+  width: 100%
+  +accentGradient
+  //+fullHeight(102px)
+  min-height: 600px
+  display: flex
+  align-items: center
+  color: $classicalWhite
+  position: relative
+  justify-content: center
+
+  +media("<=xl")
+    +fullHeight(62px)
+    display: flex
+    flex-flow: column nowrap
+
+
+  .input-panel--search
+    +media("<=xl")
+      margin-top: 32px
+      form
+        max-width: 100%
+
+  .container
+    position: relative
+    z-index: 3
+    +media("<=xl")
+      padding-top: 64px
+      padding-bottom: 32px
+      //height: 100%
+      //padding-top: 64px
+      //padding-bottom: 38px
+
+
+
+  h1
+    //font-size: 75px
+    font-size: 45px
+    line-height: 1
+    letter-spacing: -0.015em
+    font-weight: 600
+    width: 41%
+    margin-bottom: 27px
+
+    +media("<=xl")
+      font-size: 35px
+      line-height: 1
+      width: 100%
+      margin-top: 0
+      padding-top: 0
+      margin-bottom: 16px
+
+
+  p
+    width: 44.166%
+    line-height: 150%
+    +media("<=xl")
+      width: 100%
+
+    &.big-article
+      margin-top: -16px
+      font-size: 20px
+      color: rgba($classicalWhite, .8)
+      margin-bottom: 24px
+      +media("<=xl")
+        font-size: 16px
+
+  .input--search
+    margin-top: 27px
+
+
+  .promoblock__courses
+    position: absolute
+    width: 710px
+    right: 0
+    z-index: 4
+    +media("<=xl")
+      width: calc(100% - 32px)
+      position: static
+      margin-left: auto
+      margin-right: auto
+      //margin-top: auto
+      padding-bottom: 38px
+
+    .item
+      height: 392px
+      +media("<=xl")
+        min-height: 120px
+        height: calc(21vh)
+      .card
+        height: 392px
+        +media("<=xl")
+          min-height: 120px
+          height: calc((var(--vh, 1vh) * 21))
+
+    .tns-controls
+      display: none
+    button
+      display: none
+
+    .tns-nav
+      width: 290px
+      +flexCenter
+      margin-top: 24px
+      +media("<=xl")
+        width: 100%
+        margin-top: 16px
+
+      button
+        display: inline-flex
+        @include circle(8px)
+        background: rgba($classicalWhite, .5)
+        padding: 0 !important
+
+        +transition
+        &:hover
+          background: rgba($classicalWhite, .8)
+        margin-left: 4px
+        margin-right: 4px
+        border: none
+        &.tns-nav-active
+          background: $classicalWhite
+
+
+.tns-nav
+  +flexCenter
+  margin-top: 24px
+  +media("<=xl")
+      width: 100%
+      margin-top: 16px
+  button
+    display: inline-flex
+    @include circle(8px)
+    background: rgba($classicalWhite, .5)
+    padding: 0 !important
+
+    +transition
+    &:hover
+      background: rgba($classicalWhite, .8)
+    margin-left: 4px
+    margin-right: 4px
+    border: none
+    &.tns-nav-active
+      background: $classicalWhite
+
+
+.slider--nav-blue .tns-nav button
+  background: rgba($accentColor, .5) !important
+  &:hover
+    background: rgba($accentColor, .8) !important
+  &.tns-nav-active
+    background: $accentColor !important
+
+
+.tns-controls, [data-action="stop"], [data-action="start"]
+  display: none

@@ -1,0 +1,118 @@
+.signarea
+
+  +media("<=m")
+    padding: 24px 0
+
+  .container
+    height: 100%
+    max-height: 800px
+  .card.card--signin-up
+    box-shadow: 0px 19px 38px rgba(0, 0, 0, 0.3), 0px 15px 12px rgba(0, 0, 0, 0.22)
+    background: $classicalWhite
+    padding: 0
+    display: flex
+    flex-flow: row nowrap
+    border: none
+    height: 100%
+    +media("<=m")
+      flex-flow: column nowrap
+      max-height: unset
+      height: unset
+      margin-top: 24px
+      margin-bottom: 24px
+
+
+  .sign-content
+    padding: 32px
+    height: 100%
+    width: 100%
+    overflow: auto
+    +media("<=xl")
+      padding: 24px
+    .sign-content__head
+      display: flex
+      flex-wrap: wrap
+      align-items: baseline
+      margin-bottom: 24px
+      h4
+        margin: 0
+        width: 100%
+        +media("<=modal")
+
+          span
+            display: block
+            margin-top: 4px
+            margin-left: 0 !important
+            margin-right: 0 !important
+        span
+          @extend %someDescriptor
+          color: $lightAccent
+          i
+            font-style: normal
+
+
+      .description
+        width: 64.465%
+        color: rgba($pureBlack, .8)
+        margin: 0
+        margin-top: 8px
+        +media("<=xl")
+          width: 100%
+
+
+      a
+        @extend %h4
+        text-decoration: none
+        color: rgba($pureBlack, .8)
+        border-bottom: 2px dashed rgba($pureBlack, .8)
+        padding-bottom: 1px
+        @extend %statesAccentColor
+        @extend %statesAccentBorderBottom
+        +media("<=modal")
+          font-size: 18px
+        &.active
+          border-bottom: none
+          color: $pureBlack
+
+      span
+        @extend %h6
+        color: $lightAccent
+        display: inline-block
+        margin: 0 16px
+        +media("<=modal")
+          font-size: 14px
+          margin: 0 8px
+
+
+    .sign-content__area
+      .w-430
+        width: 430px
+        +media("<=xl")
+          width: 100%
+      .input-panel
+        margin-bottom: 16px
+      .btn--block
+        margin-top: 8px
+      .form__descriptor
+        @extend %someDescriptor
+        line-height: 150%
+        margin-top: 16px
+        margin-bottom: 16px
+        a
+          text-decoration: underline
+          color: inherit
+
+
+  .form__stepper
+    opacity: 0.5
+    margin-bottom: 32px
+    &.form__stepper--active
+      opacity: 1
+    h5
+      margin-top: 0
+      margin-bottom: 16px
+    +media("<=m")
+      .btn
+        margin-bottom: 16px
+
+

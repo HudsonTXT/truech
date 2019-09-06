@@ -1,0 +1,14 @@
+mixin Rating(params)
+    .rating-item
+        a(href="#").cover
+            span=params.rating?params.rating:"9.8"
+            img(src=params.img?params.img:"img/1.jpg")
+        .info
+            a(href="#").title=params.title?params.title:"Бухгалтерия для продвинутых"
+            ul
+                li.bold
+                    a(href="#") Skillbox
+                li
+                    a(href="#") 13 занятий
+                li
+                    a(href="#") 253 отзыва

@@ -1,0 +1,37 @@
+extends ../layouts/sign
+
+block variables
+    - const title = "Регистрация для учеников"
+
+block content
+    .container
+        .card.card--signin-up
+            +SignSidebar
+
+            .sign-content
+                .sign-content__head
+                    a(href="#").active Зарегистрироваться
+                    span или
+                    a(href="login.html") Войти
+
+                .sign-content__area
+                    form(type="POST", action="").w-430
+                        +Input('social', 'login_as_social', '', 'Зарегистрироваться с помощью соц.сетей')
+                        +Input('register_type', 'register_type', '', 'Тип учетной записи')
+                        +Input('text', 'register_fio', '', 'Фамилия Имя Отчество')
+                        +Input('phone', 'register_phone', '', 'Телефон')
+                        +Input('password', 'register_password', '', 'Пароль')
+                        +Input('checkbox', 'register_newsletter', '', 'Получать рассылку на электронную почту')
+                        p.form__descriptor Регистрируясь на сайте, вы принимаете <a href="#">пользовательское соглашение</a> и соглашаетесь с <a href="#">политикой конфиденциальности</a>
+
+                        button(type=submit).btn.btn--w210 Зарегистрироваться
+
+
+
+
+
+
+
+
+
+block scripts

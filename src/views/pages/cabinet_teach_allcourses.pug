@@ -1,0 +1,69 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Все курсы"
+    - var status = "teach"
+
+block content
+    .cabinet__head
+        h4 Все курсы
+        .actions
+           a(href="#").btn.btn--xs.btn--light + Добавить курс
+
+    .form__section
+        .row
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {img: "1.jpg", short: true, admin: true, reviews: 123, views: 18131, buy:1765 })
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {
+                    title: "Управление проектом",
+                    img: "2.jpg",
+                    short: true, admin: true, reviews: 256, views: 12007, buy:546
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {
+                    title: "От новичка до профи",
+                    img: "3.jpg",
+                    short: true, admin: true, reviews: 351, views: 5532, buy:1000
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {
+                    img: "4.png",
+                    title: "1С для профессионала",
+                    short: true, admin: true, reviews: 123, views: 18131, buy:1765
+
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {img: "1.jpg", short: true, admin: true, reviews: 123, views: 18131, buy:1765   })
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {
+                    title: "Управление проектом",
+                    img: "2.jpg",
+                    short: true, admin: true, reviews: 123, views: 18131, buy:1765
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {
+                    title: "От новичка до профи",
+                    img: "3.jpg",
+                    short: true, admin: true, reviews: 123, views: 18131, buy:1765
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {
+                    img: "4.png",
+                    title: "1С для профессионала",
+                    short: true, admin: true, reviews: 123, views: 18131, buy:1765
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {img: "1.jpg", short: true, admin: true, reviews: 123, views: 18131, buy:1765   })
+
+
+
+
+
+
+
+
+
+
+block scripts

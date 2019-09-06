@@ -1,0 +1,182 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Добавить курс"
+    - var status = "teach"
+
+block content
+    .cabinet__head
+            h4 Добавить курс
+            .actions
+                a(href="#").btn.btn--xs.btn--light Удалить курс
+
+
+    form.mb-32
+        +Input('upload', 'cabinet_description', '', 'Обложка курса', {icon: "rectangle-landscape"})
+
+        .form__section
+            h5 Основная информация
+            +Input('select', 'cabinet_napravlenia', ["Выберите направление", "Направление", "Направление", "Направление"], 'Направление')
+            +Input('select', 'cabinet_categories', ["Выберите категорию", "Категория", "Категория", "Категория"], 'Категория')
+            +Input('text', 'cabinet_title', '', 'Название курса')
+            +Input('text', 'cabinet_description', '', 'Краткое описание курса')
+            +Input('textarea', 'cabinet_moreinfo', '', 'Подробная информация')
+            .js-visible-toggler
+                .js-visible-toggler__elements.visible
+                    +Input('date', 'cabinet_worktime', '01 сентября 2019', 'Дата начала курса', {icon: 'calendar-alt'})
+                .js-visible-toggler__watch.js-visible__invert
+                    +Input('checkbox', 'cabinet_afterbuy', '', 'Начинать курс сразу после покупки', {checked:false})
+
+
+
+        .form__section
+            h5 Программа курса
+            ul.program-course.inputs-panel--userable
+                li(data-type="part")
+                    +Input('text', 'cabinet_part_1', 'Часть', 'Название части')
+                    .controls(tabindex="-1")
+                        a(href="#", title="Перетащите элемент для сортировки").js-sort.sort-state
+                            i.fal.fa-grip-lines
+                        a(href="#").js-new.new-state
+                            i.fal.fa-plus
+                        a(href="#").js-delete.delete-state
+                            i.fal.fa-times
+                ul
+                    li(data-type="module")
+                        +Input('text', 'cabinet_module_1', 'Модуль', 'Название модуля')
+                        .controls(tabindex="-1")
+                            a(href="#", title="Перетащите элемент для сортировки").js-sort.sort-state
+                                i.fal.fa-grip-lines
+                            a(href="#").js-delete.delete-state
+                                i.fal.fa-times
+
+                li(data-type="part")
+                    +Input('text', 'cabinet_part_2', 'Новая часть', 'Название части')
+                    .controls
+                        a(href="#", title="Перетащите элемент для сортировки").js-sort.sort-state
+                            i.fal.fa-grip-lines
+                        a(href="#").js-new.new-state
+                            i.fal.fa-plus
+                        a(href="#").js-delete.delete-state
+                            i.fal.fa-times
+
+        .form__section.form__section--full-width
+            h5 Спикеры
+            .row
+                .col-3.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u1.jpg',
+                        title: 'Николай Борисов',
+                        descriptor: 'Арт-директор Nimax',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.9',
+                        reviews: 456,
+                        courses: 23,
+
+                    })
+                .col-3.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u2.jpg',
+                        title: 'Светлана Попова',
+                        descriptor: 'Руководитель Geekbrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.2',
+                        reviews: 398,
+                        courses: 20,
+
+                    })
+                .col-3.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Павел Конюков',
+                        descriptor: 'Дизайнер Нетология',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.9',
+                        reviews: 345,
+                        courses: 18,
+
+                    })
+                .col-3.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Елена Фигма',
+                        descriptor: 'Клауд Скетч',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.2',
+                        reviews: 218,
+                        courses: 21,
+
+
+                    })
+                .col-3.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        add: true
+
+                    })
+
+
+        .form__section
+            h5 Стоимость
+            +Input('text', 'cabinet_title_program', '', 'Название пакета')
+
+
+            .duplicated.duplicated__packets
+                .duplicate-it
+                    +Input('text', 'cabinet_link', '', 'Ссылка на курс для данного пакета')
+                    ul.program-course.inputs-panel--userable
+                        li(data-type="feature")
+                            +Input('text', 'cabinet_adv_1', 'Записи курса', 'Преимущество №1')
+                            .controls(tabindex="-1")
+                                a(href="#", title="Перетащите элемент для сортировки").js-sort.sort-state
+                                    i.fal.fa-grip-lines
+                                a(href="#").js-new.new-state
+                                    i.fal.fa-plus
+                                a(href="#").js-delete.delete-state
+                                    i.fal.fa-times
+                        li(data-type="feature")
+                            +Input('text', 'cabinet_adv_new', 'Введите дополнительное преимущество пакета', 'Новое преимущество')
+                            .controls(tabindex="-1")
+                                a(href="#", title="Перетащите элемент для сортировки").js-sort.sort-state
+                                    i.fal.fa-grip-lines
+                                a(href="#").js-new.new-state
+                                    i.fal.fa-plus
+                                a(href="#").js-delete.delete-state
+                                    i.fal.fa-times
+                        li(data-type="feature", data-feature-type="disabled")
+                            +Input('text', 'cabinet_adv_2', 'Записи курса', 'Преимущество №2')
+                            .controls(tabindex="-1")
+                                a(href="#", title="Перетащите элемент для сортировки").js-sort.sort-state
+                                    i.fal.fa-grip-lines
+                                a(href="#").js-new.new-state
+                                    i.fal.fa-plus
+                                a(href="#").js-delete.delete-state
+                                    i.fal.fa-times
+                    +Input("checkbox", "cabinet_diplom", "", "После прохождения курса дается диплом")
+                    +Input('text', 'cabinet_price', '150 000', 'Цена пакета', {icon: "ruble-sign"})
+                    .js-visible-toggler
+                        .js-visible-toggler__watch
+                            +Input("checkbox", "cabinet_sale", "", "Скидка на пакет", {checked: false})
+                        .js-visible-toggler__elements
+                            +Input('text', 'cabinet_sale_price', '150 000', 'Цена пакета со скидкой', {icon: "ruble-sign"})
+                            +Input('date', 'cabinet_date_sale_end', '4 сентября 2019', 'Дата окончания скидки', {icon: "calendar-alt"})
+                    +Input("checkbox", "cabinet_prodavat_after_start", "После старта курса, пользователи смогут присоединиться к процессу обучения, купив обучающие пакеты", "Продавать курс после начала обучения")
+                .duplicate-copies
+                +Duplicator("Добавить ещё пакет", true)
+
+
+
+        button(type=submit).btn Добавить курс
+
+
+
+
+
+
+
+
+
+
+
+
+block scripts

@@ -1,0 +1,28 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Контактные данные"
+
+block content
+    .cabinet__head
+        h4 Контактные данные
+        //.actions
+        //    a(href="#").btn.btn--xs Soma Action
+
+    form
+        +Input('text', 'cabinet_fio', '', 'Фамилия Имя Отчество')
+        +Input('phone', 'cabinet_phone', '', 'Телефон')
+        +Input('text', 'cabinet_email', '', 'E-mail')
+        button(type=submit).btn Сохранить изменения
+
+
+
+
+
+
+
+
+
+
+block scripts

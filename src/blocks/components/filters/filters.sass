@@ -1,0 +1,30 @@
+.filters
+  margin-left: -8px
+  margin-right: -8px
+  display: flex
+  +media("<=m")
+    margin-left: 0
+    margin-right: 0
+    flex-flow: column nowrap !important
+  .filter__change-view
+    .btn
+      svg:last-child
+        margin-right: 0
+  .btn
+    height: 36px
+    margin-left: 8px
+    margin-right: 8px
+    font-size: 14px
+    padding-left: 16px
+    padding-right: 16px
+    +media("<=m")
+      margin-left: 0
+      margin-right: 0
+      margin-bottom: 16px
+      width: 100%
+      &:last-child
+        margin-bottom: 0
+
+    svg
+      margin-right: 4px
+

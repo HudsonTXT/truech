@@ -1,0 +1,4 @@
+mixin Duplicator(text, another)
+    - text = text || "Добавить ещё"
+    a(href="#", class=another?"duplicator another btn btn--light":"duplicator") #{text}
+        i.far.fa-plus

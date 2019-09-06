@@ -1,0 +1,33 @@
+extends ../layouts/sign
+
+block variables
+    - const title = "Вход"
+
+block content
+    .container
+        .card.card--signin-up
+            +SignSidebar
+
+            .sign-content
+                .sign-content__head
+                    a(href="register.html") Зарегистрироваться
+                    span или
+                    a(href="#").active Войти
+
+                .sign-content__area
+                    form(type="POST", action="").w-430
+                        +Input('social', 'login_as_social', '', 'Войти с помощью соц.сетей')
+                        +Input('phone', 'login_phone', '', 'Телефон')
+                        +Input('password', 'login_password', '', 'Пароль')
+                        button(type=submit).btn.btn--w210 Войти
+                        a(href="#remember-password", rel="modal:open").btn.btn--transparent.btn--sm.btn--w210.btn--block.btn--login-remember Забыли пароль?
+
+
+
+
+
+
+
+
+
+block scripts

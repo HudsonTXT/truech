@@ -1,0 +1,46 @@
+mixin Promoblock(type)
+    section#promoblock.promoblock
+        .container
+            if(!type)
+                h1 Правильный выбор курсов
+                +Input("search", "search", "Что интересует?")
+            else if (type === "about")
+                h1 TRUECH
+                p.big-article Онлайн-платформа курсов для людей
+                p Максимально практическое обучение от лидеров digital-рынка. Курсы от компаний, оттачивающих мастерство на реальных проектах. После обучения студенты смогут пройти гарантированную стажировку в этихкомпаниях или у партнеров онлайн-университета.
+
+        .promoblock__courses
+            .promoblock__carousel
+                .item
+                    +Card('promo', {img: 'img/4.png', title: 'Бухгалтерия для продвинутых', rating: '9.9', nums: "13"})
+
+                .item
+                    +Card('promo', {img: 'img/3.jpg', title: 'Управление проектами', rating: '9.2', nums: "21"})
+
+                .item
+                    +Card('promo', {img: 'img/2.jpg', title: 'От новичка до профи', rating: '9.0', nums: "135"})
+
+                .item
+                    +Card('promo', {img: 'img/1.jpg', title: 'Идеальный Landing Page', rating: '8.2', nums: "34"})
+
+                .item
+                    +Card('promo', {img: 'img/4.png', title: 'Бухгалтерия для продвинутых', rating: '9.9', nums: "13"})
+
+                .item
+                    +Card('promo', {img: 'img/3.jpg', title: 'Управление проектами', rating: '9.2', nums: "21"})
+                .item
+                    +Card('promo', {img: 'img/4.png', title: 'Бухгалтерия для продвинутых', rating: '9.9', nums: "13"})
+
+                .item
+                    +Card('promo', {img: 'img/3.jpg', title: 'Управление проектами', rating: '9.2', nums: "21"})
+
+
+        //-.promoblock__carousel
+            .item asdfsdf
+            .item asdfwqer2
+            .item asdfsdfsdfe3
+            .item asdfsdf
+            .item asdfwqer2
+            .item asdfsdfsdfe3
+
+

@@ -1,0 +1,50 @@
+.course__parts
+  background: $classicalWhite
+  border: 1px solid $line
+  +border-radius
+  overflow: hidden
+  .part
+    padding: 32px 32px 48px
+    display: flex
+    flex-flow: row nowrap
+    align-items: flex-start
+    border-bottom: 1px solid $line
+    +media("<=m")
+      padding: 24px
+      flex-flow: column nowrap
+    &:last-child
+      border-bottom: none
+
+    .title
+      max-width: 25%
+      flex: 0 0 25%
+      font-size: 18px
+      color: $pureBlack
+      font-weight: 500
+      padding-right: 32px
+      +media("<=m")
+        max-width: 100%
+        flex: 0 0 100%
+        padding-right: 0
+        margin-bottom: 24px
+
+    ul
+      list-style: none
+      padding: 0
+      margin: 0
+      display: flex
+      flex-flow: column nowrap
+
+      li
+        font-size: 16px
+        color: $pureBlack
+        margin-bottom: 12px
+        display: flex
+        align-items: baseline
+        span
+          color: $lightAccent
+          font-size: 14px
+          display: inline-block
+          margin-right: 12px
+          //text-align: right
+          width: 20px

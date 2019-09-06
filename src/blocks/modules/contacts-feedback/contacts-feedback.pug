@@ -1,0 +1,10 @@
+mixin ContactsFeedback
+    .card-col.card-col-5#contacts-feedback
+        h5 Связаться с нами
+        form
+            +Input("text", "feedback__fio", "Семенов Семен Семенов", "Фамилия Имя Отчество")
+            +Input("text", "feedback__call", "mail@truech.ru", "Телефон или e-mail для связи")
+            +Input("textarea", "feedback__fio", "Семенов Семен Семенов", "Сообщение")
+            +Input("checkbox", "feedback__checkbox", "", "Принимаю <a href='#'>пользовательское соглашение и подтверждаю</a>, что ознакомлен и согласен с <a href='#'>политикой конфиденциальности</a>")
+            +Input("checkbox", "feedback__checkbox_2", "", "Я не робот")
+            .btn Отправить

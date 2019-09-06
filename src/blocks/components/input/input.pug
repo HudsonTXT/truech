@@ -1,0 +1,87 @@
+mixin Input(type, name, placeholder, label, params)
+    if(type === 'search')
+        div.input-panel.input-panel--search
+            form
+                input(type="text", name=name, placeholder=placeholder)
+                button(type="submit")
+                    include ../../../img/svg/search_24px.svg
+    if(type === 'text' || type === 'password' || type === 'phone' || type === 'date')
+        div.input-panel.input-panel--default(class=type==='phone'?"mask-phone":null)
+                if params
+                    label(for=name).icon
+                        i.fal(class="fa-"+params.icon)
+                label(for=name)=label
+                input(type=type==='date'?"text":type, id=name, name=name, placeholder=placeholder, class=type==="date"?"datepicker":null)
+    if(type === 'upload')
+        div.input-panel.input-panel--file
+                .drop-zone
+                    i.fal(class="fa-"+params.icon)
+                .description-zone
+                    .title=label?label:"Аватар или логотип компании"
+                    .descriptor Нажмите загрузить или перетащите файл в этот блок
+
+                input(type="file", class="drop-zone__input", name=name)
+    if(type === 'social')
+        div.input-panel.input-panel--social
+                label(for=name)=label
+                .input-panel__items
+                    a(href="#")
+                        i.fab.fa-vk
+                    a(href="#")
+                        i.fab.fa-odnoklassniki
+                    a(href="#")
+                        i.fab.fa-facebook
+                    a(href="#")
+                        i.fab.fa-google
+                    a(href="#")
+                        i.far.fa-at
+    if(type === 'register_type')
+        div.input-panel.input-panel--registertype
+                label(for=name)=label
+                .input__container
+                    label(for=name+"_1")
+                        input(type="radio", name=name, id=name+"_1", checked=true)
+                        .registertype__wrapper
+                            .circle
+                                i.fal.fa-user
+                            .title Ученик
+                    label(for=name+"_2")
+                        input(type="radio", name=name, id=name+"_2")
+                        .registertype__wrapper
+                            .circle
+                                i.fal.fa-user-graduate
+                            .title Спикер
+    if(type === 'checkbox')
+        div.input-panel.input-panel--checkbox
+            label(for=name)
+                - var checkedType = params?params.checked:true
+                input(type="checkbox", name=name, id=name, checked=checkedType)
+                .checkmark
+                    .checkbox
+                        i.fal.fa-check
+                    .label !{label}
+                        span=placeholder
+    if(type === 'radio')
+        div.input-panel.input-panel--radio
+            label(for=name)=label
+            .input-panel--radio__values
+                each item, i in placeholder
+                    label(for=name+"_"+i)
+                        input(type="radio", name=name, id=name+"_"+i, checked=i===0?"checked":null)
+                        .checkmark
+                            .checkbox
+                                .circle
+                            .label=item
+    if(type === 'select')
+        div.input-panel.input-panel--default
+            label(for=name)=label
+            select(name=name)
+                each item, i in placeholder
+                    option(value=name+"_"+i)=item
+    if(type === 'textarea')
+        div.input-panel.input-panel--default
+            label(for=name)=label
+            textarea(name=name, id=name, placeholder=placeholder)
+
+
+

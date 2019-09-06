@@ -1,0 +1,127 @@
+mixin CoursePrices
+    .course__prices#course-prices
+        .prices-grid
+            .item(data-packet="1")
+                .info
+                    span.title Эконом
+                    span.description Основной курс
+
+                .price
+                    span.num 54 489
+                    span.rubles ₽
+            .item.active(data-packet="2")
+                .info
+                    span.title Стандарт
+                    span.description Пакет эконом + Сертификат
+
+                .price
+                    span.num 64 489
+                    span.rubles ₽
+            .item(data-packet="3")
+                .info
+                    span.title Премиум
+                    span.description Пакет стандарт + Доступ в чат
+
+                .price
+                    span.num 74 489
+                    span.rubles ₽
+
+        .packet__features
+            .card(data-packet="1")
+                .title Эконом
+                .description Стандартный курс
+                ul
+                    li.active
+                        i.far.fa-check
+                        | Вебинары
+                    li.active
+                        i.far.fa-check
+                        | Презентации
+                    li
+                        i.far.fa-check
+                        | Сертификат участника
+                    li
+                        i.far.fa-check
+                        | Доступ в чат с учениками и спикерами
+                    li
+                        i.far.fa-check
+                        | Личный чат со спикерами
+
+                .price
+                    .old-price
+                        .num 89 000
+                            span ₽
+
+                        .economy - 24 511
+
+                    .new-price
+                        .num 54 489
+                            span ₽
+
+                a(href="#").btn Записаться на курс
+
+            .card.active(data-packet="2")
+                .title Стандарт
+                .description Эконом + Сертификат + Чат
+                ul
+                    li.active
+                        i.far.fa-check
+                        | Вебинары
+                    li.active
+                        i.far.fa-check
+                        | Презентации
+                    li.active
+                        i.far.fa-check
+                        | Сертификат участника
+                    li.active
+                        i.far.fa-check
+                        | Доступ в чат с учениками и спикерами
+                    li
+                        i.far.fa-check
+                        | Личный чат со спикерами
+
+                .price
+                    .old-price
+                        .num 99 000
+                            span ₽
+
+                        .economy - 34 511
+
+                    .new-price
+                        .num 64 489
+                            span ₽
+
+                a(href="#").btn Записаться на курс
+
+            .card(data-packet="3")
+                .title Премиум
+                .description Пакет стандарт + Доступ в чат
+                ul
+                    li.active
+                        i.far.fa-check
+                        | Вебинары
+                    li.active
+                        i.far.fa-check
+                        | Презентации
+                    li.active
+                        i.far.fa-check
+                        | Сертификат участника
+                    li.active
+                        i.far.fa-check
+                        | Доступ в чат с учениками и спикерами
+                    li.active
+                        i.far.fa-check
+                        | Личный чат со спикерами
+
+                .price
+                    .old-price
+                        .num 109 000
+                            span ₽
+
+                        .economy - 44 511
+
+                    .new-price
+                        .num 74 489
+                            span ₽
+
+                a(href="#").btn Записаться на курс

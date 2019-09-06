@@ -1,0 +1,33 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Мои курсы"
+
+block content
+    .cabinet__head
+        h4 Мои курсы
+        //.actions
+        //    a(href="#").btn.btn--xs Soma Action
+
+    .form__section
+        h5 Активные курсы
+        .row
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {img: "1.jpg", short: true, status: "открыт", action: "Изучить"})
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {title: "Управление проектом", img: "2.jpg", short: true, status: "открыт", action: "Изучить"})
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {title: "От новичка до профи", img: "3.jpg", short: true, status: "открыт", action: "Изучить"})
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {img: "4.png", title: "1С для профессионала", short: true, status: "открыт", action: "Изучить"})
+
+    .form__section
+        h5 Пройденные курсы
+        .row
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {img: "1.jpg", short: true, status: "Пройден", action: "Изучить"})
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {title: "Управление проектом", img: "2.jpg", short: true, status: "Пройден", action: "Изучить"})
+
+block scripts

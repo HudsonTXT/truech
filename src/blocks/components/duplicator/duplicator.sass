@@ -1,0 +1,25 @@
+.duplicator
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  margin-bottom: 16px
+  color: rgba($pureBlack, .8)
+  @extend %statesAccentColor
+  i
+    color: rgba($pureBlack, .7)
+    display: inline-block
+    margin-left: 8px
+    font-size: 12px
+
+  &.another
+    //display: inline-flex
+    justify-content: center
+    margin-top: 32px
+    padding-left: 24px
+    padding-right: 24px
+    height: 48px
+    +border-radius
+    border: 1px solid $line
+    font-size: 14px
+    i
+      font-size: 10px

@@ -1,0 +1,196 @@
+.person__main
+  display: flex
+  flex-flow: row nowrap
+  align-items: flex-start
+  margin: -16px
+  +media("<=xl")
+    flex-wrap: wrap
+  .person__cover
+    max-width: 25%
+    flex: 0 0 25%
+    +border-radius
+    overflow: hidden
+    padding: 16px
+    +media("<=xl")
+      max-width: 100%
+      max-width: 640px
+      flex: 0 0 100%
+      margin-left: auto
+      margin-right: auto
+    img
+      width: 100%
+      height: auto
+      object-fit: cover
+      +border-radius
+
+  .person__about
+    padding: 16px
+    max-width: 41.666%
+    flex: 0 0 41.666%
+    +media("<=m")
+      max-width: 100%
+      flex: 0 0 100%
+    h4
+      margin-top: 0
+      margin-bottom: 8px
+
+    p.big-article
+      color: rgba($pureBlack, .8)
+      margin-bottom: 16px
+      margin-top: 8px
+
+    p.description
+      color: $lightAccent
+      @extend %defaultText
+      line-height: 130%
+
+    .items
+      display: flex
+      flex-flow: column nowrap
+      margin-top: 24px
+
+      .item
+        display: flex
+        flex-flow: column nowrap
+        margin-bottom: 24px
+        &:last-child
+          margin-bottom: 0
+
+        .title
+          @extend %Caption12
+          color: $lightAccent
+          margin-bottom: 8px
+
+        .content
+          @extend %defaultText
+          p
+            margin-top: 0
+            margin-bottom: 0
+        .tags
+          text-align: left
+          font-size: 14px
+          color: rgba($pureBlack, .8)
+          a
+            text-decoration: none
+
+        .people
+          display: flex
+          flex-flow: row nowrap
+          align-items: center
+          .avatar
+            +circle(48px)
+            overflow: hidden
+            img
+              width: 100%
+              height: 100%
+              object-fit: cover
+
+          .text
+            display: flex
+            flex-flow: column nowrap
+            margin-left: 12px
+            .name
+              font-size: 14px
+              color: $pureBlack
+              margin-bottom: 4px
+            .description
+              font-size: 12px
+              color: rgba($lightAccent, .8)
+
+  .advantages
+    max-width: 33.333%
+    flex: 0 0 33.333%
+    padding: 16px
+    margin-top: 45px
+    +media("<=m")
+      max-width: 100%
+      flex: 0 0 100%
+      margin-top: 0
+
+
+.person__main-info
+  .row
+    margin: -16px
+  .col
+    padding: 16px
+    max-width: 50%
+    flex: 0 0 50%
+    +media("<=xl")
+      max-width: 100%
+      flex: 0 0 100%
+
+    h4
+      margin-bottom: 24px
+      margin-top: 0
+
+    p
+      margin-top: 16px
+      margin-bottom: 16px
+      line-height: 150%
+      color: rgba($pureBlack, .8)
+      &:last-child
+        margin-bottom: 0
+
+    .teach__grid
+      display: flex
+      flex-flow: row wrap
+      margin: -16px
+      p.big-article
+        overflow: hidden
+        white-space: normal
+        overflow-wrap: break-word
+
+
+      .item
+        max-width: 50%
+        flex: 0 0 50%
+        padding: 16px
+
+        .num, .big-article
+          width: 100%
+          display: inline-block
+
+        .num
+          @extend %Numbers
+          color: rgba($lightAccent, .8)
+
+        .big-article
+          margin-top: 8px
+          color: rgba($pureBlack, .8)
+
+
+    .certificates__grid
+      display: flex
+      flex-flow: row wrap
+      margin: -4px
+      .item
+        display: inline-flex
+        padding: 4px
+        overflow: hidden
+        max-width: 33.333%
+        flex: 0 0 33.333%
+        height: 240px
+        +media("<=m")
+          max-width: 50%
+          flex: 0 0 50%
+
+
+      a
+        width: 100%
+        height: 100%
+        display: flex
+        +border-radius
+        border: 1px solid $line
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05)
+
+
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          +border-radius
+
+
+
+
+

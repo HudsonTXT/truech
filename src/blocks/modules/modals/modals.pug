@@ -1,0 +1,156 @@
+mixin Modals
+    #confirm.modal
+        .modal__content
+            .modal__head
+                h4 Подтверждение
+            p.default-text Вы действительно хотите применить изменения?
+            .modal__action
+                a(href="#" rel="modal:close").btn.btn--light Отмена
+                a(href="#" rel="modal:close").btn Применить
+        a(href="#" rel="modal:close").close-modal
+            i.fal.fa-times
+    #delete.modal
+        .modal__content
+            .modal__head
+                h4 Удалить спикера
+            p.default-text Вы действительно хотите удалить учетную запись спикера?
+            .modal__action
+                a(href="#" rel="modal:close").btn.btn--light Отмена
+                a(href="#" rel="modal:close").btn.btn--danger Применить
+        a(href="#" rel="modal:close").close-modal
+            i.fal.fa-times
+    #alert.modal
+        .modal__content
+            .modal__head
+                h4 Изменения сохранены
+            p.default-text Информация успешно обновлена, теперь вы можете продолжить работу с сайтом.
+            .modal__action
+                a(href="#" rel="modal:close").btn Продолжить
+        a(href="#" rel="modal:close").close-modal
+            i.fal.fa-times
+    #review-thanks.modal
+        .modal__content
+            .modal__head
+                h4 Отзыв отправлен
+            p.default-text Спасибо, что уделили внимание и оставили отзыв. Он будет проверен модераторами и опубликован.
+            .modal__action
+                a(href="#" rel="modal:close").btn Вернуться к сайту
+        a(href="#" rel="modal:close").close-modal
+            i.fal.fa-times
+    #sign-thanks.modal
+        .modal__content
+            .modal__head
+                h4 Спасибо
+            p.default-text Спасибо, что уделили время и рассказали о себе. Мы подобрали для вас несколько курсов.
+            .modal__action
+                a(href="cabinet_user_recommends.html").btn Посмотреть рекомендации
+    #remember-password.modal
+        .modal__content
+            .modal__head
+                h4 Восстановление пароля
+            p.default-text Пожалуйста, введите адрес электронной почты. На него будет отправлен новый пароль.
+            form.modal-default__form
+                +Input('text', 'cabinet_email', '', 'E-mail')
+            .modal__action
+                a(href="#remember-password-send", rel="modal:open").btn Восстановить пароль
+    #remember-password-send.modal
+        .modal__content
+            .modal__head
+                h4 Письмо отправлено
+            p.default-text Письмо отправлено, на указанный вами e-mail.
+    #read-review.modal.modal--review
+        .modal__content
+            .modal__head
+                h4 Оставить отзыв
+                    span#read-review__stepper Шаг <i>1</i> из 4
+
+            .modal--review__head
+                .item.active(data-step="1")
+                    .circle
+                        i.fa.fa-video
+                    span Видео
+                .item(data-step="2")
+                    .circle
+                        i.fa.fa-user-graduate
+                    span Подача
+                .item(data-step="3")
+                    .circle
+                        i.fa.fa-stars
+                    span Актуальность
+                .item(data-step="4")
+                    .circle
+                        i.fa.fa-comment
+                    span Отзыв
+
+            .modal--review__content
+                .item.item--rating.active(data-step="1")
+                    .title Качество видео
+                    .description Оцените качество видеоуроков
+                    .stars-grid
+                        .star(data-n="1")
+                        .star(data-n="2")
+                        .star(data-n="3")
+                        .star(data-n="4")
+                        .star(data-n="5")
+                        .star(data-n="6")
+                        .star(data-n="7")
+                        .star(data-n="8")
+                        .star(data-n="9")
+                        .star(data-n="10")
+                    .buttons-grid
+                        a(href="#", rel="modal:close").btn.btn--light Отмена
+                        a(href="#", disabled="true").btn.js-reviews-next-step Оценить качество видео
+                .item.item--rating(data-step="2")
+                    .title Подача материала
+                    .description Оцените качество подачи материала
+                    .stars-grid
+                        .star(data-n="1")
+                        .star(data-n="2")
+                        .star(data-n="3")
+                        .star(data-n="4")
+                        .star(data-n="5")
+                        .star(data-n="6")
+                        .star(data-n="7")
+                        .star(data-n="8")
+                        .star(data-n="9")
+                        .star(data-n="10")
+                    .buttons-grid
+                        a(href="#" rel="modal:close").btn.btn--light Отмена
+                        a(href="#", disabled="true").btn.js-reviews-next-step Оценить подачу
+                .item.item--rating(data-step="3")
+                    .title Актуальность материала
+                    .description Оцените актуальность материала
+                    .stars-grid
+                        .star(data-n="1")
+                        .star(data-n="2")
+                        .star(data-n="3")
+                        .star(data-n="4")
+                        .star(data-n="5")
+                        .star(data-n="6")
+                        .star(data-n="7")
+                        .star(data-n="8")
+                        .star(data-n="9")
+                        .star(data-n="10")
+                    .buttons-grid
+                        a(href="#" rel="modal:close").btn.btn--light Отмена
+                        a(href="#", disabled="true").btn.js-reviews-next-step Оценить актуальность
+                .item(data-step="4")
+                    +Input("textarea", "name", "Опишите как прошел ваш процесс обучения, что понравилось, что разочаровало?", "Комментарий")
+                    .buttons-grid
+                        a(href="#review-thanks", rel="modal:open").btn.js-reviews-next-step Отправить отзыв
+
+
+
+            .modal--review__footer
+                .cover
+                    img(src="img/1.jpg")
+                .content
+                    .content__head
+                        span.company Skillbox
+                        .rating 9.8
+                            i.fa.fa-star
+                    .content__title Бухгалтерия для продвинутых
+
+
+        a(href="#" rel="modal:close").close-modal
+            i.fal.fa-times

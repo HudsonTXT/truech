@@ -1,0 +1,25 @@
+extends ../layouts/default
+
+
+block variables
+    - const title = "Ошибка 404"
+
+block content
+    .container
+        .col-centered.col-10#error-page
+                .col
+                    h2 Тут ничего нет
+                    p Кажется, вы заблудились, тут нет ничего интересного, идите на зов главной страницы сайта. Однако, если вы уверены, что тут раньше что-то было и вдруг пропало, то обязательно сообщите нам об этом, мы тоже поищем.
+                    a(href="index.html").btn Перейти на главную
+                    a(href="contacts.html").btn.btn--light Сообщить о пропаже
+
+                .col
+                    img(src="img/404.svg")
+
+
+
+
+
+
+
+block scripts

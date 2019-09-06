@@ -1,0 +1,92 @@
+extends layouts/default
+
+
+block variables
+	- const title = "Главная"
+
+block content
+	+Promoblock
+
+	section#categories.s-margins
+		.container
+			.section__head
+				h4 Популярные категории
+				.actions
+					a(href="courses_categories.html").action--showmore Смотреть все
+						i.fa.fa-chevron-right
+
+			.row
+				.col-4.col-xs-1.col-m-2
+					+Card('categories', {icon: 'layer-group', title: "Веб-дизайн", nums: 41})
+				.col-4.col-xs-1.col-m-2
+					+Card('categories', {icon: 'paint-brush', title: "Графический дизайн", nums: 22})
+				.col-4.col-xs-1.col-m-2
+					+Card('categories', {icon: 'swatchbook', title: "Инженерный дизайн", nums: 35})
+				.col-4.col-xs-1.col-m-2
+					+Card('categories', {icon: 'suitcase', title: "Бизнес", nums: 51})
+				.col-4.col-xs-1.col-m-2.only-desktop
+					+Card('categories', {icon: 'brain', title: "Искусственный интеллект", nums: 10})
+				.col-4.col-xs-1.col-m-2.only-desktop
+					+Card('categories', {icon: 'brackets-curly', title: "Программирование", nums: 32})
+				.col-4.col-xs-1.col-m-2.only-desktop
+					+Card('categories', {icon: 'globe-asia', title: "Китайский язык", nums: 65})
+				.col-4.col-xs-1.col-m-2.only-desktop
+					+Card('categories', {icon: 'user', title: "Личное развитие", nums: 1})
+
+
+	section#courses.s-margins
+		.container
+			.section__head
+				h4 Топ курсов
+				.actions
+					a(href="courses_list.html").action--showmore Смотреть все
+						i.fa.fa-chevron-right
+			.courses__carousel--wrapper.slider--nav-blue
+				.courses__carousel
+					.item
+						//.col-4.col-xs-1.col-m-2
+						+Card('promo', {img: 'img/4.png', title: 'Бухгалтерия для продвинутых', rating: '9.9', nums: "13"})
+
+					.item
+						//.col-4.col-xs-1.col-m-2
+						+Card('promo', {img: 'img/3.jpg', title: 'Управление проектами', rating: '9.2', nums: "21"})
+
+					.item
+						//.col-4.col-xs-1.col-m-2
+						+Card('promo', {img: 'img/2.jpg', title: 'От новичка до профи', rating: '9.0', nums: "135"})
+
+					.item
+						//.col-4.col-xs-1.col-m-2
+						+Card('promo', {img: 'img/1.jpg', title: 'Идеальный Landing Page', rating: '8.2', nums: "34"})
+
+
+	section#speakers.s-margins
+		.container
+			.section__head
+				h4 Топ спикеров
+				.actions
+					a(href="speakers_list.html").action--showmore Смотреть все
+						i.fa.fa-chevron-right
+			.courses__carousel--wrapper.slider--nav-blue
+				.speakers__carousel
+					.item
+						+Card('speaker', {img: 'img/u1.jpg', title: 'Николай Борисов', descriptor: 'SkillBox', tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],  rating: '9.9', reviews: 456, courses: 23})
+
+					.item
+						+Card('speaker', {img: 'img/u2.jpg', title: 'Светлана Попова', descriptor: 'Geekbrains', tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],  rating: '9.2', reviews: 398, courses: 20})
+
+					.item
+						+Card('speaker', {img: 'img/u3.jpg', title: 'Павел Конюков', descriptor: 'Нетология', tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],  rating: '8.9', reviews: 345, courses: 18})
+
+					.item
+						+Card('speaker', {img: 'img/u3.jpg', title: 'Елена Фигма', descriptor: 'Скетч', tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],  rating: '8.2', reviews: 218, courses: 21})
+
+	//- +MainAbout
+	+Features(false, true)
+	+MainReviews
+	+Partners
+	+BeTeacher
+
+
+
+block scripts

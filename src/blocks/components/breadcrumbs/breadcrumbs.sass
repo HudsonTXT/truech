@@ -1,0 +1,53 @@
+.breadcrumbs
+  display: flex
+  list-style: none
+  flex-flow: row nowrap
+  align-items: baseline
+  margin: 0
+  padding: 0
+  margin-top: 32px
+  margin-bottom: 32px
+  +media("<=xl")
+    margin-top: 16px
+    margin-bottom: 16px
+
+  a
+    width: 100%
+    height: 100%
+    text-decoration: none
+    color: inherit
+    @extend %statesAccentColor
+
+
+  li
+    @extend %someDescriptor
+    color: $lightAccent
+    margin-left: 22px
+    position: relative
+    &:last-child a
+      cursor: default
+      &:hover
+        color: $pureBlack
+
+    +media("<=m")
+      display: none
+      &:last-child
+        display: block
+
+    &::before
+      content: ' '
+      position: absolute
+      width: 14px
+      height: 14px
+      background: url("../img/chevron_right_16px.svg") center no-repeat
+      background-size: cover
+      left: -18px
+      +media("<=m")
+        transform: rotate(180deg)
+    &:first-child
+      margin-left: 0
+      &::before
+        content: none
+
+    &.active
+      color: $pureBlack

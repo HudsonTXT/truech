@@ -1,0 +1,36 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Обучение"
+    - var status = "teach"
+
+block content
+    .cabinet__head
+        .cabinet__head--with-description
+            h4 Обучение
+            p.default-text Опишите, в нескольких словах, как проходит обучение в вашей школе. Вы можете написать до 6 шагов.
+        //.actions
+        //    a(href="#").btn.btn--xs Soma Action
+
+    form
+        +Input('text', 'cabinet_step1', '', 'Описание шага')
+        +Input('text', 'cabinet_step2', '', 'Описание шага')
+        +Input('text', 'cabinet_step3', '', 'Описание шага')
+        .duplicated
+            .duplicate-it
+                +Input('text', 'cabinet_step4', '', 'Описание шага')
+            .duplicate-copies
+            +Duplicator
+        button(type=submit).btn Сохранить изменения
+
+
+
+
+
+
+
+
+
+
+block scripts

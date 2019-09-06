@@ -1,0 +1,146 @@
+extends ../layouts/default
+
+
+block variables
+    - const title = "Каталог спикеров"
+
+block content
+    +Breadcrumbs(["Спикеры"])
+    .container#all-speakers
+        section#speakers
+            .section__head
+                h4 Все спикеры
+                +Filters
+            .row
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u1.jpg',
+                        title: 'Николай Борисов',
+                        descriptor: 'Арт-директор Nimax',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.9',
+                        reviews: 456,
+                        courses: 23,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u2.jpg',
+                        title: 'Светлана Попова',
+                        descriptor: 'Руководитель Geekbrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.2',
+                        reviews: 398,
+                        courses: 20,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Павел Конюков',
+                        descriptor: 'Дизайнер Нетология',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.9',
+                        reviews: 345,
+                        courses: 18,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Елена Фигма',
+                        descriptor: 'Клауд Скетч',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.2',
+                        reviews: 218,
+                        courses: 21,
+                        
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u1.jpg',
+                        title: 'Николай Борисов',
+                        descriptor: 'Арт-директор Nimax',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.9',
+                        reviews: 456,
+                        courses: 23,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u2.jpg',
+                        title: 'Светлана Попова',
+                        descriptor: 'Руководитель Geekbrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.2',
+                        reviews: 398,
+                        courses: 20,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Павел Конюков',
+                        descriptor: 'Дизайнер Нетология',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.9',
+                        reviews: 345,
+                        courses: 18,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Елена Фигма',
+                        descriptor: 'Клауд Скетч',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.2',
+                        reviews: 218,
+                        courses: 21,
+                        
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u1.jpg',
+                        title: 'Николай Борисов',
+                        descriptor: 'Арт-директор Nimax',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.9',
+                        reviews: 456,
+                        courses: 23,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u2.jpg',
+                        title: 'Светлана Попова',
+                        descriptor: 'Руководитель Geekbrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '9.2',
+                        reviews: 398,
+                        courses: 20,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Павел Конюков',
+                        descriptor: 'Дизайнер Нетология',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.9',
+                        reviews: 345,
+                        courses: 18,
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('speaker', {
+                        img: 'img/u3.jpg',
+                        title: 'Елена Фигма',
+                        descriptor: 'Клауд Скетч',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                        rating: '8.2',
+                        reviews: 218,
+                        courses: 21,
+                    })
+
+
+            +Pagination
+
+
+
+
+
+
+block scripts

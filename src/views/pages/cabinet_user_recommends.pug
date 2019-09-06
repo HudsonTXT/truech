@@ -1,0 +1,46 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Рекомендации"
+
+block content
+    .cabinet__head
+        h4 Рекомендации
+        //.actions
+        //    a(href="#").btn.btn--xs Soma Action
+
+    .form__section
+        .row
+            .col-3.col-xs-1.col-m-2
+                +Card('promo', {img: 'img/3.jpg', title: 'Управление проектами', rating: '9.2', nums: "21"})
+            .col-3.col-xs-1.col-m-2
+                +Card('promo', {img: 'img/2.jpg', title: 'От новичка до профи', rating: '9.0', nums: "135"})
+            .col-3.col-xs-1.col-m-2
+                +Card('promo', {img: 'img/1.jpg', title: 'Идеальный Landing Page', rating: '8.2', nums: "34"})
+
+    .form__section
+        h5 Проектная деятельность
+        .row
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {img: "1.jpg", short: true})
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {title: "Управление проектом", img: "2.jpg", short: true})
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {title: "От новичка до профи", img: "3.jpg", short: true})
+
+    .form__section
+        h5 Бухгалтерия
+        .row
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {img: "1.jpg", short: true})
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {title: "Управление проектом", img: "2.jpg", short: true})
+            .col-3.col-xs-1.col-m-2
+                +Card('course', {img: "1.jpg", short: true})
+
+    .form__section.centered--flex.mt-16
+        a(href="#").btn.btn--w-auto Посмотреть все курсы
+
+
+block scripts

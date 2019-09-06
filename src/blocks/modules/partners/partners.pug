@@ -1,0 +1,9 @@
+mixin Partners
+    section#partners.s-margins
+        .container
+            .section__head.section__head--centered
+                h4 Нам доверяют
+            .partners__grid
+                each item in [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+                    .item
+                        img(src="img/p"+item+".png")

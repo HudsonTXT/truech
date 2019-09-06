@@ -1,0 +1,28 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Уведомления"
+
+block content
+    .cabinet__head
+        h4 Уведомления
+        //.actions
+        //    a(href="#").btn.btn--xs Soma Action
+
+    form
+        +Input('checkbox', 'cabinet_alert-email', '', 'Получать уведомления на электронную почту')
+        +Input('checkbox', 'cabinet_alert-news', '', 'Получать уведомления о новостях и обновлениях портала')
+        +Input('checkbox', 'cabinet_alert-sms', '', 'Получать уведомления по SMS')
+        button(type=submit).btn Сохранить изменения
+
+
+
+
+
+
+
+
+
+
+block scripts

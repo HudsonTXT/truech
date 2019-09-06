@@ -1,0 +1,70 @@
+extends ../layouts/default
+
+
+block variables
+    - const title = "Все отзывы"
+
+block content
+    +Breadcrumbs(["Отзывы", "Курсы"])
+    .container
+        section
+            .section__head.mb-32.pos-r
+                .js-toggler(data-target="#reviews__type")
+                    h4 Все отзывы
+                        i.fa.fa-chevron-down
+
+                .reviews__dropdown.dropdown.js-toggler-target.js-toggler-close-on-select#reviews__type
+                    a(href="#").js-toggler-close-on-select__item.active
+                        span Все отзывы
+                        .icon
+                            i.fal.fa-th
+                    a(href="#").js-toggler-close-on-select__item
+                        span Курсы
+                        .icon
+                            i.fal.fa-books
+                    a(href="#").js-toggler-close-on-select__item
+                        span Спикеры
+                        .icon
+                            i.fal.fa-graduation-cap
+                .actions
+                    //-a(href="#read-review" rel="modal:open").btn.btn--xs Написать отзыв
+                    +Input("search", "search-min", "Поиск по отзывам")
+                    +Filters(true)
+        .row.reviews__row
+            section.col.col--reviews
+                .section__head.mb-16
+                    h5 Отзывы
+                +Review(true, {avatar: "u1", title: "Дмитрий Дмитров", long: true})
+
+                +Review(true, {avatar: "u2", title: "Светлана Попова", long: true})
+
+                +Review(true, {avatar: "u3", title: "Сергей Сергеев", long: true})
+
+                +Review(true, {avatar: "u1", title: "Дмитрий Дмитров", long: true})
+
+                +Review(true, {avatar: "u2", title: "Светлана Попова", long: true})
+
+                +Review(true, {avatar: "u3", title: "Сергей Сергеев", long: true})
+
+                +Pagination
+
+            section.col.col--rating
+                .section__head.mb-16
+                    h5 Рейтинг
+                    .actions
+                        a(href="rating.html").action--showmore Смотреть рейтинг
+                            i.fa.fa-chevron-right
+                +Card('promo', {
+                    img: 'img/4.png',
+                    title: 'Бухгалтерия для продвинутых',
+                    rating: '9.9',
+                    nums: "13"
+                })
+                +Card('promo', {img: 'img/3.jpg', title: 'Управление проектами', rating: '9.2', nums: "21"})
+
+                +Card('promo', {img: 'img/2.jpg', title: 'От новичка до профи', rating: '9.0', nums: "135"})
+
+                +Card('promo', {img: 'img/1.jpg', title: 'Идеальный Landing Page', rating: '8.2', nums: "34"})
+
+
+block scripts

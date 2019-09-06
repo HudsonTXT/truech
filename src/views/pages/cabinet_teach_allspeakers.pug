@@ -1,0 +1,85 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Все спикеры"
+    - var status = "teach"
+
+block content
+    .cabinet__head
+        h4 Все спикеры
+        .actions
+           a(href="#").btn.btn--xs.btn--light + Добавить спикера
+
+    .form__section
+        .row
+            .col-3.col-xs-1.col-m-2
+                +Card('speaker', {
+                    img: 'img/u1.jpg',
+                    title: 'Николай Борисов',
+                    descriptor: 'Арт-директор Nimax',
+                    tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    rating: '9.9',
+                    reviews: 456,
+                    courses: 23,
+                    admin: true
+
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('speaker', {
+                    img: 'img/u2.jpg',
+                    title: 'Светлана Попова',
+                    descriptor: 'Руководитель Geekbrains',
+                    tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    rating: '9.2',
+                    reviews: 398,
+                    courses: 20, admin: true
+
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('speaker', {
+                    img: 'img/u3.jpg',
+                    title: 'Павел Конюков',
+                    descriptor: 'Дизайнер Нетология',
+                    tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    rating: '8.9',
+                    reviews: 345,
+                    courses: 18, admin: true
+
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('speaker', {
+                    img: 'img/u3.jpg',
+                    title: 'Елена Фигма',
+                    descriptor: 'Клауд Скетч',
+                    tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    rating: '8.2',
+                    reviews: 218,
+                    courses: 21, admin: true
+
+
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('speaker', {
+                    img: 'img/u2.jpg',
+                    title: 'Светлана Попова',
+                    descriptor: 'Руководитель Geekbrains',
+                    tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    rating: '9.2',
+                    reviews: 398,
+                    courses: 20, admin: true
+
+                })
+            .col-3.col-xs-1.col-m-2
+                +Card('speaker', {
+                    img: 'img/u3.jpg',
+                    title: 'Павел Конюков',
+                    descriptor: 'Дизайнер Нетология',
+                    tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    rating: '8.9',
+                    reviews: 345,
+                    courses: 18, admin: true
+
+                })
+
+block scripts

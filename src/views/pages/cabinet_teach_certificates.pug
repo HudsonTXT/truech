@@ -1,0 +1,49 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Сертификаты"
+    - var status = "teach"
+
+block content
+    .cabinet__head
+        .cabinet__head--with-description
+            h4 Сертификаты
+            p.default-text Загрузите своё портфолио или сертификаты, подтверждающие вашу квалификацию.
+        //.actions
+        //    a(href="#").btn.btn--xs Soma Action
+
+    form.mb-32
+        .duplicated
+            .duplicate-it
+                +Input('upload', 'cabinet_description', '', 'Фото или скан сертификата', {icon: "file"})
+            .duplicate-copies
+            +Duplicator
+        button(type=submit).btn Сохранить изменения
+
+    h5 Загруженные сертификаты
+    .row.certificates__grid
+        .col-4.col-xs-1.col-m-2
+            .item
+                a(data-lightbox="certificates" href="img/cert1.png")
+                    img(src="img/cert1.png")
+        .col-4.col-xs-1.col-m-2
+            .item
+                a(data-lightbox="certificates" href="img/cert2.jpg")
+                    img(src="img/cert2.jpg")
+        .col-4.col-xs-1.col-m-2
+            .item
+                a(data-lightbox="certificates" href="img/cert3.jpg")
+                    img(src="img/cert3.jpg")
+
+
+
+
+
+
+
+
+
+
+
+block scripts

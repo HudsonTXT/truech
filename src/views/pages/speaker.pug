@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+
+block variables
+    - const title = "Владимир Завертайлов"
+
+block content
+    +Breadcrumbs(["Спикеры", "Владимир Завертайлов"])
+    .container
+        +Person("speaker")
+
+
+
+
+block scripts

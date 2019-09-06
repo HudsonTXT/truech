@@ -1,0 +1,20 @@
+extends ../layouts/default
+
+
+block variables
+    - const title = "Контактная информация"
+
+block content
+    +Breadcrumbs(["Контакты"])
+    .container
+        .card.card--row.card--noshadow#contacts
+            +ContactsMain
+            +ContactsFeedback
+
+
+
+
+
+
+
+block scripts

@@ -1,0 +1,466 @@
+.blocker {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+  background: rgba($pureBlack, .4);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  @include transition;
+}
+.blocker:before{
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.05em;
+}
+.blocker.behind {
+  background-color: transparent;
+}
+.modal {
+  display: none;
+  vertical-align: middle;
+  position: relative;
+  z-index: 2000;
+  max-width: 520px;
+  box-sizing: border-box;
+  width: 98%;
+  background: $classicalWhite;
+  padding: 32px;
+  @include border-radius;
+  box-shadow: 0px 19px 38px rgba(153, 153, 153, 0.3), 0px 15px 12px rgba(153, 153, 153, 0.22);
+  text-align: left;
+  @include media("<=xs") {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+  }
+  &.modal--review {
+    max-width: 585px;
+  }
+
+}
+
+.modal a.close-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  @include square(48px);
+  @include flexCenter;
+  text-decoration: none;
+  font-size: 0;
+  i {
+    font-size: 18px;
+    color: $lightAccent !important;
+  }
+
+
+
+}
+
+.modal-spinner {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 12px 16px;
+  border-radius: 5px;
+  background-color: #111;
+  height: 20px;
+}
+
+.modal-spinner > div {
+  border-radius: 100px;
+  background-color: #fff;
+  height: 20px;
+  width: 2px;
+  margin: 0 1px;
+  display: inline-block;
+
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.modal-spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.modal-spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.modal-spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.5) }
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+  }  20% {
+       transform: scaleY(1.0);
+       -webkit-transform: scaleY(1.0);
+     }
+}
+
+
+.modal__content {
+  h4 {
+    margin: 0;
+    margin-bottom: 24px;
+    span {
+      @extend %someDescriptor;
+      color: $lightAccent;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-left: 16px;
+      i {
+        font-style: normal;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .modal__action {
+    margin-top: 48px;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: -8px;
+    margin-right: -8px;
+
+    .btn {
+      flex: 1;
+      margin-left: 8px;
+      margin-right: 8px;
+
+    }
+  }
+
+}
+
+
+.modal--review {
+  .modal--review__head {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $line;
+    margin-left: -32px;
+    margin-right: -32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    @include media("<=modal") {
+      margin-left: -24px;
+      margin-right: -24px;
+      padding-left: 24px;
+      padding-right: 24px;
+      overflow: hidden;
+    }
+    .item {
+      @include flexCenter;
+      flex-flow: column nowrap;
+      span {
+        display: block;
+        margin-top: 8px;
+        @extend %someDescriptor;
+        opacity: 0;
+        @include transition;
+      }
+
+      &:hover {
+        span {
+          opacity: 1;
+        }
+      }
+
+      &.active {
+        span {
+          opacity: 1;
+        }
+      }
+
+      .circle {
+        @include circle(64px);
+        flex: 0 0 64px;
+        max-width: 64px;
+        @include flexCenter;
+        border: 1px solid $line;
+        background: $classicalWhite;
+        color: rgba($lightAccent, .8);
+        @include transition;
+        @include media("<=modal") {
+          @include circle(48px);
+          flex: 0 0 48px;
+          max-width: 48px;
+        }
+        i {
+          font-weight: 300;
+          @include transition;
+        }
+
+        position: relative;
+
+        &::before {
+          content: ' ';
+          width: 94px;
+          height: 1px;
+          position: absolute;
+          background: $line;
+          right: -100%;
+          margin-right: -33px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: -1;
+          @include media("<=modal") {
+            width: 200%;
+            margin-right: -20px;
+            right: -150%;
+          }
+
+        }
+      }
+
+      &.old {
+        span {
+          color: $accentColor;
+        }
+        .circle {
+          background: $accentColor;
+          border-color: $accentColor;
+          &::before {
+            background: $accentColor;
+          }
+          i {
+            color: $classicalWhite;
+            font-weight: 900;
+          }
+        }
+      }
+
+      &.active {
+        span {
+          color: $accentColor;
+        }
+        .circle {
+          background: #E7F0FB;
+          border-color: #E7F0FB;
+        }
+
+        i {
+          color: $accentColor;
+          font-weight: 900;
+        }
+
+      }
+
+      &:last-child {
+        .circle::before {
+          content: none
+        }
+      }
+    }
+  }
+
+  .modal--review__footer {
+    background: $backgroundMainTest;
+    border-top: 1px solid $line;
+    margin-left: -32px;
+    margin-right: -32px;
+    margin-bottom: -32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    @include media("<=modal") {
+      margin-left: -24px;
+      margin-right: -24px;
+      margin-bottom: -24px;
+      padding-left: 24px;
+      padding-right: 24px;
+
+    }
+
+    .cover {
+      @include square(64px);
+      @include border-radius;
+      overflow: hidden;
+      max-width: 64px;
+      flex: 0 0 64px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    .content {
+      display: flex;
+      flex-flow: column nowrap;
+      margin-left: 16px;
+      width: 100%;
+    }
+
+    .content__head {
+      display: flex;
+      flex-flow: row nowrap;
+      font-size: 14px;
+      color: $lightAccent;
+      .rating {
+        margin-left: auto;
+        font-weight: 600;
+
+        i {
+          font-size: 12px;
+          vertical-align: middle;
+          display: inline-block;
+          margin-left: 4px;
+        }
+
+      }
+    }
+
+    .content__title {
+      color: $pureBlack;
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 4px;
+    }
+
+
+  }
+
+  .modal--review__content {
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+    .input-panel--default {
+      textarea {
+        height: 154px;
+      }
+    }
+
+    .item {
+      display: none;
+      flex-flow: column nowrap;
+      &.active {
+        display: flex;
+      }
+    }
+
+    label {
+      display: none;
+    }
+
+    .buttons-grid {
+      display: flex;
+      flex-flow: row nowrap;
+      margin-top: 16px;
+      margin-left: -8px;
+      margin-right: -8px;
+      @include media("<=modal") {
+        flex-flow: column nowrap;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .btn {
+        flex: 1;
+        margin-left: 8px;
+        margin-right: 8px;
+        @include media("<=modal") {
+          flex: unset;
+          margin-left: 0;
+          margin-right: 0;
+          margin-bottom: 8px;
+          height: 36px;
+        }
+      }
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 150%;
+      color: $pureBlack;
+      letter-spacing: 0.0015em;
+      text-align: center;
+      @include media("<=modal") {
+        font-size: 18px;
+      }
+    }
+
+    .description {
+      margin-top: 4px;
+      font-size: 16px;
+      line-height: 150%;
+      color: rgba($pureBlack, .8);
+      text-align: center;
+    }
+
+    .stars-grid {
+      display: flex;
+      flex-flow: row nowrap;
+      margin-top: 16px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 48px;
+
+      .star {
+        width: 32px;
+        height: 32px;
+        overflow: hidden;
+        font-size: 27px;
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 300;
+        color: $line;
+        margin-left: 4px;
+        margin-right: 4px;
+        cursor: pointer;
+        @include flexCenter;
+        text-align: center;
+        @include transition;
+        @include media("<=modal") {
+          font-size: 16px;
+          width: 17px;
+          height: 17px;
+        }
+        &::before {
+          content: '\f005';
+        }
+        &.active {
+          color: $accentColor;
+          font-weight: 900;
+        }
+        &.hover:not(.active) {
+          color: rgba($accentColor, .5);
+          font-weight: 900;
+
+        }
+      }
+    }
+  }
+
+}

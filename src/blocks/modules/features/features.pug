@@ -1,0 +1,20 @@
+mixin Features(title, home)
+    section.s-margins(class=home?"s-white":null, id=home?"features":null)
+        .container
+            .section__head.section__head--centered
+                if(title)
+                    h4 С нами
+
+            .row
+                .col-3.col-xs-1.col-m-2
+                    +Feature("С нами проще")
+                .col-3.col-xs-1.col-m-2
+                    +Feature("Обоснованный выбор")
+                .col-3.col-xs-1.col-m-2
+                    +Feature("Лучшее решение")
+                .col-3.col-xs-1.col-m-2
+                    +Feature("Объективный подход")
+                .col-3.col-xs-1.col-m-2
+                    +Feature("Насыщенная база курсов")
+                .col-3.col-xs-1.col-m-2
+                    +Feature("Честные отзывы")

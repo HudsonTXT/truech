@@ -1,0 +1,55 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Учеба и карьера"
+
+block content
+    .cabinet__head
+        h4 Учеба и карьера
+        //.actions
+        //    a(href="#").btn.btn--xs Soma Action
+
+    form
+        .form__section
+            .form__head
+                h5 Опыт работы
+            .duplicated
+                .duplicate-it
+                    +Input('text', 'meeting__place-of-work', '', 'Место работы')
+                    +Input('text', 'meeting__profession', '', 'Профессия')
+                    +Input('radio', 'meeting__worktime', ["Менее 1 года", "от 1 до 3-х лет", "Более 3-х лет"], 'Опыт работы')
+                .duplicate-copies
+                +Duplicator
+        .form__section
+            .form__head
+                h5 Место учебы
+            .duplicated
+                .duplicate-it
+                    +Input('text', 'meeting__place-of-work', '', 'Место учебы')
+                    +Input('text', 'meeting__profession', '', 'Специальность')
+                    +Input('select', 'meeting__worktime', ["Дизайн", "Преподавание", "Строительство"], 'Направление')
+                .duplicate-copies
+                +Duplicator
+        .form__section
+            .form__head
+                h5 Дополнительное образование
+            .duplicated
+                .duplicate-it
+                    +Input('text', 'meeting__place-of-work', '', 'Место учебы')
+                    +Input('text', 'meeting__profession', '', 'Название курса')
+                .duplicate-copies
+                +Duplicator
+
+        button(type=submit).btn Сохранить изменения
+
+
+
+
+
+
+
+
+
+
+block scripts

@@ -1,0 +1,36 @@
+extends ../layouts/cabinet
+
+
+block variables
+    - const title = "Основная информация"
+    - var status = "teach"
+
+block content
+    .cabinet__head
+        h4 Основная информация
+        //.actions
+        //    a(href="#").btn.btn--xs Soma Action
+
+    form
+        +Input('text', 'cabinet_description', '', 'Слоган школы')
+        +Input('textarea', 'cabinet_title', 'Подробная информация о школе', 'Описание школы')
+        .duplicated
+            .duplicate-it
+                +Input('select', 'meeting__worktime', ["Выберите деятельность из списка", "Менее 1 года", "от 1 до 3-х лет", "Более 3-х лет"], 'Направление деятельности')
+            .duplicate-copies
+            +Duplicator
+
+        +Input('text', 'cabinet_description', '', 'Основатель школы')
+        +Input('text', 'cabinet_description', 'Основная роль: генеральный директор, директор по развитию...', 'В двух словах об основателе')
+        button(type=submit).btn Сохранить изменения
+
+
+
+
+
+
+
+
+
+
+block scripts

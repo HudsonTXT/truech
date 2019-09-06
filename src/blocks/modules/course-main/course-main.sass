@@ -1,0 +1,93 @@
+.course__main-info
+  display: flex
+  flex-flow: row nowrap
+  +media("<=m")
+    flex-flow: column nowrap
+  .text-block
+    display: flex
+    flex-flow: column nowrap
+    max-width: 58.333%
+    flex: 0 0 58.333%
+    padding-right: 30px
+    margin-right: auto
+    +media("<=xl")
+      padding-right: 0
+      max-width: 50%
+      flex: 0 0 50%
+    +media("<=m")
+      max-width: 100%
+      flex: 0 0 100%
+
+    p
+      margin-bottom: 0
+      margin-top: 0
+      color: $lightAccent
+      line-height: 150%
+
+    h2
+      margin-top: 0
+      margin-bottom: 24px
+
+    .big-article
+      margin-bottom: 32px
+      color: rgba($pureBlack, .8)
+
+  .info
+    max-width: 33.333%
+    flex: 0 0 33.333%
+    +media("<=xl")
+      max-width: 50%
+      flex: 0 0 50%
+    +media("<=m")
+      margin-top: 32px
+      max-width: 100%
+      flex: 0 0 100%
+
+    .card
+      width: 100%
+      display: flex
+      flex-flow: column nowrap
+      margin-bottom: 24px
+
+      .card__head
+        display: flex
+        flex-flow: row nowrap
+        +media("<=m")
+          align-items: baseline
+
+        .card__title
+          display: block
+          line-height: 150%
+          +media("<=m")
+            font-size: 14px
+
+
+        .card__price
+          margin-left: auto
+          text-align: right
+          display: flex
+          align-items: baseline
+          justify-content: flex-end
+
+          .pre-price
+            color: $lightAccent
+
+          .price
+            font-size: 24px
+            font-weight: 500
+            color: $pureBlack
+            display: inline-block
+            margin-left: 6px
+            +media("<=m")
+              font-size: 20px
+
+          .ruble
+            font-weight: 500
+            color: $lightAccent
+            display: inline-block
+            margin-left: 4px
+
+
+      .btn
+        display: flex
+        margin-top: 16px

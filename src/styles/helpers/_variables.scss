@@ -1,0 +1,38 @@
+$background: #E5E5E5;
+
+/* Cards */
+$cardBorders: rgba(225, 225, 225, 0.6);
+$backgroundMainTest: #FAFAFA;
+
+/* From logotype colors */
+$accentColor: #0E67CE;
+$accentDark: #003E9C;
+$accentLight: #6094FF;
+
+$accentDarkColor: #211A52;
+$accentDarkLight: #4E417F;
+$accentDarkDark: #00002A;
+
+/* Success or Danger colors */
+$coralRed: #FA3E3E;
+$successGreen: #4BB543;
+
+/* Base colors for text */
+$pureBlack: #313131;
+$lightAccent: #888888;
+
+$line: #E1E1E1;
+
+$classicalWhite: #FFFFFF;
+
+@import "../vendor/import/include-media";
+
+$breakpoints: (
+        xs: 480px,
+        modal: 585px,
+        m: 960px,
+        xl: 1200px
+);
+
+
+

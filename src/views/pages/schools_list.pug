@@ -1,0 +1,98 @@
+extends ../layouts/default
+
+
+block variables
+    - const title = "Каталог школ"
+
+block content
+    +Breadcrumbs(["Школы"])
+    .container#all-speakers
+        section#speakers
+            .section__head
+                h4 Все школы
+                +Filters
+            ////.col-to-row
+            .row
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p1.png',
+                        title: 'WorldSkills',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p2.png',
+                        title: 'Роскосмос',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p3.png',
+                        title: 'GeekBrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p4.png',
+                        title: 'Яндекс',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p1.png',
+                        title: 'WorldSkills',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p2.png',
+                        title: 'Роскосмос',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p3.png',
+                        title: 'GeekBrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p4.png',
+                        title: 'Яндекс',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p1.png',
+                        title: 'WorldSkills',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p2.png',
+                        title: 'Роскосмос',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p3.png',
+                        title: 'GeekBrains',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+                .col-4.col-xs-1.col-m-2
+                    +Card('school', {
+                        img: 'img/p4.png',
+                        title: 'Яндекс',
+                        tags: ["Дизайн", "Маркетинг", "Программирование", "Бизнес"],
+                    })
+
+
+
+            +Pagination
+
+
+
+
+
+
+block scripts

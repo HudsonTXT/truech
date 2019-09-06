@@ -1,0 +1,132 @@
+- var status = 'user'; //user|teach
+
+
+
+block variables
+include ../helpers/mixins
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title #{title} - Личный кабинет — TRUECH
+		meta(name="theme-color" content="#fff")
+		meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+		meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+		link(rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon")
+		link(rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png")
+		link(rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png")
+		link(rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png")
+		link(rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png")
+		link(rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png")
+		link(rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png")
+		link(rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png")
+		link(rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png")
+		link(rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png")
+		link(rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png")
+		link(rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png")
+		link(rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png")
+		link(rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png")
+		link(rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png")
+		link(rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png")
+		link(rel="stylesheet" href="styles/main.css?v=5")
+	body
+		+Header("user")
+		+Breadcrumbs(["Личный кабинет"])
+		.container
+			.cabinet.card
+				.cabinet__sidebar
+					.content
+						.sidebar__user(class=status==="teach"?"sidebar__teacher":null)
+							.avatar
+								img(src=status==="user"?"img/u1.jpg":"img/p12.png")
+							.sidebar__user-info
+								if status === "user"
+									.title Николай Борисов
+								else if status === "teach"
+									.title Skillbox
+								if status === "user"
+									.description Ученик
+								else
+									.description Школа
+
+						.sidebar__links
+							if status === "user"
+								.item
+									.title Профиль
+									a(href="cabinet_user_contacts.html", class=title==="Контактные данные"?"active":null).link
+										i.fal.fa-user
+										span Контактные данные
+									a(href="cabinet_user_teach.html", class=title==="Учеба и карьера"?"active":null).link
+										i.fal.fa-graduation-cap
+										span Учеба и карьера
+								.item
+									.title Настройки
+									a(href="cabinet_user_password.html", class=title==="Изменить пароль"?"active":null).link
+										i.fal.fa-unlock
+										span Изменить пароль
+									a(href="cabinet_user_alerts.html", class=title==="Уведомления"?"active":null).link
+										i.fal.fa-bell
+										span Уведомления
+								.item
+									.title Курс
+									a(href="cabinet_user_courses.html", class=title==="Мои курсы"?"active":null).link
+										i.fal.fa-bookmark
+										span Мои курсы
+									a(href="cabinet_user_recommends.html", class=title==="Рекомендации"?"active":null).link
+										i.fal.fa-star
+										span Рекомендации
+							else if status === "teach"
+								.item
+									.title О школе
+									a(href="cabinet_teach_contacts.html", class=title === "Контактные данные" ? "active" : null).link
+										i.fal.fa-user
+										span Контактные данные
+									a(href="cabinet_teach_base.html", class=title === "Основная информация" ? "active" : null).link
+										i.fal.fa-info-circle
+										span Основная информация
+									a(href="cabinet_teach_best-students.html", class=title === "Лучшие студенты" ? "active" : null).link
+										i.fal.fa-user-tie
+										span Лучшие студенты
+									a(href="cabinet_teach_progress.html", class=title === "Обучение" ? "active" : null).link
+										i.fal.fa-chalkboard
+										span Обучение
+									a(href="cabinet_teach_certificates.html", class=title === "Сертификаты" ? "active" : null).link
+										i.fal.fa-award
+										span Сертификаты
+
+								.item
+									.title Настройки
+									a(href="cabinet_user_password.html", class=title === "Изменить пароль" ? "active" : null).link
+										i.fal.fa-unlock
+										span Изменить пароль
+									a(href="cabinet_user_alerts.html", class=title === "Уведомления" ? "active" : null).link
+										i.fal.fa-bell
+										span Уведомления
+								.item
+									.title Спикеры
+										a(href="cabinet_teach_addspeaker.html", class=title === "Добавить спикера" ? "active" : null).add +
+									a(href="cabinet_teach_allspeakers.html", class=title === "Все спикеры" ? "active" : null).link
+										i.fal.fa-user-graduate
+										span Все спикеры
+								.item
+									.title Курсы
+										a(href="cabinet_teach_addcourse.html", class=title === "Добавить курс" ? "active" : null).add +
+									a(href="cabinet_teach_allcourses.html", class=title === "Все курсы" ? "active" : null).link
+										i.fal.fa-books
+										span Все курсы
+							.item.item--last
+								a(href="#").link
+									i.fal.fa-sign-out
+									span Выйти из аккаунта
+
+
+				.cabinet__content
+					.content
+						block content
+		+Footer
+		+Modals
+		block scripts
+		script(src="js/main.js?v=5")
+		script(src="js/vendor.js?v=5")

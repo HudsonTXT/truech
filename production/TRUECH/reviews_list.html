@@ -1,0 +1,696 @@
+
+<!-- Scripts-->
+<!-- Components-->
+<!-- Modules-->
+<!--Modules About page-->
+<!--Modules Contacts-->
+<!--Course main-->
+<!--Spaker-->
+<!--School-->
+<!--Person-->
+<!--Reviews-->
+<!--Modals-->
+<!--Modules Sign--><!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Все отзывы — TRUECH</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.min.css?v=2">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="only-mobile mobile-open js-mobile-open"><i class="fa fa-bars"></i></div><a class="header__logo" href="index.html"><img src="img/logo.svg"/></a><a class="btn btn--catalog header__catalog-open js-toggler" href="#" data-target="#header__dropdown" data-body-lock="true">
+          Каталог<i class="far fa-chevron-down"></i></a>
+        <div class="header__search">
+          <div class="input-panel input-panel--search">
+            <form>
+              <input type="text" name="search" placeholder="Что интересует?"/>
+              <button type="submit"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.965 14.255H15.755L20.745 19.255L19.255 20.745L14.255 15.755V14.965L13.985 14.685C12.845 15.665 11.365 16.255 9.755 16.255C6.165 16.255 3.255 13.345 3.255 9.755C3.255 6.165 6.165 3.255 9.755 3.255C13.345 3.255 16.255 6.165 16.255 9.755C16.255 11.365 15.665 12.845 14.685 13.985L14.965 14.255ZM5.255 9.755C5.255 12.245 7.26501 14.255 9.755 14.255C12.245 14.255 14.255 12.245 14.255 9.755C14.255 7.26501 12.245 5.255 9.755 5.255C7.26501 5.255 5.255 7.26501 5.255 9.755Z" fill="#888888"/>
+</svg>
+
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="header__actions"><a class="btn btn--light" href="register.html">Для организаций</a><a class="btn" href="register.html">Присоединиться</a>
+        </div>
+      </div>
+      <div class="header__dropdown header__catalog js-toggler-target" id="header__dropdown">
+        <div class="container">
+          <div class="catalog__puncts">
+            <div class="items"><a class="active" href="courses_list.html">Курсы</a><a href="schools_list.html">Школы</a><a href="speakers_list.html">Спикеры</a><a href="reviews_list.html">Отзывы</a></div>
+            <div class="items-down"><a href="about.html">О проекте</a><a href="contacts.html">Контакты</a></div>
+          </div>
+          <div class="catalog__lists">
+            <div class="list list--themes">
+              <div class="list__container js-header-categories"><a class="active" href="#" data-category="design">
+                  <div class="icon"><img src="img/1.jpg"/></div><span>Дизайн</span></a><a href="#" data-category="business">
+                  <div class="icon"><img src="img/2.jpg"/></div><span>Бизнес</span></a><a href="#" data-category="it">
+                  <div class="icon"><img src="img/3.jpg"/></div><span>IT</span></a><a href="#" data-category="health">
+                  <div class="icon"><img src="img/4.png"/></div><span>Здоровье</span></a><a href="#" data-category="personal">
+                  <div class="icon"><img src="img/1.jpg"/></div><span>Личное развитие</span></a><a href="#">
+                  <div class="icon"><img src="img/2.jpg"/></div><span>Изучение языков</span></a><a href="#">
+                  <div class="icon"><img src="img/3.jpg"/></div><span>Математика и логика</span></a><a href="#">
+                  <div class="icon"><img src="img/4.png"/></div><span>Наука о данных</span></a></div>
+              <div class="list__bottom"><a class="btn btn--light btn--xs" href="courses_categories.html">Подобрать необходимый курс</a></div>
+            </div>
+            <div class="list list--themes">
+              <div class="list__container js-header-subcategories"><a class="active" href="#"><span>Веб-дизайн</span></a><a href="#"><span>Графический дизайн</span></a><a href="#"><span>Ланшафтный дизайн</span></a><a href="#"><span>Продуктовый дизайн</span></a></div>
+            </div>
+            <div class="list list--courses">
+              <div class="list__container"><a class="card card--promo" href="course.html">
+                  <div class="card__content">
+                    <div class="card__content-top">
+                      <p class="nums">13 занятий</p>
+                      <div class="rating"><span>9.9</span><i class="fa fa-star"></i></div>
+                    </div>
+                    <p class="title">Курс номер 1</p>
+                  </div>
+                  <div class="card__cover">
+                    <div class="card__cover-mask"></div><img src="img/2.jpg"/>
+                  </div></a><a class="card card--promo" href="course.html">
+                  <div class="card__content">
+                    <div class="card__content-top">
+                      <p class="nums">14 занятий</p>
+                      <div class="rating"><span>9.5</span><i class="fa fa-star"></i></div>
+                    </div>
+                    <p class="title">Курс номер 2</p>
+                  </div>
+                  <div class="card__cover">
+                    <div class="card__cover-mask"></div><img src="img/1.jpg"/>
+                  </div></a><a class="card card--promo" href="course.html">
+                  <div class="card__content">
+                    <div class="card__content-top">
+                      <p class="nums">11 занятий</p>
+                      <div class="rating"><span>9.1</span><i class="fa fa-star"></i></div>
+                    </div>
+                    <p class="title">Курс номер 3</p>
+                  </div>
+                  <div class="card__cover">
+                    <div class="card__cover-mask"></div><img src="img/3.jpg"/>
+                  </div></a><a class="card card--promo" href="course.html">
+                  <div class="card__content">
+                    <div class="card__content-top">
+                      <p class="nums">21 занятие</p>
+                      <div class="rating"><span>8.0</span><i class="fa fa-star"></i></div>
+                    </div>
+                    <p class="title">Курс номер 4</p>
+                  </div>
+                  <div class="card__cover">
+                    <div class="card__cover-mask"></div><img src="img/4.png"/>
+                  </div></a><a class="card card--promo" href="course.html">
+                  <div class="card__content">
+                    <div class="card__content-top">
+                      <p class="nums">134 занятия</p>
+                      <div class="rating"><span>7.5</span><i class="fa fa-star"></i></div>
+                    </div>
+                    <p class="title">Курс номер 5</p>
+                  </div>
+                  <div class="card__cover">
+                    <div class="card__cover-mask"></div><img src="img/1.jpg"/>
+                  </div></a>
+              </div>
+              <div class="list__bottom"><a class="btn btn--xs" href="courses_list.html">Все курсы раздела</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html"><svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.793 6.03906L13.125 4.67188V2.53906C13.125 2.45703 13.043 2.375 12.9609 2.375H12.4141C12.3047 2.375 12.25 2.45703 12.25 2.53906V3.96094L8.42188 0.84375C8.28516 0.734375 8.03906 0.652344 7.875 0.652344C7.68359 0.652344 7.4375 0.734375 7.30078 0.84375L0.957031 6.03906C0.902344 6.06641 0.875 6.14844 0.875 6.20312C0.875 6.23047 0.875 6.3125 0.902344 6.33984L1.17578 6.66797C1.23047 6.72266 1.3125 6.75 1.36719 6.75C1.39453 6.75 1.44922 6.72266 1.50391 6.69531L2.625 5.79297V12.4375C2.625 12.6836 2.81641 12.875 3.0625 12.875H6.5625C6.78125 12.875 7 12.6836 7 12.4375V8.9375H8.75V12.4375C8.75 12.6836 8.94141 12.875 9.1875 12.875H12.6875C12.9062 12.875 13.125 12.6836 13.125 12.4375V5.79297L14.2188 6.69531C14.2734 6.72266 14.3281 6.75 14.3555 6.75C14.4375 6.75 14.4922 6.72266 14.5469 6.66797L14.8203 6.33984C14.8477 6.3125 14.8477 6.23047 14.8477 6.20312C14.8477 6.14844 14.8203 6.06641 14.793 6.03906ZM12.2227 12L9.59766 12.0273V8.5C9.59766 8.28125 9.40625 8.0625 9.1875 8.0625H6.5625H6.53516C6.31641 8.0625 6.09766 8.25391 6.09766 8.5V12H3.5V5.08203L7.875 1.5L12.25 5.08203L12.2227 12Z" fill="#888888"/>
+</svg>
+<span>Главная</span></a></li>
+        <li><a href="#"><span>Отзывы</span></a></li>
+        <li class="active"><a href="#"><span>Курсы</span></a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <section>
+        <div class="section__head mb-32 pos-r">
+          <div class="js-toggler" data-target="#reviews__type">
+            <h4>Все отзывы<i class="fa fa-chevron-down"></i></h4>
+          </div>
+          <div class="reviews__dropdown dropdown js-toggler-target js-toggler-close-on-select" id="reviews__type"><a class="js-toggler-close-on-select__item active" href="#"><span>Все отзывы</span>
+              <div class="icon"><i class="fal fa-th"></i></div></a><a class="js-toggler-close-on-select__item" href="#"><span>Курсы</span>
+              <div class="icon"><i class="fal fa-books"></i></div></a><a class="js-toggler-close-on-select__item" href="#"><span>Спикеры</span>
+              <div class="icon"><i class="fal fa-graduation-cap"></i></div></a></div>
+          <div class="actions"><a class="btn btn--xs" href="#read-review" rel="modal:open">Написать отзыв</a>
+            <div class="input-panel input-panel--search">
+              <form>
+                <input type="text" name="search-min" placeholder="Поиск по отзывам"/>
+                <button type="submit"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.965 14.255H15.755L20.745 19.255L19.255 20.745L14.255 15.755V14.965L13.985 14.685C12.845 15.665 11.365 16.255 9.755 16.255C6.165 16.255 3.255 13.345 3.255 9.755C3.255 6.165 6.165 3.255 9.755 3.255C13.345 3.255 16.255 6.165 16.255 9.755C16.255 11.365 15.665 12.845 14.685 13.985L14.965 14.255ZM5.255 9.755C5.255 12.245 7.26501 14.255 9.755 14.255C12.245 14.255 14.255 12.245 14.255 9.755C14.255 7.26501 12.245 5.255 9.755 5.255C7.26501 5.255 5.255 7.26501 5.255 9.755Z" fill="#888888"/>
+</svg>
+
+                </button>
+              </form>
+            </div>
+            <div class="actions filters">
+              <div class="pos-r"><a class="btn btn--light js-toggler" href="#" data-target="#sort-by">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 4V5.33333H14V4H2ZM2 12H6V10.6667H2V12ZM10 8.66667H2V7.33333H10V8.66667Z" fill="#313131"/>
+</g>
+</svg>
+                  Сортировка</a>
+                <div class="dropdown dropdown--right js-toggler-target js-toggler-close-on-select" id="sort-by"><a class="js-toggler-close-on-select__item active" href="#"><span>Самые дешевые</span>
+                    <div class="icon"><i class="fal fa-chevron-up"></i></div></a><a class="js-toggler-close-on-select__item" href="#"><span>Самые дорогие</span>
+                    <div class="icon"><i class="fal fa-chevron-down"></i></div></a><a class="js-toggler-close-on-select__item" href="#"><span>Самые популярные</span>
+                    <div class="icon"><i class="fal fa-chevron-up"></i></div></a><a class="js-toggler-close-on-select__item" href="#"><span>Самые новые</span>
+                    <div class="icon"><i class="fal fa-chevron-down"></i></div></a></div>
+              </div>
+              <div class="pos-r"><a class="btn btn--light js-toggler" href="#" data-target="#filters">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.0014 8.00004C13.0014 8.22671 12.9814 8.44004 12.9547 8.65337L14.3614 9.75337C14.488 9.85337 14.5214 10.0334 14.4414 10.18L13.108 12.4867C13.048 12.5934 12.9347 12.6534 12.8214 12.6534C12.7814 12.6534 12.7414 12.6467 12.7014 12.6334L11.0414 11.9667C10.6947 12.2267 10.3214 12.4534 9.91469 12.62L9.66136 14.3867C9.64136 14.5467 9.50136 14.6667 9.33469 14.6667H6.66802C6.50136 14.6667 6.36136 14.5467 6.34136 14.3867L6.08802 12.62C5.68136 12.4534 5.30802 12.2334 4.96136 11.9667L3.30136 12.6334C3.26802 12.6467 3.22802 12.6534 3.18802 12.6534C3.06802 12.6534 2.95469 12.5934 2.89469 12.4867L1.56136 10.18C1.48136 10.0334 1.51469 9.85337 1.64136 9.75337L3.04802 8.65337C3.02136 8.44004 3.00136 8.22004 3.00136 8.00004C3.00136 7.78004 3.02136 7.56004 3.04802 7.34671L1.64136 6.24671C1.51469 6.14671 1.47469 5.96671 1.56136 5.82004L2.89469 3.51337C2.95469 3.40671 3.06802 3.34671 3.18136 3.34671C3.22136 3.34671 3.26136 3.35337 3.30136 3.36671L4.96136 4.03337C5.30802 3.77337 5.68136 3.54671 6.08802 3.38004L6.34136 1.61337C6.36136 1.45337 6.50136 1.33337 6.66802 1.33337H9.33469C9.50136 1.33337 9.64136 1.45337 9.66136 1.61337L9.91469 3.38004C10.3214 3.54671 10.6947 3.76671 11.0414 4.03337L12.7014 3.36671C12.7347 3.35337 12.7747 3.34671 12.8147 3.34671C12.9347 3.34671 13.048 3.40671 13.108 3.51337L14.4414 5.82004C14.5214 5.96671 14.488 6.14671 14.3614 6.24671L12.9547 7.34671C12.9814 7.56004 13.0014 7.77337 13.0014 8.00004ZM11.668 8.00004C11.668 7.86004 11.6614 7.72004 11.6347 7.51337L11.5414 6.76004L12.1347 6.29337L12.848 5.72671L12.3814 4.92004L11.5347 5.26004L10.828 5.54671L10.2214 5.08004C9.95469 4.88004 9.68802 4.72671 9.40136 4.60671L8.69469 4.32004L8.58802 3.56671L8.46136 2.66671H7.53469L7.40136 3.56671L7.29469 4.32004L6.58802 4.60671C6.31469 4.72004 6.04136 4.88004 5.75469 5.09337L5.15469 5.54671L4.46136 5.26671L3.61469 4.92671L3.14802 5.73337L3.86802 6.29337L4.46136 6.76004L4.36802 7.51337C4.34802 7.71337 4.33469 7.86671 4.33469 8.00004C4.33469 8.13337 4.34802 8.28671 4.36802 8.49337L4.46136 9.24671L3.86802 9.71337L3.14802 10.2734L3.61469 11.08L4.46136 10.74L5.16802 10.4534L5.77469 10.92C6.04136 11.12 6.30802 11.2734 6.59469 11.3934L7.30136 11.68L7.40802 12.4334L7.53469 13.3334H8.46802L8.60136 12.4334L8.70802 11.68L9.41469 11.3934C9.68802 11.28 9.96136 11.12 10.248 10.9067L10.848 10.4534L11.5414 10.7334L12.388 11.0734L12.8547 10.2667L12.1347 9.70671L11.5414 9.24004L11.6347 8.48671C11.6547 8.28671 11.668 8.14004 11.668 8.00004ZM8.00136 5.33337C6.52802 5.33337 5.33469 6.52671 5.33469 8.00004C5.33469 9.47337 6.52802 10.6667 8.00136 10.6667C9.47469 10.6667 10.668 9.47337 10.668 8.00004C10.668 6.52671 9.47469 5.33337 8.00136 5.33337ZM6.66802 8.00004C6.66802 8.73337 7.26802 9.33337 8.00136 9.33337C8.73469 9.33337 9.33469 8.73337 9.33469 8.00004C9.33469 7.26671 8.73469 6.66671 8.00136 6.66671C7.26802 6.66671 6.66802 7.26671 6.66802 8.00004Z" fill="#313131"/>
+</g>
+</svg>
+                  Фильтр</a>
+                <form class="dropdown dropdown--right js-toggler-target dropdown--filter" id="filters">
+                  <div class="dropdown__content">
+                    <div class="dropdown__head">
+                      <h5>Фильтр</h5>
+                      <div class="actions"><a class="dropdown__close js-toggler-closer" href="#"><i class="fal fa-times"></i></a></div>
+                    </div>
+                    <div class="filter__section">
+                      <div class="filter__head">
+                        <p class="title">Продолжительность курсов</p>
+                        <div class="actions">
+                          <p class="filter-spinner">от<span id="filter-value-min">0</span>до<span id="filter-value-max">0</span>дней</p>
+                        </div>
+                      </div><div id="slider-range"></div>
+                      <div class="slider__range-values"><span>0 дней</span><span>365 дней</span></div>
+                    </div>
+                    <div class="filter__section">
+                      <div class="filter__head">
+                        <p class="title">Программное обеспечение</p>
+                      </div>
+                      <div class="input-panel input-panel--checkbox">
+                        <label for="filter_figma">
+                          <input type="checkbox" name="filter_figma" id="filter_figma" checked="checked"/>
+                          <div class="checkmark">
+                            <div class="checkbox"><i class="fal fa-check"></i></div>
+                            <div class="label">Figma<span></span></div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="input-panel input-panel--checkbox">
+                        <label for="filter_sketch">
+                          <input type="checkbox" name="filter_sketch" id="filter_sketch" checked="checked"/>
+                          <div class="checkmark">
+                            <div class="checkbox"><i class="fal fa-check"></i></div>
+                            <div class="label">Sketch<span></span></div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="input-panel input-panel--checkbox">
+                        <label for="filter_axd">
+                          <input type="checkbox" name="filter_axd" id="filter_axd" checked="checked"/>
+                          <div class="checkmark">
+                            <div class="checkbox"><i class="fal fa-check"></i></div>
+                            <div class="label">Adobe XD<span></span></div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="input-panel input-panel--checkbox">
+                        <label for="filter_ai">
+                          <input type="checkbox" name="filter_ai" id="filter_ai" checked="checked"/>
+                          <div class="checkmark">
+                            <div class="checkbox"><i class="fal fa-check"></i></div>
+                            <div class="label">Adobe Illustrator<span></span></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="filter__section">
+                      <div class="filter__head">
+                        <p class="title">Стоимость</p>
+                      </div>
+                      <div class="input-panel input-panel--radio">
+                        <label for="filter__price"></label>
+                        <div class="input-panel--radio__values">
+                          <label for="filter__price_0">
+                            <input type="radio" name="filter__price" id="filter__price_0"/>
+                            <div class="checkmark">
+                              <div class="checkbox">
+                                <div class="circle"></div>
+                              </div>
+                              <div class="label">Менее 5 000</div>
+                            </div>
+                          </label>
+                          <label for="filter__price_1">
+                            <input type="radio" name="filter__price" id="filter__price_1"/>
+                            <div class="checkmark">
+                              <div class="checkbox">
+                                <div class="circle"></div>
+                              </div>
+                              <div class="label">от 5 000 до 15 000</div>
+                            </div>
+                          </label>
+                          <label for="filter__price_2">
+                            <input type="radio" name="filter__price" id="filter__price_2"/>
+                            <div class="checkmark">
+                              <div class="checkbox">
+                                <div class="circle"></div>
+                              </div>
+                              <div class="label">от 15 000 до 30 000</div>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter__section">
+                      <div class="filter__head">
+                        <p class="title">Ключевые слова</p>
+                      </div>
+                      <div class="input-panel input-panel--default">
+                        <label for="filter__keywords"></label>
+                        <input type="text" id="filter__keywords" name="filter__keywords" placeholder=""/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown__footer">
+                    <button class="btn btn--light" type="reset">Сброс</button>
+                    <button class="btn js-toggler-closer" type="submit">Применить</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="row reviews__row">
+        <section class="col col--reviews">
+          <div class="section__head mb-16">
+            <h5>Отзывы</h5>
+          </div>
+          <div class="card card--review review review--long">
+            <div class="review__content">
+              <p>Я как новичёк просмотрел видео и все понял! Нигде ещё не встречал чтоб так все раскладывали пополочкам куда нажать, зачем туда нажать и что будет при нажатии. Видно что команда Skillbox готовит видео материал на отлично после их видео уроков не приходится искать в поисковике что они имелии ввиду и что они хотели мне открыть показать, такого я еще невстречал у Skillbox команда профессионалов в этом деле расказывают показывают практикуют в процессе обучения это круто также мне нравится их стратегия по трудоустройству они открыли двери в свой мирок это круто ! ревиззоро советует Skillbox как новую дверь в интересный мир )))</p>
+            </div>
+            <div class="review__grade"><span class="text">Оценка:</span>
+              <div class="rating"><span>9.9</span><i class="fa fa-star"></i></div>
+            </div>
+            <div class="review__snippet">
+              <div class="review__item">
+                <div class="review__img"><img src="img/3.jpg"/></div>
+                <div class="review__info">
+                  <div class="review__school">Skillbox</div>
+                  <div class="review__rating">9.8<i class="fa fa-star"></i></div>
+                  <div class="review__type-title">От новичка до про</div>
+                </div>
+              </div>
+              <div class="review__item review__user">
+                <div class="review__avatar"><img src="img/u1.jpg"/></div>
+                <div class="review__author">
+                  <div class="review__title">Дмитрий Дмитров</div>
+                  <div class="review__date">12 июня, 2019</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card--review review review--long">
+            <div class="review__content">
+              <p>Я как новичёк просмотрел видео и все понял! Нигде ещё не встречал чтоб так все раскладывали пополочкам куда нажать, зачем туда нажать и что будет при нажатии. Видно что команда Skillbox готовит видео материал на отлично после их видео уроков не приходится искать в поисковике что они имелии ввиду и что они хотели мне открыть показать, такого я еще невстречал у Skillbox команда профессионалов в этом деле расказывают показывают практикуют в процессе обучения это круто также мне нравится их стратегия по трудоустройству они открыли двери в свой мирок это круто ! ревиззоро советует Skillbox как новую дверь в интересный мир )))</p>
+            </div>
+            <div class="review__grade"><span class="text">Оценка:</span>
+              <div class="rating"><span>9.9</span><i class="fa fa-star"></i></div>
+            </div>
+            <div class="review__snippet">
+              <div class="review__item">
+                <div class="review__img"><img src="img/3.jpg"/></div>
+                <div class="review__info">
+                  <div class="review__school">Skillbox</div>
+                  <div class="review__rating">9.8<i class="fa fa-star"></i></div>
+                  <div class="review__type-title">От новичка до про</div>
+                </div>
+              </div>
+              <div class="review__item review__user">
+                <div class="review__avatar"><img src="img/u2.jpg"/></div>
+                <div class="review__author">
+                  <div class="review__title">Светлана Попова</div>
+                  <div class="review__date">12 июня, 2019</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card--review review review--long">
+            <div class="review__content">
+              <p>Я как новичёк просмотрел видео и все понял! Нигде ещё не встречал чтоб так все раскладывали пополочкам куда нажать, зачем туда нажать и что будет при нажатии. Видно что команда Skillbox готовит видео материал на отлично после их видео уроков не приходится искать в поисковике что они имелии ввиду и что они хотели мне открыть показать, такого я еще невстречал у Skillbox команда профессионалов в этом деле расказывают показывают практикуют в процессе обучения это круто также мне нравится их стратегия по трудоустройству они открыли двери в свой мирок это круто ! ревиззоро советует Skillbox как новую дверь в интересный мир )))</p>
+            </div>
+            <div class="review__grade"><span class="text">Оценка:</span>
+              <div class="rating"><span>9.9</span><i class="fa fa-star"></i></div>
+            </div>
+            <div class="review__snippet">
+              <div class="review__item">
+                <div class="review__img"><img src="img/3.jpg"/></div>
+                <div class="review__info">
+                  <div class="review__school">Skillbox</div>
+                  <div class="review__rating">9.8<i class="fa fa-star"></i></div>
+                  <div class="review__type-title">От новичка до про</div>
+                </div>
+              </div>
+              <div class="review__item review__user">
+                <div class="review__avatar"><img src="img/u3.jpg"/></div>
+                <div class="review__author">
+                  <div class="review__title">Сергей Сергеев</div>
+                  <div class="review__date">12 июня, 2019</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card--review review review--long">
+            <div class="review__content">
+              <p>Я как новичёк просмотрел видео и все понял! Нигде ещё не встречал чтоб так все раскладывали пополочкам куда нажать, зачем туда нажать и что будет при нажатии. Видно что команда Skillbox готовит видео материал на отлично после их видео уроков не приходится искать в поисковике что они имелии ввиду и что они хотели мне открыть показать, такого я еще невстречал у Skillbox команда профессионалов в этом деле расказывают показывают практикуют в процессе обучения это круто также мне нравится их стратегия по трудоустройству они открыли двери в свой мирок это круто ! ревиззоро советует Skillbox как новую дверь в интересный мир )))</p>
+            </div>
+            <div class="review__grade"><span class="text">Оценка:</span>
+              <div class="rating"><span>9.9</span><i class="fa fa-star"></i></div>
+            </div>
+            <div class="review__snippet">
+              <div class="review__item">
+                <div class="review__img"><img src="img/3.jpg"/></div>
+                <div class="review__info">
+                  <div class="review__school">Skillbox</div>
+                  <div class="review__rating">9.8<i class="fa fa-star"></i></div>
+                  <div class="review__type-title">От новичка до про</div>
+                </div>
+              </div>
+              <div class="review__item review__user">
+                <div class="review__avatar"><img src="img/u1.jpg"/></div>
+                <div class="review__author">
+                  <div class="review__title">Дмитрий Дмитров</div>
+                  <div class="review__date">12 июня, 2019</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card--review review review--long">
+            <div class="review__content">
+              <p>Я как новичёк просмотрел видео и все понял! Нигде ещё не встречал чтоб так все раскладывали пополочкам куда нажать, зачем туда нажать и что будет при нажатии. Видно что команда Skillbox готовит видео материал на отлично после их видео уроков не приходится искать в поисковике что они имелии ввиду и что они хотели мне открыть показать, такого я еще невстречал у Skillbox команда профессионалов в этом деле расказывают показывают практикуют в процессе обучения это круто также мне нравится их стратегия по трудоустройству они открыли двери в свой мирок это круто ! ревиззоро советует Skillbox как новую дверь в интересный мир )))</p>
+            </div>
+            <div class="review__grade"><span class="text">Оценка:</span>
+              <div class="rating"><span>9.9</span><i class="fa fa-star"></i></div>
+            </div>
+            <div class="review__snippet">
+              <div class="review__item">
+                <div class="review__img"><img src="img/3.jpg"/></div>
+                <div class="review__info">
+                  <div class="review__school">Skillbox</div>
+                  <div class="review__rating">9.8<i class="fa fa-star"></i></div>
+                  <div class="review__type-title">От новичка до про</div>
+                </div>
+              </div>
+              <div class="review__item review__user">
+                <div class="review__avatar"><img src="img/u2.jpg"/></div>
+                <div class="review__author">
+                  <div class="review__title">Светлана Попова</div>
+                  <div class="review__date">12 июня, 2019</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card--review review review--long">
+            <div class="review__content">
+              <p>Я как новичёк просмотрел видео и все понял! Нигде ещё не встречал чтоб так все раскладывали пополочкам куда нажать, зачем туда нажать и что будет при нажатии. Видно что команда Skillbox готовит видео материал на отлично после их видео уроков не приходится искать в поисковике что они имелии ввиду и что они хотели мне открыть показать, такого я еще невстречал у Skillbox команда профессионалов в этом деле расказывают показывают практикуют в процессе обучения это круто также мне нравится их стратегия по трудоустройству они открыли двери в свой мирок это круто ! ревиззоро советует Skillbox как новую дверь в интересный мир )))</p>
+            </div>
+            <div class="review__grade"><span class="text">Оценка:</span>
+              <div class="rating"><span>9.9</span><i class="fa fa-star"></i></div>
+            </div>
+            <div class="review__snippet">
+              <div class="review__item">
+                <div class="review__img"><img src="img/3.jpg"/></div>
+                <div class="review__info">
+                  <div class="review__school">Skillbox</div>
+                  <div class="review__rating">9.8<i class="fa fa-star"></i></div>
+                  <div class="review__type-title">От новичка до про</div>
+                </div>
+              </div>
+              <div class="review__item review__user">
+                <div class="review__avatar"><img src="img/u3.jpg"/></div>
+                <div class="review__author">
+                  <div class="review__title">Сергей Сергеев</div>
+                  <div class="review__date">12 июня, 2019</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pagination">
+            <ul>
+              <li><a href="#back"><i class="far fa-chevron-left"></i></a></li>
+              <ul>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li class="active"><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">46</a></li>
+                <li><a href="#">47</a></li>
+                <li><a href="#">48</a></li>
+                <li><a href="#">49</a></li>
+                <li><a href="#">50</a></li>
+              </ul>
+              <li><a href="#next"><i class="far fa-chevron-right"></i></a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="col col--rating">
+          <div class="section__head mb-16">
+            <h5>Рейтинг</h5>
+            <div class="actions"><a class="action--showmore" href="rating.html">Смотреть рейтинг<i class="fa fa-chevron-right"></i></a></div>
+          </div><a class="card card--promo" href="course.html">
+            <div class="card__content">
+              <div class="card__content-top">
+                <p class="nums">13 занятий</p>
+                <div class="rating"><span>9.9</span><i class="fa fa-star"></i></div>
+              </div>
+              <p class="title">Бухгалтерия для продвинутых</p>
+            </div>
+            <div class="card__cover">
+              <div class="card__cover-mask"></div><img src="img/4.png"/>
+            </div></a><a class="card card--promo" href="course.html">
+            <div class="card__content">
+              <div class="card__content-top">
+                <p class="nums">21 занятие</p>
+                <div class="rating"><span>9.2</span><i class="fa fa-star"></i></div>
+              </div>
+              <p class="title">Управление проектами</p>
+            </div>
+            <div class="card__cover">
+              <div class="card__cover-mask"></div><img src="img/3.jpg"/>
+            </div></a><a class="card card--promo" href="course.html">
+            <div class="card__content">
+              <div class="card__content-top">
+                <p class="nums">135 занятий</p>
+                <div class="rating"><span>9.0</span><i class="fa fa-star"></i></div>
+              </div>
+              <p class="title">От новичка до профи</p>
+            </div>
+            <div class="card__cover">
+              <div class="card__cover-mask"></div><img src="img/2.jpg"/>
+            </div></a><a class="card card--promo" href="course.html">
+            <div class="card__content">
+              <div class="card__content-top">
+                <p class="nums">34 занятия</p>
+                <div class="rating"><span>8.2</span><i class="fa fa-star"></i></div>
+              </div>
+              <p class="title">Идеальный Landing Page</p>
+            </div>
+            <div class="card__cover">
+              <div class="card__cover-mask"></div><img src="img/1.jpg"/>
+            </div></a>
+        </section>
+      </div>
+    </div>
+    <footer>
+      <div class="footer__top">
+        <div class="container">
+          <div class="footer__col footer__col--logo"><img src="img/logo-icon.svg"/>
+            <div class="footer__descriptor"><span class="title">TRUECH</span><span class="description">Рейтинг курсов рунета</span></div>
+          </div>
+          <div class="footer__col">
+            <div class="footer__title">Портал</div><a href="index.html">Главная</a><a href="about.html">О портале</a><a href="reviews_list.html">Отзывы</a><a href="contacts.html">Контакты</a>
+          </div>
+          <div class="footer__col">
+            <div class="footer__title">Обучение</div><a href="courses_list.html">Курсы</a><a href="speakers_list.html">Спикеры</a><a href="schools_list.html">Школы</a><a href="#">Процесс</a>
+          </div>
+          <div class="footer__col">
+            <div class="footer__title">Информация</div><a href="#">Преимущества регистрации</a><a href="#">Информация для спикеров</a><a href="#">Оплата</a><a href="#">Политика конфиденциальности</a>
+          </div>
+          <div class="footer__col footer__col--social">
+            <div class="footer__title">Мы в соцсетях</div>
+            <div class="footer__social"><a href="#"><i class="fab fa-vk"></i></a><a href="#"><i class="fab fa-odnoklassniki"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="container">
+            <div class="footer__copyright">© ООО «Труч», 2019 г.</div>
+            <div class="footer__developer">Разработка сайта<a href="https://prostordesign.ru">prostor.design</a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="modal" id="confirm">
+      <div class="modal__content">
+        <div class="modal__head">
+          <h4>Подтверждение</h4>
+        </div>
+        <p class="default-text">Вы действительно хотите применить изменения?</p>
+        <div class="modal__action"><a class="btn btn--light" href="#" rel="modal:close">Отмена</a><a class="btn" href="#" rel="modal:close">Применить</a></div>
+      </div><a class="close-modal" href="#" rel="modal:close"><i class="fal fa-times"></i></a>
+    </div>
+    <div class="modal" id="delete">
+      <div class="modal__content">
+        <div class="modal__head">
+          <h4>Удалить спикера</h4>
+        </div>
+        <p class="default-text">Вы действительно хотите удалить учетную запись спикера?</p>
+        <div class="modal__action"><a class="btn btn--light" href="#" rel="modal:close">Отмена</a><a class="btn btn--danger" href="#" rel="modal:close">Применить</a></div>
+      </div><a class="close-modal" href="#" rel="modal:close"><i class="fal fa-times"></i></a>
+    </div>
+    <div class="modal" id="alert">
+      <div class="modal__content">
+        <div class="modal__head">
+          <h4>Изменения сохранены</h4>
+        </div>
+        <p class="default-text">Информация успешно обновлена, теперь вы можете продолжить работу с сайтом.</p>
+        <div class="modal__action"><a class="btn" href="#" rel="modal:close">Продолжить</a></div>
+      </div><a class="close-modal" href="#" rel="modal:close"><i class="fal fa-times"></i></a>
+    </div>
+    <div class="modal" id="review-thanks">
+      <div class="modal__content">
+        <div class="modal__head">
+          <h4>Отзыв отправлен</h4>
+        </div>
+        <p class="default-text">Спасибо, что уделили внимание и оставили отзыв. Он будет проверен модераторами и опубликован.</p>
+        <div class="modal__action"><a class="btn" href="#" rel="modal:close">Вернуться к сайту</a></div>
+      </div><a class="close-modal" href="#" rel="modal:close"><i class="fal fa-times"></i></a>
+    </div>
+    <div class="modal" id="sign-thanks">
+      <div class="modal__content">
+        <div class="modal__head">
+          <h4>Спасибо</h4>
+        </div>
+        <p class="default-text">Спасибо, что уделили время и рассказали о себе. Мы подобрали для вас несколько курсов.</p>
+        <div class="modal__action"><a class="btn" href="cabinet_user_recommends.html">Посмотреть рекомендации</a></div>
+      </div>
+    </div>
+    <div class="modal modal--review" id="read-review">
+      <div class="modal__content">
+        <div class="modal__head">
+          <h4>Оставить отзыв<span id="read-review__stepper">Шаг <i>1</i> из 4</span></h4>
+        </div>
+        <div class="modal--review__head">
+          <div class="item active" data-step="1">
+            <div class="circle"><i class="fa fa-video"></i></div><span>Видео</span>
+          </div>
+          <div class="item" data-step="2">
+            <div class="circle"><i class="fa fa-user-graduate"></i></div><span>Подача</span>
+          </div>
+          <div class="item" data-step="3">
+            <div class="circle"><i class="fa fa-stars"></i></div><span>Актуальность</span>
+          </div>
+          <div class="item" data-step="4">
+            <div class="circle"><i class="fa fa-comment"></i></div><span>Отзыв</span>
+          </div>
+        </div>
+        <div class="modal--review__content">
+          <div class="item item--rating active" data-step="1">
+            <div class="title">Качество видео</div>
+            <div class="description">Оцените качество видеоуроков</div>
+            <div class="stars-grid">
+              <div class="star" data-n="1"></div>
+              <div class="star" data-n="2"></div>
+              <div class="star" data-n="3"></div>
+              <div class="star" data-n="4"></div>
+              <div class="star" data-n="5"></div>
+              <div class="star" data-n="6"></div>
+              <div class="star" data-n="7"></div>
+              <div class="star" data-n="8"></div>
+              <div class="star" data-n="9"></div>
+              <div class="star" data-n="10"></div>
+            </div>
+            <div class="buttons-grid"><a class="btn btn--light" href="#" rel="modal:close">Отмена</a><a class="btn js-reviews-next-step" href="#" disabled="true">Оценить качество видео</a></div>
+          </div>
+          <div class="item item--rating" data-step="2">
+            <div class="title">Подача материала</div>
+            <div class="description">Оцените качество подачи материала</div>
+            <div class="stars-grid">
+              <div class="star" data-n="1"></div>
+              <div class="star" data-n="2"></div>
+              <div class="star" data-n="3"></div>
+              <div class="star" data-n="4"></div>
+              <div class="star" data-n="5"></div>
+              <div class="star" data-n="6"></div>
+              <div class="star" data-n="7"></div>
+              <div class="star" data-n="8"></div>
+              <div class="star" data-n="9"></div>
+              <div class="star" data-n="10"></div>
+            </div>
+            <div class="buttons-grid"><a class="btn btn--light" href="#" rel="modal:close">Отмена</a><a class="btn js-reviews-next-step" href="#">Оценить подачу</a></div>
+          </div>
+          <div class="item item--rating" data-step="3">
+            <div class="title">Актуальность материала</div>
+            <div class="description">Оцените актуальность материала</div>
+            <div class="stars-grid">
+              <div class="star" data-n="1"></div>
+              <div class="star" data-n="2"></div>
+              <div class="star" data-n="3"></div>
+              <div class="star" data-n="4"></div>
+              <div class="star" data-n="5"></div>
+              <div class="star" data-n="6"></div>
+              <div class="star" data-n="7"></div>
+              <div class="star" data-n="8"></div>
+              <div class="star" data-n="9"></div>
+              <div class="star" data-n="10"></div>
+            </div>
+            <div class="buttons-grid"><a class="btn btn--light" href="#" rel="modal:close">Отмена</a><a class="btn js-reviews-next-step" href="#">Оценить актуальность</a></div>
+          </div>
+          <div class="item" data-step="4">
+            <div class="input-panel input-panel--default">
+              <label for="name">Комментарий</label>
+              <textarea name="name" placeholder="Опишите как прошел ваш процесс обучения, что понравилось, что разочаровало?"></textarea>
+            </div>
+            <div class="buttons-grid"><a class="btn js-reviews-next-step" href="#review-thanks" rel="modal:open">Отправить отзыв</a></div>
+          </div>
+        </div>
+        <div class="modal--review__footer">
+          <div class="cover"><img src="img/1.jpg"/></div>
+          <div class="content">
+            <div class="content__head"><span class="company">Skillbox</span>
+              <div class="rating">9.8<i class="fa fa-star"></i></div>
+            </div>
+            <div class="content__title">Бухгалтерия для продвинутых</div>
+          </div>
+        </div>
+      </div><a class="close-modal" href="#" rel="modal:close"><i class="fal fa-times"></i></a>
+    </div>
+    <script src="js/main.min.js?v=2"></script>
+    <script src="js/vendor.min.js?v=2"></script>
+  </body>
+</html>

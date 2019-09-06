@@ -1,0 +1,195 @@
+mixin Header(type)
+    header.header
+        .container
+
+            a.only-mobile.mobile-open.js-mobile-open(href="#", data-target='#header__dropdown', data-body-lock="true").js-toggler
+                i.far.fa-bars
+
+
+            a(href="index.html").header__logo
+                img(src="img/logo.svg")
+            .header__catalog__wrapper
+                a(href="#", data-target='#header__dropdown', data-body-lock="true").btn.btn--catalog.header__catalog-open
+                    | Каталог
+                    <i class="far fa-chevron-down"></i>
+
+            a(href="#").only-mobile.mobile-search.js-mobile-search-open
+                i.far.fa-search
+            .header__search
+                +Input('search', 'search', 'Что интересует?')
+
+            .header__actions
+                if !type
+                    a(href="register.html").btn.btn--light Для организаций
+                    a(href="register.html").btn Присоединиться
+                else
+                    .pos-r.notifications--area
+                        a(href="#", data-target="#notifications-bar").notifications.notifications--new.js-toggler
+                            i.fal.fa-bell
+
+                        .dropdown.dropdown--filter#notifications-bar.js-toggler-target
+                            .dropdown__content
+                                .dropdown__head
+                                    h5 Уведомления
+                                    .actions
+                                        a(href="#").dropdown__close.js-toggler-closer
+                                            i.fal.fa-times
+                                .notifications__area
+                                    .notifications__content
+                                        a(href="#").notifications__item
+                                            .cover.cover--link
+                                                img(src="img/1.jpg")
+                                            .content
+                                                .title Идеальный Landing Page
+                                                .description Вам стала доступна ссылка для прохождения курса
+                                                .time 1 час назад
+                                        a(href="#").notifications__item
+                                            .cover.cover--comment
+                                                img(src="img/2.jpg")
+                                            .content
+                                                .title Идеальный Landing Page
+                                                .description Вам стала доступна ссылка для прохождения курса
+                                                .time 1 час назад
+                                        a(href="#").notifications__item.old
+                                            .cover.cover--link
+                                                img(src="img/3.jpg")
+                                            .content
+                                                .title Идеальный Landing Page
+                                                .description Вам стала доступна ссылка для прохождения курса
+                                                .time 1 час назад
+                                        a(href="#").notifications__item.old
+                                            .cover.cover--comment
+                                                img(src="img/4.png")
+                                            .content
+                                                .title Идеальный Landing Page
+                                                .description Вам стала доступна ссылка для прохождения курса
+                                                .time 1 час назад
+                                        a(href="#").notifications__item.old
+                                            .cover.cover--link
+                                                img(src="img/3.jpg")
+                                            .content
+                                                .title Идеальный Landing Page
+                                                .description Вам стала доступна ссылка для прохождения курса
+                                                .time 1 час назад
+
+                    .pos-r.user--area
+                        a(href="#", data-target="#user-bar").user.js-toggler
+                            .name Николай Борисов
+                            .avatar
+                                img(src="img/u1.jpg")
+
+                        .dropdown.dropdown--right.js-toggler-target#user-bar.user-bar
+                            a(href="cabinet_user_contacts.html")
+                                span Контактные данные
+                                .icon
+                                    i.fal.fa-user
+                            a(href="cabinet_user_teach.html")
+                                span Учеба и карьера
+                                .icon
+                                    i.fal.fa-graduation-cap
+                            .split-line
+                            a(href="cabinet_user_password.html")
+                                span Изменить пароль
+                                .icon
+                                    i.fal.fa-unlock
+                            a(href="cabinet_user_alerts.html")
+                                span Уведомления
+                                .icon
+                                    i.fal.fa-bell
+                            .split-line
+                            a(href="cabinet_user_courses.html")
+                                span Мои курсы
+                                .icon
+                                    i.fal.fa-bookmark
+                            a(href="cabinet_user_recommends.html")
+                                span Рекомендации
+                                .icon
+                                    i.fal.fa-star
+                            a(href="#").js-toggler-close-on-select__item
+                                span Выход
+                                .icon
+                                    i.fal.fa-sign-out
+
+
+        .header__dropdown.header__catalog.js-toggler-target#header__dropdown
+            .container
+                .catalog__puncts.js-mobile-active
+                    .items
+                        a(href="courses_list.html").active.js-mobile-checker Курсы
+                        a(href="schools_list.html") Школы
+                        a(href="speakers_list.html") Спикеры
+                        a(href="reviews_list.html") Отзывы
+
+
+                    .items-down
+                        a(href="about.html").items-down__item О проекте
+                        a(href="contacts.html").items-down__item Контакты
+                        .only-mobile.header__dropdown--mobile
+                            a(href="register.html").btn.btn--light Для организаций
+                            a(href="register.html").btn Присоединиться
+
+
+                .catalog__lists
+                    a(href="#").only-mobile.js-mobile-back
+                        i.far.fa-chevron-left
+                        | Назад
+                    .list.list--themes
+                        .list__container.js-header-categories
+                            a(href="#", data-category="design").active
+                                .icon
+                                    img(src="img/1.jpg")
+                                span Дизайн
+                            a(href="#", data-category="business")
+                                .icon
+                                    img(src="img/2.jpg")
+                                span Бизнес
+                            a(href="#", data-category="it")
+                                .icon
+                                    img(src="img/3.jpg")
+                                span IT
+                            a(href="#", data-category="health")
+                                .icon
+                                    img(src="img/4.png")
+                                span Здоровье
+                            a(href="#", data-category="personal")
+                                .icon
+                                    img(src="img/1.jpg")
+                                span Личное развитие
+                            a(href="#")
+                                .icon
+                                    img(src="img/2.jpg")
+                                span Изучение языков
+                            a(href="#")
+                                .icon
+                                    img(src="img/3.jpg")
+                                span Математика и логика
+                            a(href="#")
+                                .icon
+                                    img(src="img/4.png")
+                                span Наука о данных
+                        .list__bottom
+                            a(href="courses_categories.html").btn.btn--light.btn--xs Подобрать необходимый курс
+                    .list.list--themes
+                        .list__container.js-header-subcategories
+                            a(href="#").active
+                                span Веб-дизайн
+                            a(href="#")
+                                span Графический дизайн
+                            a(href="#")
+                                span Ланшафтный дизайн
+                            a(href="#")
+                                span Продуктовый дизайн
+                    .list.list--courses
+                        .list__container
+                            +Card('promo', {img: 'img/2.jpg', title: 'Курс номер 1', rating: '9.9', nums: "13"})
+                            +Card('promo', {img: 'img/1.jpg', title: 'Курс номер 2', rating: '9.5', nums: "14"})
+                            +Card('promo', {img: 'img/3.jpg', title: 'Курс номер 3', rating: '9.1', nums: "11"})
+                            +Card('promo', {img: 'img/4.png', title: 'Курс номер 4', rating: '8.0', nums: "21"})
+                            +Card('promo', {img: 'img/1.jpg', title: 'Курс номер 5', rating: '7.5', nums: "134"})
+                        .list__bottom
+                            a(href="courses_list.html").btn.btn--xs Все курсы раздела
+
+
+
+
+

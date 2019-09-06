@@ -1,0 +1,84 @@
+mixin Filters(changeViewHide)
+
+    .actions.filters
+        .pos-r
+            a(href="#", data-target="#sort-by").btn.btn--light.js-toggler
+                include ../../../img/sort_24px.svg
+                | Сортировка
+
+            .dropdown.dropdown--right.js-toggler-target.js-toggler-close-on-select#sort-by
+                a(href="#").js-toggler-close-on-select__item.active
+                    span Самые дешевые
+                    .icon
+                        i.fal.fa-chevron-up
+                a(href="#").js-toggler-close-on-select__item
+                    span Самые дорогие
+                    .icon
+                        i.fal.fa-chevron-down
+                a(href="#").js-toggler-close-on-select__item
+                    span Самые популярные
+                    .icon
+                        i.fal.fa-chevron-up
+                a(href="#").js-toggler-close-on-select__item
+                    span Самые новые
+                    .icon
+                        i.fal.fa-chevron-down
+        .pos-r
+            a(href="#", data-target="#filters").btn.btn--light.js-toggler
+                include ../../../img/settings_24px.svg
+                | Фильтр
+
+            form.dropdown.dropdown--right.js-toggler-target.dropdown--filter#filters
+                .dropdown__content
+                    .dropdown__head
+                        h5 Фильтр
+                        .actions
+                            a(href="#").dropdown__close.js-toggler-closer
+                                i.fal.fa-times
+
+                    .filter__section
+                        .filter__head
+                            p.title Продолжительность курсов
+                            .actions
+                                p.filter-spinner от
+                                    span#filter-value-min 0
+                                    | до
+                                    span#filter-value-max 0
+                                    | дней
+
+
+                        <div id="slider-range"></div>
+                        .slider__range-values
+                            span 0 дней
+                            span 365 дней
+                    .filter__section
+                        .filter__head
+                            p.title Программное обеспечение
+
+                        +Input("checkbox", "filter_figma", "", "Figma")
+                        +Input("checkbox", "filter_sketch", "", "Sketch")
+                        +Input("checkbox", "filter_axd", "", "Adobe XD")
+                        +Input("checkbox", "filter_ai", "", "Adobe Illustrator")
+
+                    .filter__section
+                        .filter__head
+                            p.title Стоимость
+
+                        +Input('radio', 'filter__price', ["Менее 5 000", "от 5 000 до 15 000", "от 15 000 до 30 000"])
+                    .filter__section
+                        .filter__head
+                            p.title Ключевые слова
+                        +Input('text', 'filter__keywords', '', '')
+
+                .dropdown__footer
+                    button(type="reset").btn.btn--light Сброс
+                    button(type="submit").btn.js-toggler-closer Применить
+
+
+
+
+        if !changeViewHide
+            .btn.btn--light.filter__change-view.only-desktop
+                include ../../../img/view_agenda_24px_outlined.svg
+                include ../../../img/toc_24px_outlined.svg
+

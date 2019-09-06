@@ -1,0 +1,15 @@
+#numbers
+  .container
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    +media("<=xl")
+      flex-wrap: wrap
+  .aboutnumber
+    max-width: 25%
+    flex: 0 0 25%
+
+    +media("<=xl")
+      max-width: 50%
+      flex: 0 0 50%
+
