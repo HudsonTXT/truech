@@ -11,7 +11,7 @@ jobs:
       - name: checkout master branch
         uses: actions/checkout@master
       - name: Merge master -> compiled-master
-        uses: devmasx/merge-branch@v1.3.1
+        uses: devmasx/merge-branch@v1.4.0
         with:
           type: now
           from_branch: master
