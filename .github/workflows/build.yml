@@ -1,0 +1,27 @@
+build:
+name: Build
+runs-on: ubuntu-latest
+
+steps:
+  - name: checkout master branch
+    uses: actions/checkout@master
+  - name: Merge master -> compiled-master
+    uses: devmasx/merge-branch@v1.3.1
+    with:
+      type: now
+      from_branch: master
+      target_branch: compiled-master
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+  - name: checkout compiled-master branch
+    uses: actions/checkout@v2
+    with:
+      ref: compiled-master
+  - run: |
+      rm .gitignore 
+      mv compiled-gitignore .gitignore
+      yarn install
+      yarn build
+  - uses: stefanzweifel/git-auto-commit-action@v4
+    with:
+      commit_message: Add new gitignore & build
+      branch: compiled-master
