@@ -22,8 +22,6 @@ jobs:
         with:
           ref: compiled-master
       - run: |
-          rm .gitignore 
-          mv compiled-gitignore .gitignore
           yarn install
           yarn build
       - uses: stefanzweifel/git-auto-commit-action@v4
