@@ -16,7 +16,7 @@ jobs:
           type: now
           from_branch: master
           target_branch: compiled-master
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.token }}
       - name: checkout compiled-master branch
         uses: actions/checkout@v2
         with:
